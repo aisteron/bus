@@ -10,3 +10,15 @@ function my_deregister_scripts(){
   wp_deregister_script( 'wp-embed' );
 }
 add_action( 'wp_footer', 'my_deregister_scripts' );
+
+
+
+
+add_action( 'wp_enqueue_scripts', 'theme_bus_scripts' );
+
+function theme_bus_scripts() {
+    wp_enqueue_style( 'default-style', get_stylesheet_uri() );
+    wp_enqueue_style( 'critical', get_template_directory_uri(). '/src/css/critical/critical.css' );
+    wp_enqueue_style( 'rest', get_template_directory_uri(). '/src/css/rest.css' );
+
+}
