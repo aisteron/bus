@@ -5,7 +5,29 @@ module.exports = function(grunt){
 		pkg: grunt.file.readJSON('package.json'),
 
 
-		
+		critical: 
+		{
+		    dist: 
+			{
+			    options: {
+			      base: './',
+			      dimensions: [{
+			        width: 1300,
+			        height: 900
+			       },
+			       {
+			        width: 500,
+			        height: 900
+			      }]
+			    },
+
+        		files: [
+				      {src: ['http://bus.local/'], dest: 'css/critical/critical.css'},
+				      //{src: ['blog.html'], dest: 'dist/blog.html'}
+
+				      ]
+        	}
+		},
 		pug: 
 			{
 			  compile: {
@@ -94,7 +116,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	//grunt.loadNpmTasks('grunt-contrib-concat');
-
+	grunt.loadNpmTasks('grunt-critical');
 	grunt.loadNpmTasks('grunt-browser-sync');
 
 	grunt.registerTask('default',['pug','less','watch', 'browserSync'])
