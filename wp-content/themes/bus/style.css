@@ -3,4 +3,4 @@ Theme Name: Bus
 Theme URI: #
 Author: mallymkun
 
-*/body{font-size:1em}
+*/body{background:#111d26}.wrap{width:1190px;margin:0 auto}.wrap .logo-line{font-family:'Open Sans Condensed';color:#12c391;text-transform:uppercase;display:-ms-grid;display:grid;-ms-grid-columns:1fr 185px 155px 166px;grid-template-columns:1fr 185px 155px 166px;-ms-grid-rows:auto;grid-template-rows:auto}.wrap .logo-line img{vertical-align:text-bottom;padding-right:.5em}.wrap .logo-line .vw span:first-of-type{display:block;margin-bottom:.3em}.wrap .logo-line .mail,.wrap .logo-line .phone{-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center}

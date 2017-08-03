@@ -38,7 +38,8 @@ module.exports = function(grunt){
 			    },
 			    
 			    files: {
-			      '../footer.php':['template/footer.pug']
+			      '../footer.php':['template/footer.pug'],
+			      '../front-page.php':['template/front-page.pug']
 			    },
 			    
 			  }
@@ -77,7 +78,7 @@ module.exports = function(grunt){
 			{
 				css:
 				{
-					files:['src/css/*.less'],
+					files:['css/*.less'],
 					tasks:['less'],
 					options: {
 				      livereload: true,
@@ -85,7 +86,7 @@ module.exports = function(grunt){
 				},
 				scripts:
 				{
-					files:['src/template/*.pug'],
+					files:['template/*.pug'],
 					tasks:['pug'],
 					options: {
 				      livereload: true,

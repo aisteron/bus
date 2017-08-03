@@ -4,7 +4,44 @@ Theme URI: #
 Author: mallymkun
 
 */
+@bg: #111d26;
+@green: #12c391;
 body
 {
-	font-size:1em;
+	background: @bg;
+}
+
+.wrap
+{
+	width:1190px;
+	margin:0 auto;
+
+	.logo-line
+	{
+		font-family: 'Open Sans Condensed';
+		color:@green;
+		text-transform: uppercase; 
+	 
+		display:grid;
+		grid-template-columns: 1fr 185px 155px 166px;
+		grid-template-rows:auto;
+
+		img 
+		{
+		    vertical-align: text-bottom;
+    		padding-right: 0.5em;
+		}
+		.vw
+		{
+			span:first-of-type 
+			{
+				display: block;
+    			margin-bottom: 0.3em;
+			}
+		}
+		.mail, .phone {align-self: center;}
+	}
+
+	
+
 }
