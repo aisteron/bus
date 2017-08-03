@@ -25,7 +25,8 @@ module.exports = function(grunt){
 				      {src: ['http://bus.local/'], dest: 'css/critical/critical.css'},
 				      //{src: ['blog.html'], dest: 'dist/blog.html'}
 
-				      ]
+				      ],
+				ignore: ['@font-face']     
         	}
 		},
 		pug: 
@@ -100,7 +101,7 @@ module.exports = function(grunt){
 	            dev: {
 	                bsFiles: {
 	                    src : [
-                        'src/css/*.css',
+                        '../style.css',
                         '../*.php'
                     ]
 	                },
@@ -120,7 +121,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-critical');
 	grunt.loadNpmTasks('grunt-browser-sync');
 
-	grunt.registerTask('default',['pug','less','watch', 'browserSync'])
+	grunt.registerTask('default',['pug','less','browserSync','watch'])
 
 
 }; //end wrap
