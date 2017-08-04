@@ -12,21 +12,20 @@ module.exports = function(grunt){
 			    options: {
 			      base: './',
 			      dimensions: [{
-			        width: 1300,
+			        width: 821,
 			        height: 900
-			       },
+			       }/*,
 			       {
 			        width: 500,
 			        height: 900
-			      }]
+			      }*/]
 			    },
 
         		files: [
-				      {src: ['http://bus.local/'], dest: 'css/critical/critical.css'},
+				      {src: ['http://localhost:3000/'], dest: 'css/critical/critical-821.css'},
 				      //{src: ['blog.html'], dest: 'dist/blog.html'}
 
 				      ],
-				ignore: ['@font-face']     
         	}
 		},
 		pug: 

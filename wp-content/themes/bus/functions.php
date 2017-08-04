@@ -28,6 +28,8 @@ add_action( 'init', 'register_my_menus' );
 
 
 
+
+
 #	#	#	#	#	#	#	#	#
 #								#
 # кэширование критического css 	#
@@ -36,7 +38,7 @@ add_action( 'init', 'register_my_menus' );
 
 //add_action( 'init', 'critical_css');
 
-function critical_css() {
+/*function critical_css() {
 
 	if(isset($_COOKIE['key']))
 	{
@@ -61,5 +63,17 @@ function critical_css() {
 
 	}
 
+}*/
+
+
+# для построения критического css мы отключаем фишку с куками, потому что PhantomJS не может выполнить функцию
+# loadCSS почему-то
+
+function wpdocs_vip_scripts() {
+    wp_enqueue_style( 'dafault-style', get_stylesheet_uri() );
+    //wp_enqueue_style( 'w821', get_template_directory_uri().'/src/css/critical/critical-821.css' );
+    wp_enqueue_script('custom', get_template_directory_uri() .'/src/js/custom.js', array('jquery'), null, true);
+
 }
 
+add_action( 'wp_enqueue_scripts', 'wpdocs_vip_scripts' );    
