@@ -6,6 +6,8 @@ Author: mallymkun
 */
 @bg: #111d26;
 @green: #12c391;
+@hoverGreen: #1d5252;
+@grey: #3b4043;
 
 
 
@@ -84,6 +86,26 @@ body
 						border-bottom: 1px solid @green; 
 					} 
 				}
+				&:last-child
+				{
+					background-color: @green;
+				    padding: 0.3em;
+    				border-radius: 6px;
+
+    				a 
+    				{
+    					font-size: 90%;
+    					font-weight: normal;
+    					&:hover 
+    					{
+    						text-decoration: none;
+    					}
+    				}
+    				&:hover 
+    				{
+    					background-color: #09ad7e;
+    				}
+				}
 			}
 		}
 	}
@@ -108,7 +130,7 @@ body
 				padding-left: 1em;
 				&:hover 
 				{
-					background-color: #1d5252;
+					background-color: @hoverGreen;
 					transition:0.6s;
 				}
 
@@ -123,6 +145,104 @@ body
 	    	}
 	    }
 	}
+
+	/* большая картинка с микроавтобусом на главной */
+	/* тут начинаются стили характерные только для главной страницы */
+
+	.main-lead
+	{
+		background-image: url('src/img/header8.jpg');
+	    min-height: 639px;
+	    position: relative;
+	    margin-top: -15em;
+	    z-index: -1;
+	    background-position: -164px -29px;
+
+
+	}
+
+    .lead
+    {
+	    float: right;
+			margin-top: 6em;
+	    background: rgba(17, 17, 17, 0.24);
+	    padding: 2em;
+	    border: 1px dashed @green;
+	    border-radius: 6px;
+	    text-align: center;
+
+	    p 
+	    {
+	    	color:#fff;
+	    	font-weight: 700;
+	    	text-transform: uppercase;
+	    	margin-top: -1em;
+
+	    	>span 
+	    	{
+	    		color:@green;
+	    	}
+	    }
+	    form
+	    {
+	    	input 
+	    	{
+	    		display: block;
+	    		padding:0.3em;
+	    		margin: 1em auto;
+	    		border-radius: 6px;
+	    		border: none;
+
+	    		&:last-child 
+	    		{
+	    			margin-top:1.3em;
+	    			background-color: @green;
+				    color: #fff;
+				    padding: 0.6em;
+				    cursor:pointer;
+
+				    &:hover
+				    {
+				    	background-color: @hoverGreen;
+				    	transition:0.6s ease-in-out;
+				    }
+
+	    		}
+	    	}
+	    }
+    }
+
+    .second-menu 
+    {
+    	    border-top: 2px solid @green;
+    		border-bottom: 2px solid @green;
+    		background-color: @grey;
+    		width: 100vw;
+		    left: calc(~"-50vw + 50%");
+		    position: relative;
+
+    	.menu 
+    	{
+    		display: flex;
+    		justify-content: space-between;
+    		margin: 0 auto;
+    		padding:0;
+    		width:1190px;
+
+    		li 
+    		{
+    			list-style-type: none;
+
+    			a 
+    			{
+    				font-weight: 700;
+    				color:#fff;
+    				text-decoration: none;
+    			}
+    		}
+    	}
+    }
+
 
 	
 

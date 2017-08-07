@@ -23,5 +23,6 @@ $('.grid-icon').click(function(){
 
 
 
+
 }); // document ready
 })(jQuery)

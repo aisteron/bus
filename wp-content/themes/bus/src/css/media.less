@@ -9,6 +9,16 @@
 	{
 		width:95% !important;
 	}
+	/*ниже - только для главной*/
+	.second-menu
+	{
+		.menu
+		{
+			width:100% !important;
+			justify-content: space-around !important;
+		}
+	}
+	/*выше - только для главной */
 }
 
 @media only screen and (max-width:822px)
@@ -34,6 +44,26 @@
 
 		}
 		.topnav {display: none;}
+
+		/*ниже - только для главной */
+
+		.main-lead {display:none}
+		.lead 
+		{
+			float:none;
+			margin:1em auto;
+			width:169px;
+		}
+
+		.second-menu
+		{
+			.menu
+			{
+				flex-wrap:wrap;
+			}
+		}
+
+		/*выше - только для главной */
 	}
 
 		

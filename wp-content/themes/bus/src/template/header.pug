@@ -1,0 +1,33 @@
+doctype html
+<html lang="ru">
+head
+	meta(charset="UTF-8")
+	link(rel='dns-prefetch' href='//fonts.googleapis.com')
+	link(href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;subset=cyrillic-ext" rel="stylesheet")
+	meta(name="viewport" content="width=device-width, initial-scale=1.0")
+	title
+	| <?php wp_head()?>
+<body>
+<div class='wrap'>
+	.logo-line
+		.logo
+			img(src='wp-content/themes/bus/src/img/logo.png')
+		.mail
+			img(src='wp-content/themes/bus/src/img/25-25-envelope.png')
+			|busminsk@bk.ru
+		.phone
+			img(src="wp-content/themes/bus/src/img/25-25-velcom.png")
+			|+375 29 638 77 00
+		.vw
+			span
+				img(src="wp-content/themes/bus/src/img/25-25-viber.png")
+				| мы есть в viber
+			span
+				img(src="wp-content/themes/bus/src/img/25-25-wa.png")
+				| и whatsapp
+		.grid-icon
+			img(src='wp-content/themes/bus/src/img/grid.svg')
+	.topnav
+		| <?php wp_nav_menu(array('menu' => 'header-menu','container' => ''))
+		|?>
+		

@@ -1,29 +1,17 @@
 |<?php //critical_css();
 | get_header(); ?>
 
-.wrap
-	.logo-line
-		.logo
-			img(src='wp-content/themes/bus/src/img/logo.png')
-		.mail
-			img(src='wp-content/themes/bus/src/img/25-25-envelope.png')
-			|busminsk@bk.ru
-		.phone
-			img(src="wp-content/themes/bus/src/img/25-25-velcom.png")
-			|+375 29 638 77 00
-		.vw
-			span
-				img(src="wp-content/themes/bus/src/img/25-25-viber.png")
-				| мы есть в viber
-			span
-				img(src="wp-content/themes/bus/src/img/25-25-wa.png")
-				| и whatsapp
-		.grid-icon
-			img(src='wp-content/themes/bus/src/img/grid.svg')
-	.topnav
-		| <?php wp_nav_menu(array('menu' => 'header-menu','container' => ''))
-		|?>
-	.main-lead
+.lead
+	p <span> Онлайн </span> заявка
+	form
+		input(type='text' placeholder='Номер телефона' required)
+		input(type='text' placeholder='Дата проката' required)
+		input(type='submit' value='Оставить заявку')
+.main-lead
+.second-menu
+	| <?php wp_nav_menu(array('menu' => 'second-menu','container' => '', 'walker' => new WPDocs_Walker_Nav_Menu()))?>
+
+	
 			
 
 |<?php get_footer();?>

@@ -39,7 +39,8 @@ module.exports = function(grunt){
 			    
 			    files: {
 			      '../footer.php':['template/footer.pug'],
-			      '../front-page.php':['template/front-page.pug']
+			      '../front-page.php':['template/front-page.pug'],
+			      '../header.php':['template/header.pug']
 			    },
 			    
 			  }
