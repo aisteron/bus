@@ -1,6 +1,8 @@
 |<?php //critical_css();
 | get_header(); ?>
 
+.header-822
+	p Прокат <span>авто</span> в Минске
 .lead
 	p <span> Онлайн </span> заявка
 	form
@@ -9,9 +11,19 @@
 		input(type='submit' value='Оставить заявку')
 .main-lead
 .second-menu
-	| <?php wp_nav_menu(array('menu' => 'second-menu','container' => '', 'walker' => new WPDocs_Walker_Nav_Menu()))?>
+	| <?php wp_nav_menu(array('menu' => 'second-menu','container' => '', 'walker' => new My_Walker_Nav_Menu()))?>
 
-	
-			
+	include php/menu-walker.php
+
+.keyholder(data-bg="/wp-content/themes/bus/src/img/bg-5.jpg" class='lazyload')
+	.text ВНИМАНИЕ! У НАС СТАЛ ДОСТУПЕН ПРОКАТ<br> АВТОМОБИЛЕЙ БЕЗ ВОДИТЕЛЯ
+	.auto
+		img(class='lazyload' data-src='/wp-content/themes/bus/src/img/wcar.png')
+		a(href="#")
+			input(type='button' value='Подобрать авто')
+.carLineWrap
+	h2 Микроавтобусы
+	include php/owl-slider-main.php
+
 
 |<?php get_footer();?>

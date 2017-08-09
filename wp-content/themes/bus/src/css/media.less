@@ -16,6 +16,18 @@
 		{
 			width:100% !important;
 			justify-content: space-around !important;
+			flex-wrap:wrap;
+
+			li
+			{
+				a 
+				{
+					span 
+					{
+						display: block;
+					}
+				}
+			}
 		}
 	}
 	/*выше - только для главной */
@@ -46,7 +58,20 @@
 		.topnav {display: none;}
 
 		/*ниже - только для главной */
+		.header-822 
+		{
+			display: block;
+			text-align: center;
+		    color: #fff;
+		    text-transform: uppercase;
+		    font-weight: 700;
+		    font-size: 2em;
 
+		    span 
+		    {
+		    	color:@green;
+		    }
+		}
 		.main-lead {display:none}
 		.lead 
 		{
@@ -55,11 +80,18 @@
 			width:169px;
 		}
 
-		.second-menu
+		.keyholder
 		{
-			.menu
+			flex-wrap:wrap;
+
+			.auto 
 			{
-				flex-wrap:wrap;
+				a 
+				{
+				    display: block;
+				    margin: 0 auto;
+				    width: 152px;
+				}
 			}
 		}
 
@@ -77,6 +109,9 @@
 		{
 			grid-template-columns: 1fr 35px;
 		    grid-template-rows: auto;
+	        margin-left: -8px !important;
+    		margin-right: -8px !important;
+
 		    .phone {font-size: 1.5em}
 			.mail, .vw {display: none;}
 			img 
@@ -84,5 +119,23 @@
 			    vertical-align: baseline;
 			}
 		}
-	}		
+
+
+	}
+
+	/*ниже - только для главной */
+	.wrap 
+	{
+		.keyholder 
+		{
+			padding-top: 2em;
+    		padding-bottom: 2em;
+
+				.auto img 
+			{
+					width:100% !important;
+			}
+		}
+	}
+	/*выше - только для главной */	
 }

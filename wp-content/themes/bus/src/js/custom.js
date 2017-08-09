@@ -6,7 +6,7 @@ $(document).ready(function(){
 
 $('.topnav').after('<div class="mobile-menu"><ul></ul></div>');
 
-$('.menu li a').each(function(){
+$('.topnav .menu li a').each(function(){
 var atext = $(this).text();
 var alink = $(this).attr('href');
 //var alink = $(this).find('a').attr('href');
@@ -21,6 +21,47 @@ $('.grid-icon').click(function(){
 
 });
 
+if($(document).width() > 820)
+{
+	$('.main-lead').attr('data-bg', 'wp-content/themes/bus/src/img/header8.jpg' ).addClass('lazyload');
+}
+
+
+function loadCSS( href, before, media ){
+        "use strict";
+        var ss = window.document.createElement( "link" );
+        var ref = before || window.document.getElementsByTagName( "script" )[ 0 ];
+        var sheets = window.document.styleSheets;
+        ss.rel = "stylesheet";
+        ss.href = href;
+        ss.media = "only x";
+        ref.parentNode.insertBefore( ss, ref );
+        function toggleMedia(){
+            var defined;
+            for( var i = 0; i < sheets.length; i++ ){
+                if( sheets[ i ].href && sheets[ i ].href.indexOf( href ) > -1 ){
+                    defined = true;
+                }
+            }
+            if( defined ){
+                ss.media = media || "all";
+            }
+            else {
+                setTimeout( toggleMedia );
+            }
+        }
+        toggleMedia();
+        return ss;
+    }
+
+/* если это главная, то грузим стили для карусели */
+if(window.location.href.split('/').length = 4)
+{
+ loadCSS( "wp-content/themes/bus/src/css/owl/owl.carousel.min.css" ); 	
+ loadCSS( "wp-content/themes/bus/src/css/owl/owl.theme.default.min.css" ); 	
+}    
+
+   
 
 
 

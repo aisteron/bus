@@ -29,7 +29,9 @@ add_action( 'init', 'register_my_menus' );
 
 
 
+/*добавляем поддержку post thumbnail для second menu главной страницы*/
 
+add_theme_support( 'post-thumbnails' ); 
 
 #	#	#	#	#	#	#	#	#
 #								#
@@ -71,9 +73,31 @@ add_action( 'init', 'register_my_menus' );
 # loadCSS почему-то
 
 function wpdocs_vip_scripts() {
+
+	/*
+	 *
+	 * Move jQuery to the footer. 
+	 */
+
+	wp_scripts()->add_data( 'jquery', 'group', 1 );
+    wp_scripts()->add_data( 'jquery-core', 'group', 1 );
+    wp_scripts()->add_data( 'jquery-migrate', 'group', 1 );
+
     wp_enqueue_style( 'dafault-style', get_stylesheet_uri() );
     //wp_enqueue_style( 'w821', get_template_directory_uri().'/src/css/critical/critical-821.css' );
+
     wp_enqueue_script('custom', get_template_directory_uri() .'/src/js/custom.js', array('jquery'), null, true);
+    wp_enqueue_script('lazy', get_template_directory_uri() .'/src/js/lazysizes.min.js', array('jquery'), null, true);
+    wp_enqueue_script('lazy-unveil', get_template_directory_uri() .'/src/js/ls.unveilhooks.min.js', array('jquery'), null, true);
+
+    /* owl carousel */
+
+    if (is_front_page())
+    {
+    	wp_enqueue_script('owl-js', get_template_directory_uri() .'/src/js/owl.carousel.min.js', array('jquery'), null, true);
+    }
+
+   
 
 }
 
