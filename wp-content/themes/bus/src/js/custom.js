@@ -23,7 +23,8 @@ $('.grid-icon').click(function(){
 
 if($(document).width() > 820)
 {
-	$('.main-lead').attr('data-bg', 'wp-content/themes/bus/src/img/header8.jpg' ).addClass('lazyload');
+	$('.main-lead').attr('data-bg', 'wp-content/themes/bus/src/img/header9.jpg' ).addClass('lazyload');
+	$('.keyholder').attr('data-bg', 'wp-content/themes/bus/src/img/bg-5.jpg' ).addClass('lazyload');
 }
 
 
@@ -58,7 +59,14 @@ function loadCSS( href, before, media ){
 if(window.location.href.split('/').length = 4)
 {
  loadCSS( "wp-content/themes/bus/src/css/owl/owl.carousel.min.css" ); 	
- loadCSS( "wp-content/themes/bus/src/css/owl/owl.theme.default.min.css" ); 	
+ loadCSS( "wp-content/themes/bus/src/css/owl/owl.theme.default.min.css" );
+ //$.getScript("wp-content/themes/bus/src/js/owl.carousel.min.js");
+ $.getScript( "wp-content/themes/bus/src/js/owl.carousel.min.js", function( data, textStatus, jqxhr ) {
+
+  console.log( "Load owl.carousel.min.js performed." );
+  $(".owl-carousel").owlCarousel();
+});
+ 
 }    
 
    

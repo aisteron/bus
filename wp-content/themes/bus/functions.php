@@ -90,15 +90,22 @@ function wpdocs_vip_scripts() {
     wp_enqueue_script('lazy', get_template_directory_uri() .'/src/js/lazysizes.min.js', array('jquery'), null, true);
     wp_enqueue_script('lazy-unveil', get_template_directory_uri() .'/src/js/ls.unveilhooks.min.js', array('jquery'), null, true);
 
+
     /* owl carousel */
 
-    if (is_front_page())
+    /*if (is_front_page())
     {
     	wp_enqueue_script('owl-js', get_template_directory_uri() .'/src/js/owl.carousel.min.js', array('jquery'), null, true);
-    }
+    }*/
 
    
 
 }
 
-add_action( 'wp_enqueue_scripts', 'wpdocs_vip_scripts' );    
+add_action( 'wp_enqueue_scripts', 'wpdocs_vip_scripts' );  
+
+
+function load_custom_wp_admin_style() {
+        wp_enqueue_script('admin', get_template_directory_uri() .'/src/js/admin.js', array('jquery'), null, true);
+}
+add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' ); 
