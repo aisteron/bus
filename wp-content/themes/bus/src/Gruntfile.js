@@ -87,7 +87,7 @@ module.exports = function(grunt){
 				},
 				scripts:
 				{
-					files:['template/*.pug'],
+					files:['template/*.pug', 'template/php/*.php'],
 					tasks:['pug'],
 					options: {
 				      livereload: true,

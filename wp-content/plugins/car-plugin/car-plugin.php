@@ -14,6 +14,14 @@ if (! defined('ABSPATH'))
 {
 	exit;
 }
+
+function load_custom_wp_admin_style() {
+    wp_enqueue_script('admin-js', plugins_url( 'admin.js', __FILE__ ), array('jquery'), null, true);
+    wp_enqueue_style('admin-css', plugins_url( 'admin.css', __FILE__ ));
+}
+add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' ); 
+
+
 add_action('init', 'wpcp_register_post_type');
 
 function wpcp_register_post_type()
@@ -62,7 +70,7 @@ add_action('init', 'wpcp_register_taxonomy');
 
 function wpcp_register_taxonomy()
 {
-	register_taxonomy('taxonomy', array('car'), array(
+	register_taxonomy('type', array('car'), array(
 		'label'                 => '', // определяется параметром $labels->name
 		'labels'                => array(
 			'name'              => 'Тип транспорта',
@@ -89,7 +97,7 @@ function wpcp_register_taxonomy()
 		'hierarchical'          => false,
 		'update_count_callback' => '',
 		'rewrite'               => true,
-		//'query_var'             => $taxonomy, // название параметра запроса
+		//'query_var'             => 'type', // название параметра запроса
 		'capabilities'          => array(),
 		'meta_box_cb'           => null, // callback функция. Отвечает за html код метабокса (с версии 3.8): post_categories_meta_box или post_tags_meta_box. Если указать false, то метабокс будет отключен вообще
 		'show_admin_column'     => false, // Позволить или нет авто-создание колонки таксономии в таблице ассоциированного типа записи. (с версии 3.5)
@@ -118,19 +126,72 @@ add_action( 'add_meta_boxes', 'register_plum_metabox' );
  */
 
 function plum_display ( $post ) {
-    // Display code/markup goes here. Don't forget to include nonces!
-    echo '<a href="#" class="add">Добавить</a>';
+
+    echo '<a href="#" class="add">Добавить</a><br>';
+
+    global $post;
+	$meta = get_post_meta($post->ID);
+
+	foreach ($meta as $key => $value)
+	 { //выводим изображения в метабокс из БД
+
+
+		if(strpos($key,'img_') === 0) //нужны только meta_value у meta_key начинающихся на 'img_'
+		{
+			echo '<img src="'.wp_get_attachment_url($value[0]).'" data-id="'.$key.'">';
+
+		}
+	}
 }
  
-/**
- * Save meta box content.
- *
- * @param int $post_id Post ID
- */
 
-function plum_save( $post_id ) {
-    // Save logic goes here. Don't forget to include nonce checks!
+
+
+
+/* обрабаnываем ajax-запрос на сохранение данных */
+
+add_action('wp_ajax_my_action', 'my_action_add_img');
+
+function my_action_add_img() {
+
+
+
+		foreach ($_POST as $key => $value) 
+		{
+
+			$id = $_POST['url'];
+		
+			if(strpos($key,'img_') === 0) //ищем в массиве $_POST поля начинающиеся на img_
+			{
+				update_post_meta( $id, $key, $_POST[$key] );
+			}
+
+		}
+		echo 'добавили в таблицу id изображений(-я)';
+
+		wp_die();
+
 }
-add_action( 'save_post', 'plum_save' );
+
+/*обработчик для удаления изображения из БД поста */
+
+add_action('wp_ajax_remove', 'remove_post_image');
+
+function remove_post_image() 
+	{
+
+		$id = $_POST['postid'];
+		$imagekey = $_POST['imagekey'];
+		delete_post_meta( $id, $imagekey );
+	
+		echo 'удалили изображение с meta_key = ',$imagekey, ' из базы данных' ;
+		wp_die();
+	}
+		
+
+		
+
+
+
 
 
