@@ -5,11 +5,12 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wlwmanifest_link');
 remove_action('wp_head', 'wp_generator');
+remove_action( 'rest_api_init','wp_oembed_register_route');
 
-function my_deregister_scripts(){
+/*function my_deregister_scripts(){
   wp_deregister_script( 'wp-embed' );
 }
-add_action( 'wp_footer', 'my_deregister_scripts' );
+add_action( 'wp_footer', 'my_deregister_scripts' );*/
 
 
 
@@ -26,6 +27,10 @@ function register_my_menus() {
   );
 }
 add_action( 'init', 'register_my_menus' );
+
+# регистрация размера thumnail
+
+add_image_size( 'owl-273', 230, 173 );
 
 
 

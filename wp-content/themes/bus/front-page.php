@@ -75,7 +75,9 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu {
 } ?></div><div class="keyholder"><div class="text">ВНИМАНИЕ! У НАС СТАЛ ДОСТУПЕН ПРОКАТ<br> АВТОМОБИЛЕЙ БЕЗ ВОДИТЕЛЯ</div><div class="auto"><img class="lazyload" data-src="/wp-content/themes/bus/src/img/wcar.png"/><a href="#"><input type="button" value="Подобрать авто"/></a></div></div><div class="carLineWrap"><h2 class="typical">Микроавтобусы</h2><?php
 
 // задаем нужные нам критерии выборки данных из БД
-$query = new WP_Query( array( 'type' => 'van' ) );
+function getOwl ($arg) {
+global $post;
+$query = new WP_Query( array( 'type' => $arg ) );
 
 // Цикл
 echo '<div class="owl-carousel owl-theme">';
@@ -85,10 +87,14 @@ if ( $query->have_posts() ) {
 
 		
 		//echo '<li>' . get_the_title() . '</li>';
-		echo '<div class="owl-item"><a href="'.get_permalink($post->ID).'" rel="nofollow"><img src="'.get_the_post_thumbnail_url($post->ID).'"></a>';
+		echo '<div class="owl-item"><div class="img-owl-wrap"><a href="'.get_permalink($post->ID).'" rel="nofollow"><img src="'.get_the_post_thumbnail_url($post->ID, 'owl-273').'"></a><div class="hoverMe"></div></div>';
 		echo '<h3><a href="'.get_permalink($post->ID).'">'.get_the_title($post->ID).'</a></h3>';
 		echo '<p>от '. get_post_meta( $post->ID, 'от', true ).' руб. в час</p>';
-		echo '<p>кол-во мест: '. get_post_meta( $post->ID, 'кол-во мест', true ).'</p></div>';
+		
+		if (get_post_meta( $post->ID, 'кол-во мест', true )) {
+			echo '<p>кол-во мест: '. get_post_meta( $post->ID, 'кол-во мест', true ).'</p></div>';
+		}
+		else {echo '</div>';}
 
 	}
 } else {
@@ -98,5 +104,10 @@ echo '</div>';
 /* Возвращаем оригинальные данные поста. Сбрасываем $post. */
 wp_reset_postdata();
 
-
-?></div><?php get_footer();?>
+} 
+?><?php getOwl('van');?><p class="dashed">Перейти в раздел: <a href="/van/">Прокат микроавтобусов с водителем</a></p></div><div class="carLineWrap"><h2 class="typical">Прокат авто на свадьбу</h2><?php getOwl('wed');?><p class="dashed">Перейти в раздел: <a href="/wedding/">Прокат авто на свадьбу</a></p></div><div class="carLineWrap"><h2 class="typical">Автобусы</h2><?php getOwl('bus');?><p class="dashed">Перейти в раздел: <a href="/bus/">Прокат пассажирских автобусов</a></p></div><?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<?php the_content(); ?>
+<?php endwhile; else: ?>
+<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+<?php endif; ?>					
+<?php get_footer();?>

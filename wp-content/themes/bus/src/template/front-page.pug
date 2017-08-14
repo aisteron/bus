@@ -24,6 +24,27 @@
 .carLineWrap
 	h2.typical Микроавтобусы
 	include php/owl-slider-main.php
+	| <?php getOwl('van');?>
+	p.dashed Перейти в раздел: 
+		a(href="/van/") Прокат микроавтобусов с водителем
+.carLineWrap
+	h2.typical Прокат авто на свадьбу
+	| <?php getOwl('wed');?>
+	p.dashed Перейти в раздел: 
+		a(href="/wedding/") Прокат авто на свадьбу
+.carLineWrap
+	h2.typical Автобусы
+	| <?php getOwl('bus');?>
+	p.dashed Перейти в раздел: 
+		a(href="/bus/") Прокат пассажирских автобусов
+
+| <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+|<?php the_content(); ?>
+
+|<?php endwhile; else: ?>
+|<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+|<?php endif; ?>					
 
 
 |<?php get_footer();?>

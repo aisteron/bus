@@ -63,8 +63,16 @@ if(window.location.href.split('/').length = 4)
  
 }    
 
-   
+ 
+ /* "зеленение" превьюшек в карусели на главной */  
 
+/*
+ $('.img-owl-wrap').on('hover', 'img', function(){
+
+    $(this).css('transform', 'scale(1.1)')
+
+    //$(this).parent().next().fadeToggle();
+ });*/
 
 
 }); // document ready

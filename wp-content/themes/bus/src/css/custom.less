@@ -326,16 +326,19 @@ body
 
     	.owl-carousel
     	{
+    		margin-bottom: 2em;
     		.owl-item
     		{
     			h3 
     			{
+    				margin-bottom: 0;
     				a 
     				{
     					color:@green;
     					text-decoration:none;
     				}
     			}
+    			p {font-size:80%; font-family: Arial, sans-serif}
     			p:nth-child(3)
     			{
 					margin-bottom: 0;
@@ -345,12 +348,114 @@ body
     			{
     				margin-top:0;
     			}
+				.img-owl-wrap
+				{
+					position: relative;
+				    overflow: hidden;
+				    width: 230px;
+
+					img 
+	    			{
+	    				transition: all 1s ease-in-out; 
+	    			}
+	    			img:hover 
+	    			{
+	    				transform: scale(1.1);
+	    			} 
+				}
+				div.hoverMe 
+				{
+					display:none;
+					background-color: @green;
+					width:230px;
+					height:173px;
+					position: absolute;
+				    top: 0;
+				    opacity: 0.3;
+
+				}
+
+    			
     		}
+    	}
+
+    	p.dashed 
+    	{
+    		display: inline;
+    		border: 1px dashed @green;
+    		padding:0.4em;
+    		font-size:1.2em;
+    		border-radius: 5px;
+
+    		a 
+    		{
+    			color:@green;
+    			text-decoration: none;
+
+    			&:hover 
+    			{
+    				text-decoration: underline;
+    			}
+    		}
+    	}
+    } // carLineWrap
+
+    .wpb_wrapper
+    {
+    	color:#fff;
+
+    	a 
+    	{
+    		color:@green;
+    		text-decoration: none;
+
+    		&:hover 
+    		{
+    			text-decoration: underline;
+    		}
+    	}
+
+    	h2:extend(.wrap .typical) 
+    	{
+
     	}
     }
 
 
 	/*стили для главной закончились*/
+
+
+	/*footer styles */
+	
+	footer
+	{
+		color:#fff;
+
+		.f-line
+		{
+			display: flex;
+			justify-content:space-between;
+			border-top: 1px solid @green;
+			border-bottom: 1px solid @green;
+		    padding-top: 50px;
+    		padding-bottom: 15px;
+
+			.item
+			{
+				//flex-basis:300px;
+
+				.header
+				{
+					text-transform: uppercase;
+					color:@green;
+				}
+				input:extend(.wrap .keyholder .auto input)
+				{
+
+				}
+			}
+		}
+	}
 
 }
 

@@ -1,3 +1,2 @@
-<?php wp_footer();?>
-</body>
+<footer><div class="f-line"><div class="item"><p class="header">О Компании</p><p>Предоставляем транспортные средства<br> для корпоративных мероприятий <br>и личных праздников.</p></div><div class="item"><p class="header">Контактные телефоны</p><p>+375 29 638 77 00</p></div><div class="item"><p class="header">Наш адрес</p><p>пр-т Пушкина, 12 (по предварительной записи)</p><p>E-mail: busminsk@bk.ru</p></div><div class="item"><p class="header">Онлайн заказ</p><a href="#"><input type="button" value="Оставить заявку"/></a></div></div><div class="s-line"><img class="lazyload" data-src="wp-content/themes/bus/src/img/logo.png"/><ul><li>Микроавтобусы</li><li>Автобусы</li><li>Лимузины</li><li>Представительские</li><li>Авто на свадьбу</li><li>Внедорожники</li><li>Без водителя</li><li>Прокат вип авто</li></ul></div><?php wp_footer();?></footer></body>
 </html>

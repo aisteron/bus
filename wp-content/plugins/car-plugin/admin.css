@@ -4,3 +4,15 @@
 	cursor: not-allowed;
 
 }
+
+#addictive-plum img 
+{
+	width:250px;
+	height:173px;
+}
+
+ #addictive-plum a.add
+ {
+ 	padding-bottom: 1em;
+    display: inline-block;
+ }
