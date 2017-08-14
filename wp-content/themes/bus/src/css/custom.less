@@ -451,7 +451,41 @@ body
 				}
 				input:extend(.wrap .keyholder .auto input)
 				{
+					&:hover{cursor: pointer}
+				}
+			}
+		}
+		.s-line 
+		{
+			display:flex;
+		    justify-content: space-between;
+		    padding-top:1em;
+		    img 
+		    {
+		    	flex-basis:300px;
+		    	max-height: 54px;
+		    }
 
+			ul 
+			{
+				display:flex;
+				flex-wrap:wrap;
+
+				li 
+				{
+					list-style-type: none;
+					padding-left: 1em;
+
+
+					a 
+					{
+						color:#fff;
+						text-decoration: none;
+						&:hover
+						{
+							text-decoration: underline;
+						}
+					}
 				}
 			}
 		}
