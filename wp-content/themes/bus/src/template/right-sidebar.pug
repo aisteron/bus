@@ -1,0 +1,26 @@
+| <?php 
+|/*
+| *
+| * Template Name: Right Sidebar
+| *
+| * @package WordPress
+| *
+| */
+| get_header(); ?>
+
+
+
+| <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+.wpb_wrapper
+	.left
+		|<?php the_content(); ?>
+	.right
+		include php/right-sidebar.php	
+
+|<?php endwhile; else: ?>
+|<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+|<?php endif; ?>					
+
+
+|<?php get_footer();?>

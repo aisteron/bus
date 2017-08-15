@@ -15,7 +15,7 @@ footer
 			a(href='#')
 				input(type="button" value="Оставить заявку")
 	.s-line
-		img(class='lazyload' data-src="wp-content/themes/bus/src/img/logo.png")
+		img(class='lazyload' data-src!="<?php echo get_template_directory_uri(). '/src/img/logo.png' ?>")
 		ul
 			li 
 				a(href='#') Микроавтобусы
@@ -33,6 +33,8 @@ footer
 				a(href='#') Без водителя
 			li 
 				a(href='#') Прокат вип авто
+</div>				
+.footer-scripts
 	|<?php wp_footer();?>
 
 </body>

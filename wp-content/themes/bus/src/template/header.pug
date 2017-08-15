@@ -16,23 +16,27 @@ head
 <div class='wrap'>
 	.logo-line
 		.logo
-			img(src='wp-content/themes/bus/src/img/logo.png')
+			a(href="/") 
+				i.sprite.sprite-logo
 		.mail
-			img(src='wp-content/themes/bus/src/img/25-25-envelope.png')
-			|busminsk@bk.ru
+			i.sprite.sprite-mail
+			span busminsk@bk.ru
 		.phone
-			img(src="wp-content/themes/bus/src/img/25-25-velcom.png")
-			|+375 29 638 77 00
+			i.sprite.sprite-phone
+			span +375 29 638 77 00
 		.vw
-			span
-				img(src="wp-content/themes/bus/src/img/25-25-viber.png")
-				| мы есть в viber
-			span
-				img(src="wp-content/themes/bus/src/img/25-25-wa.png")
-				| и whatsapp
+			span.wrap
+				i.sprite.sprite-viber
+				span мы есть в viber
+			span.wrap
+				i.sprite.sprite-wa
+				span и whatsapp
 		.grid-icon
-			img(src='wp-content/themes/bus/src/img/grid.svg')
+			i.sprite.sprite-grid
 	.topnav
 		| <?php wp_nav_menu(array('menu' => 'header-menu','container' => ''))
 		|?>
+	style(type="text/css").
+		.sprite {
+		background-image:url(/wp-content/themes/bus/src/img/sprite.png)}	
 		

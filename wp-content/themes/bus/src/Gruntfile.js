@@ -40,7 +40,9 @@ module.exports = function(grunt){
 			    files: {
 			      '../footer.php':['template/footer.pug'],
 			      '../front-page.php':['template/front-page.pug'],
-			      '../header.php':['template/header.pug']
+			      '../header.php':['template/header.pug'],
+			      '../full-width.php':['template/full-width.pug'],
+			      '../right-sidebar.php':['template/right-sidebar.pug']
 			    },
 			    
 			  }
@@ -61,7 +63,9 @@ module.exports = function(grunt){
 				    },
 			    files: 
 				    {
-				      '../style.css': 'css/custom.less'
+				      '../style.css': 'css/custom.less',
+				      'css/pages/about/about.css': 'css/pages/about/about.less',
+				      'css/pages/right-sidebar/right.css': 'css/pages/right-sidebar/right.less',
 				    }
 			  }
 			},
@@ -79,7 +83,7 @@ module.exports = function(grunt){
 			{
 				css:
 				{
-					files:['css/*.less'],
+					files:['css/*.less', 'css/pages/*/*.less'],
 					tasks:['less'],
 					options: {
 				      livereload: true,

@@ -26,7 +26,7 @@ define('DB_NAME', 'bus.local');
 define('DB_USER', 'root');
 
 /** Пароль к базе данных MySQL */
-define('DB_PASSWORD', '77605366');
+define('DB_PASSWORD', '');
 
 /** Имя сервера MySQL */
 define('DB_HOST', '127.0.0.1');
