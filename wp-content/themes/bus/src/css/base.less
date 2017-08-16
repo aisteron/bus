@@ -71,6 +71,11 @@ body
 			    width: 25px;
 			    height: 25px;
 			}
+			a 
+			{
+				text-decoration: none;
+				color:@green;
+			}
 		}
 		
 		.vw
@@ -135,6 +140,11 @@ body
 		    min-height: 54px;
 		    padding-left: inherit;
 
+		    .current-menu-item
+		    {
+		    	border-bottom:2px solid @green;
+		    }
+
 		    li.menu-item-has-children
 		    {
 		    	a:first-child {padding-bottom: 1em;}
@@ -148,6 +158,8 @@ body
 				    margin-top: 1.05em;
 				    padding: 0.7em;
 				    margin-left: -0.7em;
+
+				    
 
 		    		li
 		    		{
@@ -193,7 +205,7 @@ body
 
 					&:hover
 					{
-						border-bottom: 1px solid @green; 
+						border-bottom: 2px solid @green; 
 					} 
 				}
 				&:last-child
@@ -269,28 +281,45 @@ body
 
 		.f-line
 		{
-			display: flex;
-			justify-content:space-between;
 			border-top: 1px solid @green;
 			border-bottom: 1px solid @green;
 		    padding-top: 1em;
     		padding-bottom: 1em;
 
-			.item
-			{
-				//flex-basis:300px;
+		    width: 100vw;
+		    left: calc(~"-50vw + 49.3%");
+		    position: relative;
 
-				.header
+		    .f-line-wrap 
+		    {
+		    	width: 1190px;
+			    display: flex;
+			    margin: 0 auto;
+			    justify-content: space-between;
+
+			    .item:first-child
+			    {
+
+			    }
+
+				.item
 				{
-					text-transform: uppercase;
-					color:@green;
-					margin-top:0;
+
+
+					.header
+					{
+						text-transform: uppercase;
+						color:@green;
+						margin-top:0;
+					}
+					input:extend(.wrap .keyholder input)
+					{
+						&:hover{cursor: pointer}
+					}
 				}
-				input:extend(.wrap .keyholder .auto input)
-				{
-					&:hover{cursor: pointer}
-				}
-			}
+		    }
+
+
 		}
 		.s-line 
 		{
@@ -326,6 +355,32 @@ body
 				}
 			}
 		}
+	}
+
+	.keyholder
+	{
+		input
+			{
+			    background-color: #12c391;
+			    background-image: none;
+			    background: #12c391;
+			    background: -webkit-linear-gradient(135deg,#12c391 30%,#00d6bd 100%);
+			    background: linear-gradient(135deg,#12c391 30%,#00d6bd 100%);
+		        border: none;
+			    padding: 1em;
+			    border-bottom: 2px solid green;
+			    border-radius: 3px;
+			    color:#fff;
+			    text-transform: uppercase;
+			    font-weight: bold;
+
+			    &:hover 
+			    {
+			    	border-width:0;
+			    	cursor:pointer;
+			    	transition:1s ease-out; 
+			    }
+			}    
 	}
 
 } // .wrap

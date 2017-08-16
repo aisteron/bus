@@ -42,7 +42,8 @@ module.exports = function(grunt){
 			      '../front-page.php':['template/front-page.pug'],
 			      '../header.php':['template/header.pug'],
 			      '../full-width.php':['template/full-width.pug'],
-			      '../right-sidebar.php':['template/right-sidebar.pug']
+			      '../right-sidebar.php':['template/right-sidebar.pug'],
+			      '../article-template.php':['template/article-template.pug'],
 			    },
 			    
 			  }

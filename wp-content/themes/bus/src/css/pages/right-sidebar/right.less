@@ -4,12 +4,119 @@
 {
     display:flex;
 
+    .left
+    {
+        padding-right: 1em;
+        
+        h1:extend(.wrap .typical){}
+        
+        /*для страницы "Статьи" */
+        .article-item
+        {
+            display:flex;
+            margin-top: 1em;
+            border-bottom: 1px solid #00402e;
+            border-top: 1px solid #183246;
+            //background-color: #172631;
+            border-radius:4px;
+
+            background: #172631; /* Old browsers */
+            background: -moz-linear-gradient(top, #172631 85%, #11332c 97%, #11332c 99%, #00402e 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, #172631 85%,#11332c 97%,#11332c 99%,#00402e 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, #172631 85%,#11332c 97%,#11332c 99%,#00402e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            
+            &:last-of-type
+            {
+                margin-bottom: 1em;
+            }    
+
+            img 
+            {
+                width:150px;
+                height:150px;
+                align-self: center;
+                margin-left: 0;
+            }
+
+            .desc 
+            {
+                padding-left:1em;
+
+                h4 
+                {
+                    margin-top:0;
+                    margin-bottom:0;
+                }
+
+                p:last-of-type
+                {
+                    margin-bottom: 0;
+                    float:right;
+                }
+                p 
+                {
+                    padding-right:1em;
+                }
+            }
+        } /*конец стилей "Статьи"*/
+
+        /*стили для "Трансфера" */
+        .tablewrap
+        {
+            display:flex;
+        }
+        /* конец стилей для трансфера */
+    }
+
     .right
     {
         border-left:1px solid @green;
+        min-width:306px;
+        
+        .h3s
+        {
+            display: block;
+            font-size: 1.5em;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: @green;
+            margin: 1em;
+            text-align: center;
+        }
+
+        ul 
+        {
+            padding-left: 1em;
+            li 
+            {
+                list-style-type:none;
+                padding-bottom: 2em;
+                
+                a 
+                {
+                    display:flex;
+                    color:#fff;
+                    font-family: Arial, sans-serif;
+                    img 
+                    {
+                        border-radius: 50%;
+                        width:60px;
+                        height:60px;
+                    }
+                    span 
+                    {
+                        padding-left: 1em;
+                        font-size: 80%;
+                        align-self:center;
+                    }
+
+                }   
+            }
+        }
     }
 }
 
 
 
 @import '../../base-media';// header + footer media queries
+@import 'right-media';// right-sidebar.php template media queries

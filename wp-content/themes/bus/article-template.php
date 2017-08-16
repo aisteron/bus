@@ -1,13 +1,13 @@
 <?php 
 /*
 *
-* Template Name: Right Sidebar
+* WP Post Template: Article Template
 *
 * @package WordPress
 *
 */
 get_header(); ?>
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?><div class="wpb_wrapper"><div class="left"><?php the_content(); ?></div><div class="right"><span class='h3s'>Статьи</span>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?><div class="wpb_wrapper"><div class="left"><h1><?php echo the_title(); ?></h1><?php the_content(); ?></div><div class="right"><span class='h3s'>Статьи</span>
 
 <?php
 // The Query

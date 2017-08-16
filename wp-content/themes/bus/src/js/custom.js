@@ -67,7 +67,14 @@ function loadCSS( href, before, media ){
  
 }    
 
- 
+/* делаем подчеркивание у статей у topnav меню*/
+
+if (window.location.href.split('/').length == 5 && window.location.href.split('/')[3] == "articles")
+{
+    $("#menu-item-29").addClass('current-menu-item');
+
+    
+} 
  /* "зеленение" превьюшек в карусели на главной */  
 
 /*

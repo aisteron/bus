@@ -187,6 +187,45 @@ function remove_post_image()
 		echo 'удалили изображение с meta_key = ',$imagekey, ' из базы данных' ;
 		wp_die();
 	}
+
+
+/* шод код для вывода списка статей в шаблоне right-sidebar.php */
+/* будет использоваться на странице "Статьи" */
+
+//[list]
+function articles_list( $atts ){
+ 
+ // The Query
+$the_query = new WP_Query('cat=1');
+
+// The Loop
+echo '<h1>Статьи</h1>';
+if ( $the_query->have_posts() ) {
+
+	global $post;
+	while ( $the_query->have_posts() ) {
+		$the_query->the_post();
+		echo 
+		'	<div class="article-item">
+			<img src="'.get_the_post_thumbnail_url($post->ID, 'thumbnail').'">
+			<div class="desc">
+				<h4>' . get_the_title() . '</h4>
+				<p>' . get_the_excerpt() . '</p>
+				<p><a href="' . get_permalink($post->ID) . '">Подробнее</a></p>
+			</div>
+			</div>
+		';
+	}
+
+	/* Restore original Post Data */
+	wp_reset_postdata();
+} else {
+	// no posts found
+}
+
+}
+add_shortcode( 'list', 'articles_list' );
+
 		
 
 		
