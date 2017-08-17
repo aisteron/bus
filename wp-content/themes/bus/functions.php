@@ -111,7 +111,7 @@ function wpdocs_vip_scripts() {
   wp_enqueue_script('lazy-unveil', get_template_directory_uri() .'/src/js/ls.unveilhooks.min.js', array('jquery'), null, true);
 
 
-    /* owl carousel */
+    /* enqueue styles conditions */
 
     if (is_front_page())
     {
@@ -127,6 +127,10 @@ function wpdocs_vip_scripts() {
     if (is_page_template( 'right-sidebar.php' ))
     {
       wp_enqueue_style( 'right-sidebar-style', get_template_directory_uri() .'/src/css/pages/right-sidebar/right.css' );
+    }
+    if (is_page_template( 'category.php' ))
+    {
+      wp_enqueue_style( 'category-style', get_template_directory_uri() .'/src/css/pages/category/category.css' );
     }
 
     if (is_single())

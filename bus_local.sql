@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Авг 16 2017 г., 19:43
+-- Время создания: Авг 17 2017 г., 16:27
 -- Версия сервера: 5.5.50
 -- Версия PHP: 5.3.29
 
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `wp_options` (
   `option_name` varchar(191) NOT NULL DEFAULT '',
   `option_value` longtext NOT NULL,
   `autoload` varchar(20) NOT NULL DEFAULT 'yes'
-) ENGINE=MyISAM AUTO_INCREMENT=337 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=365 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `wp_options`
@@ -136,7 +136,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (30, 'hack_file', '0', 'yes'),
 (31, 'blog_charset', 'UTF-8', 'yes'),
 (32, 'moderation_keys', '', 'no'),
-(33, 'active_plugins', 'a:5:{i:0;s:31:"query-monitor/query-monitor.php";i:1;s:25:"car-plugin/car-plugin.php";i:2;s:39:"custom-permalinks/custom-permalinks.php";i:3;s:47:"regenerate-thumbnails/regenerate-thumbnails.php";i:4;s:51:"wp-custom-post-template/wp-custom-post-template.php";}', 'yes'),
+(33, 'active_plugins', 'a:7:{i:0;s:31:"query-monitor/query-monitor.php";i:1;s:25:"car-plugin/car-plugin.php";i:2;s:39:"custom-permalinks/custom-permalinks.php";i:3;s:47:"regenerate-thumbnails/regenerate-thumbnails.php";i:4;s:55:"remove-yoast-seo-comments/remove-yoast-seo-comments.php";i:5;s:24:"wordpress-seo/wp-seo.php";i:6;s:51:"wp-custom-post-template/wp-custom-post-template.php";}', 'yes'),
 (34, 'category_base', '', 'yes'),
 (35, 'ping_sites', 'http://rpc.pingomatic.com/', 'yes'),
 (36, 'comment_max_links', '2', 'yes'),
@@ -195,7 +195,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (89, 'medium_large_size_w', '768', 'yes'),
 (90, 'medium_large_size_h', '0', 'yes'),
 (91, 'initial_db_version', '38590', 'yes'),
-(92, 'wp_user_roles', 'a:5:{s:13:"administrator";a:2:{s:4:"name";s:13:"Administrator";s:12:"capabilities";a:62:{s:13:"switch_themes";b:1;s:11:"edit_themes";b:1;s:16:"activate_plugins";b:1;s:12:"edit_plugins";b:1;s:10:"edit_users";b:1;s:10:"edit_files";b:1;s:14:"manage_options";b:1;s:17:"moderate_comments";b:1;s:17:"manage_categories";b:1;s:12:"manage_links";b:1;s:12:"upload_files";b:1;s:6:"import";b:1;s:15:"unfiltered_html";b:1;s:10:"edit_posts";b:1;s:17:"edit_others_posts";b:1;s:20:"edit_published_posts";b:1;s:13:"publish_posts";b:1;s:10:"edit_pages";b:1;s:4:"read";b:1;s:8:"level_10";b:1;s:7:"level_9";b:1;s:7:"level_8";b:1;s:7:"level_7";b:1;s:7:"level_6";b:1;s:7:"level_5";b:1;s:7:"level_4";b:1;s:7:"level_3";b:1;s:7:"level_2";b:1;s:7:"level_1";b:1;s:7:"level_0";b:1;s:17:"edit_others_pages";b:1;s:20:"edit_published_pages";b:1;s:13:"publish_pages";b:1;s:12:"delete_pages";b:1;s:19:"delete_others_pages";b:1;s:22:"delete_published_pages";b:1;s:12:"delete_posts";b:1;s:19:"delete_others_posts";b:1;s:22:"delete_published_posts";b:1;s:20:"delete_private_posts";b:1;s:18:"edit_private_posts";b:1;s:18:"read_private_posts";b:1;s:20:"delete_private_pages";b:1;s:18:"edit_private_pages";b:1;s:18:"read_private_pages";b:1;s:12:"delete_users";b:1;s:12:"create_users";b:1;s:17:"unfiltered_upload";b:1;s:14:"edit_dashboard";b:1;s:14:"update_plugins";b:1;s:14:"delete_plugins";b:1;s:15:"install_plugins";b:1;s:13:"update_themes";b:1;s:14:"install_themes";b:1;s:11:"update_core";b:1;s:10:"list_users";b:1;s:12:"remove_users";b:1;s:13:"promote_users";b:1;s:18:"edit_theme_options";b:1;s:13:"delete_themes";b:1;s:6:"export";b:1;s:18:"view_query_monitor";b:1;}}s:6:"editor";a:2:{s:4:"name";s:6:"Editor";s:12:"capabilities";a:34:{s:17:"moderate_comments";b:1;s:17:"manage_categories";b:1;s:12:"manage_links";b:1;s:12:"upload_files";b:1;s:15:"unfiltered_html";b:1;s:10:"edit_posts";b:1;s:17:"edit_others_posts";b:1;s:20:"edit_published_posts";b:1;s:13:"publish_posts";b:1;s:10:"edit_pages";b:1;s:4:"read";b:1;s:7:"level_7";b:1;s:7:"level_6";b:1;s:7:"level_5";b:1;s:7:"level_4";b:1;s:7:"level_3";b:1;s:7:"level_2";b:1;s:7:"level_1";b:1;s:7:"level_0";b:1;s:17:"edit_others_pages";b:1;s:20:"edit_published_pages";b:1;s:13:"publish_pages";b:1;s:12:"delete_pages";b:1;s:19:"delete_others_pages";b:1;s:22:"delete_published_pages";b:1;s:12:"delete_posts";b:1;s:19:"delete_others_posts";b:1;s:22:"delete_published_posts";b:1;s:20:"delete_private_posts";b:1;s:18:"edit_private_posts";b:1;s:18:"read_private_posts";b:1;s:20:"delete_private_pages";b:1;s:18:"edit_private_pages";b:1;s:18:"read_private_pages";b:1;}}s:6:"author";a:2:{s:4:"name";s:6:"Author";s:12:"capabilities";a:10:{s:12:"upload_files";b:1;s:10:"edit_posts";b:1;s:20:"edit_published_posts";b:1;s:13:"publish_posts";b:1;s:4:"read";b:1;s:7:"level_2";b:1;s:7:"level_1";b:1;s:7:"level_0";b:1;s:12:"delete_posts";b:1;s:22:"delete_published_posts";b:1;}}s:11:"contributor";a:2:{s:4:"name";s:11:"Contributor";s:12:"capabilities";a:5:{s:10:"edit_posts";b:1;s:4:"read";b:1;s:7:"level_1";b:1;s:7:"level_0";b:1;s:12:"delete_posts";b:1;}}s:10:"subscriber";a:2:{s:4:"name";s:10:"Subscriber";s:12:"capabilities";a:2:{s:4:"read";b:1;s:7:"level_0";b:1;}}}', 'yes'),
+(92, 'wp_user_roles', 'a:5:{s:13:"administrator";a:2:{s:4:"name";s:13:"Administrator";s:12:"capabilities";a:63:{s:13:"switch_themes";b:1;s:11:"edit_themes";b:1;s:16:"activate_plugins";b:1;s:12:"edit_plugins";b:1;s:10:"edit_users";b:1;s:10:"edit_files";b:1;s:14:"manage_options";b:1;s:17:"moderate_comments";b:1;s:17:"manage_categories";b:1;s:12:"manage_links";b:1;s:12:"upload_files";b:1;s:6:"import";b:1;s:15:"unfiltered_html";b:1;s:10:"edit_posts";b:1;s:17:"edit_others_posts";b:1;s:20:"edit_published_posts";b:1;s:13:"publish_posts";b:1;s:10:"edit_pages";b:1;s:4:"read";b:1;s:8:"level_10";b:1;s:7:"level_9";b:1;s:7:"level_8";b:1;s:7:"level_7";b:1;s:7:"level_6";b:1;s:7:"level_5";b:1;s:7:"level_4";b:1;s:7:"level_3";b:1;s:7:"level_2";b:1;s:7:"level_1";b:1;s:7:"level_0";b:1;s:17:"edit_others_pages";b:1;s:20:"edit_published_pages";b:1;s:13:"publish_pages";b:1;s:12:"delete_pages";b:1;s:19:"delete_others_pages";b:1;s:22:"delete_published_pages";b:1;s:12:"delete_posts";b:1;s:19:"delete_others_posts";b:1;s:22:"delete_published_posts";b:1;s:20:"delete_private_posts";b:1;s:18:"edit_private_posts";b:1;s:18:"read_private_posts";b:1;s:20:"delete_private_pages";b:1;s:18:"edit_private_pages";b:1;s:18:"read_private_pages";b:1;s:12:"delete_users";b:1;s:12:"create_users";b:1;s:17:"unfiltered_upload";b:1;s:14:"edit_dashboard";b:1;s:14:"update_plugins";b:1;s:14:"delete_plugins";b:1;s:15:"install_plugins";b:1;s:13:"update_themes";b:1;s:14:"install_themes";b:1;s:11:"update_core";b:1;s:10:"list_users";b:1;s:12:"remove_users";b:1;s:13:"promote_users";b:1;s:18:"edit_theme_options";b:1;s:13:"delete_themes";b:1;s:6:"export";b:1;s:18:"view_query_monitor";b:1;s:15:"wpseo_bulk_edit";b:1;}}s:6:"editor";a:2:{s:4:"name";s:6:"Editor";s:12:"capabilities";a:35:{s:17:"moderate_comments";b:1;s:17:"manage_categories";b:1;s:12:"manage_links";b:1;s:12:"upload_files";b:1;s:15:"unfiltered_html";b:1;s:10:"edit_posts";b:1;s:17:"edit_others_posts";b:1;s:20:"edit_published_posts";b:1;s:13:"publish_posts";b:1;s:10:"edit_pages";b:1;s:4:"read";b:1;s:7:"level_7";b:1;s:7:"level_6";b:1;s:7:"level_5";b:1;s:7:"level_4";b:1;s:7:"level_3";b:1;s:7:"level_2";b:1;s:7:"level_1";b:1;s:7:"level_0";b:1;s:17:"edit_others_pages";b:1;s:20:"edit_published_pages";b:1;s:13:"publish_pages";b:1;s:12:"delete_pages";b:1;s:19:"delete_others_pages";b:1;s:22:"delete_published_pages";b:1;s:12:"delete_posts";b:1;s:19:"delete_others_posts";b:1;s:22:"delete_published_posts";b:1;s:20:"delete_private_posts";b:1;s:18:"edit_private_posts";b:1;s:18:"read_private_posts";b:1;s:20:"delete_private_pages";b:1;s:18:"edit_private_pages";b:1;s:18:"read_private_pages";b:1;s:15:"wpseo_bulk_edit";b:1;}}s:6:"author";a:2:{s:4:"name";s:6:"Author";s:12:"capabilities";a:10:{s:12:"upload_files";b:1;s:10:"edit_posts";b:1;s:20:"edit_published_posts";b:1;s:13:"publish_posts";b:1;s:4:"read";b:1;s:7:"level_2";b:1;s:7:"level_1";b:1;s:7:"level_0";b:1;s:12:"delete_posts";b:1;s:22:"delete_published_posts";b:1;}}s:11:"contributor";a:2:{s:4:"name";s:11:"Contributor";s:12:"capabilities";a:5:{s:10:"edit_posts";b:1;s:4:"read";b:1;s:7:"level_1";b:1;s:7:"level_0";b:1;s:12:"delete_posts";b:1;}}s:10:"subscriber";a:2:{s:4:"name";s:10:"Subscriber";s:12:"capabilities";a:2:{s:4:"read";b:1;s:7:"level_0";b:1;}}}', 'yes'),
 (93, 'fresh_site', '0', 'yes'),
 (94, 'WPLANG', 'ru_RU', 'yes'),
 (95, 'widget_search', 'a:2:{i:2;a:1:{s:5:"title";s:0:"";}s:12:"_multiwidget";i:1;}', 'yes'),
@@ -211,12 +211,12 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (105, 'widget_media_video', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 (106, 'widget_tag_cloud', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 (107, 'widget_nav_menu', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
-(108, 'cron', 'a:4:{i:1502936054;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1502980456;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1502980771;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
+(108, 'cron', 'a:5:{i:1502979254;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1502980456;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1502980771;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1503058959;a:1:{s:19:"wpseo-reindex-links";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
 (109, 'theme_mods_twentyseventeen', 'a:2:{s:18:"custom_css_post_id";i:-1;s:16:"sidebars_widgets";a:2:{s:4:"time";i:1501598146;s:4:"data";a:4:{s:19:"wp_inactive_widgets";a:0:{}s:9:"sidebar-1";a:6:{i:0;s:8:"search-2";i:1;s:14:"recent-posts-2";i:2;s:17:"recent-comments-2";i:3;s:10:"archives-2";i:4;s:12:"categories-2";i:5;s:6:"meta-2";}s:9:"sidebar-2";a:0:{}s:9:"sidebar-3";a:0:{}}}}', 'yes'),
-(332, '_site_transient_update_core', 'O:8:"stdClass":4:{s:7:"updates";a:3:{i:0;O:8:"stdClass":10:{s:8:"response";s:7:"upgrade";s:8:"download";s:65:"https://downloads.wordpress.org/release/ru_RU/wordpress-4.8.1.zip";s:6:"locale";s:5:"ru_RU";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:65:"https://downloads.wordpress.org/release/ru_RU/wordpress-4.8.1.zip";s:10:"no_content";b:0;s:11:"new_bundled";b:0;s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:5:"4.8.1";s:7:"version";s:5:"4.8.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.7";s:15:"partial_version";s:0:"";}i:1;O:8:"stdClass":10:{s:8:"response";s:7:"upgrade";s:8:"download";s:59:"https://downloads.wordpress.org/release/wordpress-4.8.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:59:"https://downloads.wordpress.org/release/wordpress-4.8.1.zip";s:10:"no_content";s:70:"https://downloads.wordpress.org/release/wordpress-4.8.1-no-content.zip";s:11:"new_bundled";s:71:"https://downloads.wordpress.org/release/wordpress-4.8.1-new-bundled.zip";s:7:"partial";s:69:"https://downloads.wordpress.org/release/wordpress-4.8.1-partial-0.zip";s:8:"rollback";b:0;}s:7:"current";s:5:"4.8.1";s:7:"version";s:5:"4.8.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.7";s:15:"partial_version";s:3:"4.8";}i:2;O:8:"stdClass":11:{s:8:"response";s:10:"autoupdate";s:8:"download";s:65:"https://downloads.wordpress.org/release/ru_RU/wordpress-4.8.1.zip";s:6:"locale";s:5:"ru_RU";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:65:"https://downloads.wordpress.org/release/ru_RU/wordpress-4.8.1.zip";s:10:"no_content";b:0;s:11:"new_bundled";b:0;s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:5:"4.8.1";s:7:"version";s:5:"4.8.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.7";s:15:"partial_version";s:0:"";s:9:"new_files";s:1:"1";}}s:12:"last_checked";i:1502892907;s:15:"version_checked";s:3:"4.8";s:12:"translations";a:0:{}}', 'no'),
-(330, '_site_transient_timeout_theme_roots', '1502894701', 'no'),
-(331, '_site_transient_theme_roots', 'a:4:{s:3:"bus";s:7:"/themes";s:13:"twentyfifteen";s:7:"/themes";s:15:"twentyseventeen";s:7:"/themes";s:13:"twentysixteen";s:7:"/themes";}', 'no'),
-(333, '_site_transient_update_themes', 'O:8:"stdClass":4:{s:12:"last_checked";i:1502892913;s:7:"checked";a:4:{s:3:"bus";s:0:"";s:13:"twentyfifteen";s:3:"1.8";s:15:"twentyseventeen";s:3:"1.3";s:13:"twentysixteen";s:3:"1.3";}s:8:"response";a:0:{}s:12:"translations";a:0:{}}', 'no'),
+(332, '_site_transient_update_core', 'O:8:"stdClass":4:{s:7:"updates";a:3:{i:0;O:8:"stdClass":10:{s:8:"response";s:7:"upgrade";s:8:"download";s:65:"https://downloads.wordpress.org/release/ru_RU/wordpress-4.8.1.zip";s:6:"locale";s:5:"ru_RU";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:65:"https://downloads.wordpress.org/release/ru_RU/wordpress-4.8.1.zip";s:10:"no_content";b:0;s:11:"new_bundled";b:0;s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:5:"4.8.1";s:7:"version";s:5:"4.8.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.7";s:15:"partial_version";s:0:"";}i:1;O:8:"stdClass":10:{s:8:"response";s:7:"upgrade";s:8:"download";s:59:"https://downloads.wordpress.org/release/wordpress-4.8.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:59:"https://downloads.wordpress.org/release/wordpress-4.8.1.zip";s:10:"no_content";s:70:"https://downloads.wordpress.org/release/wordpress-4.8.1-no-content.zip";s:11:"new_bundled";s:71:"https://downloads.wordpress.org/release/wordpress-4.8.1-new-bundled.zip";s:7:"partial";s:69:"https://downloads.wordpress.org/release/wordpress-4.8.1-partial-0.zip";s:8:"rollback";b:0;}s:7:"current";s:5:"4.8.1";s:7:"version";s:5:"4.8.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.7";s:15:"partial_version";s:3:"4.8";}i:2;O:8:"stdClass":11:{s:8:"response";s:10:"autoupdate";s:8:"download";s:65:"https://downloads.wordpress.org/release/ru_RU/wordpress-4.8.1.zip";s:6:"locale";s:5:"ru_RU";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:65:"https://downloads.wordpress.org/release/ru_RU/wordpress-4.8.1.zip";s:10:"no_content";b:0;s:11:"new_bundled";b:0;s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:5:"4.8.1";s:7:"version";s:5:"4.8.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.7";s:15:"partial_version";s:0:"";s:9:"new_files";s:1:"1";}}s:12:"last_checked";i:1502972542;s:15:"version_checked";s:3:"4.8";s:12:"translations";a:0:{}}', 'no'),
+(345, '_site_transient_timeout_theme_roots', '1502974344', 'no'),
+(346, '_site_transient_theme_roots', 'a:4:{s:3:"bus";s:7:"/themes";s:13:"twentyfifteen";s:7:"/themes";s:15:"twentyseventeen";s:7:"/themes";s:13:"twentysixteen";s:7:"/themes";}', 'no'),
+(333, '_site_transient_update_themes', 'O:8:"stdClass":4:{s:12:"last_checked";i:1502972553;s:7:"checked";a:4:{s:3:"bus";s:0:"";s:13:"twentyfifteen";s:3:"1.8";s:15:"twentyseventeen";s:3:"1.3";s:13:"twentysixteen";s:3:"1.3";}s:8:"response";a:0:{}s:12:"translations";a:0:{}}', 'no'),
 (222, 'widget_widget_sp_image', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 (192, 'dismissed_update_core', 'a:1:{s:11:"4.8.1|ru_RU";b:1;}', 'no'),
 (122, 'can_compress_scripts', '1', 'no'),
@@ -226,13 +226,13 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (126, '_transient_timeout_feed_d117b5738fbd35bd8c0391cda1f2b5d9', '1501640085', 'no'),
 (127, '_transient_timeout_feed_mod_d117b5738fbd35bd8c0391cda1f2b5d9', '1501640086', 'no'),
 (128, '_transient_feed_mod_d117b5738fbd35bd8c0391cda1f2b5d9', '1501596885', 'no'),
-(321, '_site_transient_timeout_community-events-1aecf33ab8525ff212ebdffbb438372e', '1502931155', 'no'),
-(322, '_site_transient_community-events-1aecf33ab8525ff212ebdffbb438372e', 'a:2:{s:8:"location";a:1:{s:2:"ip";s:9:"127.0.0.0";}s:6:"events";a:0:{}}', 'no'),
-(158, '_transient_timeout_plugin_slugs', '1502952697', 'no'),
-(159, '_transient_plugin_slugs', 'a:5:{i:0;s:39:"custom-permalinks/custom-permalinks.php";i:1;s:31:"query-monitor/query-monitor.php";i:2;s:47:"regenerate-thumbnails/regenerate-thumbnails.php";i:3;s:25:"car-plugin/car-plugin.php";i:4;s:51:"wp-custom-post-template/wp-custom-post-template.php";}', 'no'),
+(340, '_site_transient_timeout_community-events-1aecf33ab8525ff212ebdffbb438372e', '1503011582', 'no'),
+(341, '_site_transient_community-events-1aecf33ab8525ff212ebdffbb438372e', 'a:2:{s:8:"location";a:1:{s:2:"ip";s:9:"127.0.0.0";}s:6:"events";a:0:{}}', 'no'),
+(158, '_transient_timeout_plugin_slugs', '1503058964', 'no'),
+(159, '_transient_plugin_slugs', 'a:7:{i:0;s:39:"custom-permalinks/custom-permalinks.php";i:1;s:31:"query-monitor/query-monitor.php";i:2;s:47:"regenerate-thumbnails/regenerate-thumbnails.php";i:3;s:55:"remove-yoast-seo-comments/remove-yoast-seo-comments.php";i:4;s:25:"car-plugin/car-plugin.php";i:5;s:51:"wp-custom-post-template/wp-custom-post-template.php";i:6;s:24:"wordpress-seo/wp-seo.php";}', 'no'),
 (160, 'recently_activated', 'a:2:{s:59:"custom-post-type-permalinks/custom-post-type-permalinks.php";i:1502806507;s:29:"image-widget/image-widget.php";i:1502373150;}', 'yes'),
 (132, 'current_theme', 'Bus', 'yes'),
-(133, 'theme_mods_bus', 'a:3:{i:0;b:0;s:18:"custom_css_post_id";i:-1;s:18:"nav_menu_locations";a:2:{s:11:"header-menu";i:2;s:11:"second-menu";i:3;}}', 'yes'),
+(133, 'theme_mods_bus', 'a:3:{i:0;b:0;s:18:"custom_css_post_id";i:-1;s:18:"nav_menu_locations";a:3:{s:11:"header-menu";i:2;s:11:"second-menu";i:3;s:9:"side-menu";i:13;}}', 'yes'),
 (134, 'theme_switched', '', 'yes'),
 (162, 'nav_menu_options', 'a:2:{i:0;b:0;s:8:"auto_add";a:0:{}}', 'yes'),
 (216, '_site_transient_timeout_available_translations', '1502378543', 'no');
@@ -242,12 +242,26 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (320, '_site_transient_browser_3182f755614c06389a440066daa2f279', 'a:9:{s:8:"platform";s:7:"Windows";s:4:"name";s:6:"Chrome";s:7:"version";s:12:"60.0.3112.90";s:10:"update_url";s:28:"http://www.google.com/chrome";s:7:"img_src";s:49:"http://s.wordpress.org/images/browsers/chrome.png";s:11:"img_src_ssl";s:48:"https://wordpress.org/images/browsers/chrome.png";s:15:"current_version";s:2:"18";s:7:"upgrade";b:0;s:8:"insecure";b:0;}', 'no'),
 (277, 'add_post_type_for_tax', '', 'yes'),
 (267, 'category_children', 'a:0:{}', 'yes'),
-(302, '_site_transient_timeout_poptags_40cd750bba9870f18aada2478b24840a', '1502872802', 'no'),
-(303, '_site_transient_poptags_40cd750bba9870f18aada2478b24840a', 'O:8:"stdClass":100:{s:6:"widget";a:3:{s:4:"name";s:6:"widget";s:4:"slug";s:6:"widget";s:5:"count";i:4361;}s:4:"post";a:3:{s:4:"name";s:4:"post";s:4:"slug";s:4:"post";s:5:"count";i:2495;}s:5:"admin";a:3:{s:4:"name";s:5:"admin";s:4:"slug";s:5:"admin";s:5:"count";i:2363;}s:11:"woocommerce";a:3:{s:4:"name";s:11:"woocommerce";s:4:"slug";s:11:"woocommerce";s:5:"count";i:2252;}s:5:"posts";a:3:{s:4:"name";s:5:"posts";s:4:"slug";s:5:"posts";s:5:"count";i:1827;}s:8:"comments";a:3:{s:4:"name";s:8:"comments";s:4:"slug";s:8:"comments";s:5:"count";i:1596;}s:9:"shortcode";a:3:{s:4:"name";s:9:"shortcode";s:4:"slug";s:9:"shortcode";s:5:"count";i:1584;}s:7:"twitter";a:3:{s:4:"name";s:7:"twitter";s:4:"slug";s:7:"twitter";s:5:"count";i:1436;}s:6:"google";a:3:{s:4:"name";s:6:"google";s:4:"slug";s:6:"google";s:5:"count";i:1355;}s:6:"images";a:3:{s:4:"name";s:6:"images";s:4:"slug";s:6:"images";s:5:"count";i:1350;}s:8:"facebook";a:3:{s:4:"name";s:8:"facebook";s:4:"slug";s:8:"facebook";s:5:"count";i:1333;}s:7:"sidebar";a:3:{s:4:"name";s:7:"sidebar";s:4:"slug";s:7:"sidebar";s:5:"count";i:1272;}s:5:"image";a:3:{s:4:"name";s:5:"image";s:4:"slug";s:5:"image";s:5:"count";i:1270;}s:3:"seo";a:3:{s:4:"name";s:3:"seo";s:4:"slug";s:3:"seo";s:5:"count";i:1124;}s:7:"gallery";a:3:{s:4:"name";s:7:"gallery";s:4:"slug";s:7:"gallery";s:5:"count";i:1053;}s:4:"page";a:3:{s:4:"name";s:4:"page";s:4:"slug";s:4:"page";s:5:"count";i:1046;}s:6:"social";a:3:{s:4:"name";s:6:"social";s:4:"slug";s:6:"social";s:5:"count";i:998;}s:5:"email";a:3:{s:4:"name";s:5:"email";s:4:"slug";s:5:"email";s:5:"count";i:941;}s:5:"links";a:3:{s:4:"name";s:5:"links";s:4:"slug";s:5:"links";s:5:"count";i:814;}s:5:"login";a:3:{s:4:"name";s:5:"login";s:4:"slug";s:5:"login";s:5:"count";i:807;}s:9:"ecommerce";a:3:{s:4:"name";s:9:"ecommerce";s:4:"slug";s:9:"ecommerce";s:5:"count";i:805;}s:7:"widgets";a:3:{s:4:"name";s:7:"widgets";s:4:"slug";s:7:"widgets";s:5:"count";i:772;}s:5:"video";a:3:{s:4:"name";s:5:"video";s:4:"slug";s:5:"video";s:5:"count";i:767;}s:3:"rss";a:3:{s:4:"name";s:3:"rss";s:4:"slug";s:3:"rss";s:5:"count";i:669;}s:7:"content";a:3:{s:4:"name";s:7:"content";s:4:"slug";s:7:"content";s:5:"count";i:668;}s:10:"buddypress";a:3:{s:4:"name";s:10:"buddypress";s:4:"slug";s:10:"buddypress";s:5:"count";i:662;}s:4:"spam";a:3:{s:4:"name";s:4:"spam";s:4:"slug";s:4:"spam";s:5:"count";i:654;}s:5:"pages";a:3:{s:4:"name";s:5:"pages";s:4:"slug";s:5:"pages";s:5:"count";i:643;}s:8:"security";a:3:{s:4:"name";s:8:"security";s:4:"slug";s:8:"security";s:5:"count";i:639;}s:6:"jquery";a:3:{s:4:"name";s:6:"jquery";s:4:"slug";s:6:"jquery";s:5:"count";i:637;}s:6:"slider";a:3:{s:4:"name";s:6:"slider";s:4:"slug";s:6:"slider";s:5:"count";i:619;}s:5:"media";a:3:{s:4:"name";s:5:"media";s:4:"slug";s:5:"media";s:5:"count";i:605;}s:4:"ajax";a:3:{s:4:"name";s:4:"ajax";s:4:"slug";s:4:"ajax";s:5:"count";i:592;}s:9:"analytics";a:3:{s:4:"name";s:9:"analytics";s:4:"slug";s:9:"analytics";s:5:"count";i:592;}s:4:"feed";a:3:{s:4:"name";s:4:"feed";s:4:"slug";s:4:"feed";s:5:"count";i:588;}s:6:"search";a:3:{s:4:"name";s:6:"search";s:4:"slug";s:6:"search";s:5:"count";i:579;}s:8:"category";a:3:{s:4:"name";s:8:"category";s:4:"slug";s:8:"category";s:5:"count";i:573;}s:10:"e-commerce";a:3:{s:4:"name";s:10:"e-commerce";s:4:"slug";s:10:"e-commerce";s:5:"count";i:573;}s:4:"menu";a:3:{s:4:"name";s:4:"menu";s:4:"slug";s:4:"menu";s:5:"count";i:558;}s:4:"form";a:3:{s:4:"name";s:4:"form";s:4:"slug";s:4:"form";s:5:"count";i:548;}s:5:"embed";a:3:{s:4:"name";s:5:"embed";s:4:"slug";s:5:"embed";s:5:"count";i:541;}s:10:"javascript";a:3:{s:4:"name";s:10:"javascript";s:4:"slug";s:10:"javascript";s:5:"count";i:533;}s:4:"link";a:3:{s:4:"name";s:4:"link";s:4:"slug";s:4:"link";s:5:"count";i:521;}s:3:"css";a:3:{s:4:"name";s:3:"css";s:4:"slug";s:3:"css";s:5:"count";i:512;}s:5:"share";a:3:{s:4:"name";s:5:"share";s:4:"slug";s:5:"share";s:5:"count";i:502;}s:7:"youtube";a:3:{s:4:"name";s:7:"youtube";s:4:"slug";s:7:"youtube";s:5:"count";i:499;}s:7:"comment";a:3:{s:4:"name";s:7:"comment";s:4:"slug";s:7:"comment";s:5:"count";i:494;}s:5:"theme";a:3:{s:4:"name";s:5:"theme";s:4:"slug";s:5:"theme";s:5:"count";i:483;}s:9:"dashboard";a:3:{s:4:"name";s:9:"dashboard";s:4:"slug";s:9:"dashboard";s:5:"count";i:474;}s:6:"custom";a:3:{s:4:"name";s:6:"custom";s:4:"slug";s:6:"custom";s:5:"count";i:471;}s:10:"responsive";a:3:{s:4:"name";s:10:"responsive";s:4:"slug";s:10:"responsive";s:5:"count";i:469;}s:10:"categories";a:3:{s:4:"name";s:10:"categories";s:4:"slug";s:10:"categories";s:5:"count";i:469;}s:3:"ads";a:3:{s:4:"name";s:3:"ads";s:4:"slug";s:3:"ads";s:5:"count";i:443;}s:9:"affiliate";a:3:{s:4:"name";s:9:"affiliate";s:4:"slug";s:9:"affiliate";s:5:"count";i:439;}s:6:"editor";a:3:{s:4:"name";s:6:"editor";s:4:"slug";s:6:"editor";s:5:"count";i:438;}s:4:"tags";a:3:{s:4:"name";s:4:"tags";s:4:"slug";s:4:"tags";s:5:"count";i:437;}s:6:"button";a:3:{s:4:"name";s:6:"button";s:4:"slug";s:6:"button";s:5:"count";i:437;}s:12:"contact-form";a:3:{s:4:"name";s:12:"contact form";s:4:"slug";s:12:"contact-form";s:5:"count";i:428;}s:4:"user";a:3:{s:4:"name";s:4:"user";s:4:"slug";s:4:"user";s:5:"count";i:418;}s:5:"photo";a:3:{s:4:"name";s:5:"photo";s:4:"slug";s:5:"photo";s:5:"count";i:418;}s:6:"mobile";a:3:{s:4:"name";s:6:"mobile";s:4:"slug";s:6:"mobile";s:5:"count";i:405;}s:9:"slideshow";a:3:{s:4:"name";s:9:"slideshow";s:4:"slug";s:9:"slideshow";s:5:"count";i:405;}s:7:"contact";a:3:{s:4:"name";s:7:"contact";s:4:"slug";s:7:"contact";s:5:"count";i:403;}s:5:"users";a:3:{s:4:"name";s:5:"users";s:4:"slug";s:5:"users";s:5:"count";i:402;}s:5:"stats";a:3:{s:4:"name";s:5:"stats";s:4:"slug";s:5:"stats";s:5:"count";i:401;}s:6:"photos";a:3:{s:4:"name";s:6:"photos";s:4:"slug";s:6:"photos";s:5:"count";i:396;}s:10:"statistics";a:3:{s:4:"name";s:10:"statistics";s:4:"slug";s:10:"statistics";s:5:"count";i:382;}s:3:"api";a:3:{s:4:"name";s:3:"api";s:4:"slug";s:3:"api";s:5:"count";i:380;}s:6:"events";a:3:{s:4:"name";s:6:"events";s:4:"slug";s:6:"events";s:5:"count";i:380;}s:10:"navigation";a:3:{s:4:"name";s:10:"navigation";s:4:"slug";s:10:"navigation";s:5:"count";i:369;}s:4:"news";a:3:{s:4:"name";s:4:"news";s:4:"slug";s:4:"news";s:5:"count";i:353;}s:8:"calendar";a:3:{s:4:"name";s:8:"calendar";s:4:"slug";s:8:"calendar";s:5:"count";i:345;}s:7:"payment";a:3:{s:4:"name";s:7:"payment";s:4:"slug";s:7:"payment";s:5:"count";i:334;}s:7:"plugins";a:3:{s:4:"name";s:7:"plugins";s:4:"slug";s:7:"plugins";s:5:"count";i:332;}s:12:"social-media";a:3:{s:4:"name";s:12:"social media";s:4:"slug";s:12:"social-media";s:5:"count";i:332;}s:9:"multisite";a:3:{s:4:"name";s:9:"multisite";s:4:"slug";s:9:"multisite";s:5:"count";i:332;}s:10:"shortcodes";a:3:{s:4:"name";s:10:"shortcodes";s:4:"slug";s:10:"shortcodes";s:5:"count";i:330;}s:10:"newsletter";a:3:{s:4:"name";s:10:"newsletter";s:4:"slug";s:10:"newsletter";s:5:"count";i:326;}s:4:"code";a:3:{s:4:"name";s:4:"code";s:4:"slug";s:4:"code";s:5:"count";i:325;}s:5:"popup";a:3:{s:4:"name";s:5:"popup";s:4:"slug";s:5:"popup";s:5:"count";i:321;}s:4:"list";a:3:{s:4:"name";s:4:"list";s:4:"slug";s:4:"list";s:5:"count";i:321;}s:4:"meta";a:3:{s:4:"name";s:4:"meta";s:4:"slug";s:4:"meta";s:5:"count";i:320;}s:3:"url";a:3:{s:4:"name";s:3:"url";s:4:"slug";s:3:"url";s:5:"count";i:318;}s:9:"marketing";a:3:{s:4:"name";s:9:"marketing";s:4:"slug";s:9:"marketing";s:5:"count";i:301;}s:6:"simple";a:3:{s:4:"name";s:6:"simple";s:4:"slug";s:6:"simple";s:5:"count";i:299;}s:8:"redirect";a:3:{s:4:"name";s:8:"redirect";s:4:"slug";s:8:"redirect";s:5:"count";i:296;}s:4:"chat";a:3:{s:4:"name";s:4:"chat";s:4:"slug";s:4:"chat";s:5:"count";i:295;}s:16:"custom-post-type";a:3:{s:4:"name";s:16:"custom post type";s:4:"slug";s:16:"custom-post-type";s:5:"count";i:290;}s:3:"tag";a:3:{s:4:"name";s:3:"tag";s:4:"slug";s:3:"tag";s:5:"count";i:290;}s:15:"payment-gateway";a:3:{s:4:"name";s:15:"payment gateway";s:4:"slug";s:15:"payment-gateway";s:5:"count";i:284;}s:11:"advertising";a:3:{s:4:"name";s:11:"advertising";s:4:"slug";s:11:"advertising";s:5:"count";i:283;}s:6:"author";a:3:{s:4:"name";s:6:"author";s:4:"slug";s:6:"author";s:5:"count";i:282;}s:7:"adsense";a:3:{s:4:"name";s:7:"adsense";s:4:"slug";s:7:"adsense";s:5:"count";i:280;}s:4:"html";a:3:{s:4:"name";s:4:"html";s:4:"slug";s:4:"html";s:5:"count";i:280;}s:5:"forms";a:3:{s:4:"name";s:5:"forms";s:4:"slug";s:5:"forms";s:5:"count";i:276;}s:8:"lightbox";a:3:{s:4:"name";s:8:"lightbox";s:4:"slug";s:8:"lightbox";s:5:"count";i:275;}s:12:"notification";a:3:{s:4:"name";s:12:"notification";s:4:"slug";s:12:"notification";s:5:"count";i:269;}s:7:"tinymce";a:3:{s:4:"name";s:7:"tinyMCE";s:4:"slug";s:7:"tinymce";s:5:"count";i:269;}s:8:"tracking";a:3:{s:4:"name";s:8:"tracking";s:4:"slug";s:8:"tracking";s:5:"count";i:268;}s:7:"captcha";a:3:{s:4:"name";s:7:"captcha";s:4:"slug";s:7:"captcha";s:5:"count";i:268;}}', 'no');
+(342, '_site_transient_timeout_poptags_40cd750bba9870f18aada2478b24840a', '1502983319', 'no'),
+(343, '_site_transient_poptags_40cd750bba9870f18aada2478b24840a', 'O:8:"stdClass":100:{s:6:"widget";a:3:{s:4:"name";s:6:"widget";s:4:"slug";s:6:"widget";s:5:"count";i:4362;}s:4:"post";a:3:{s:4:"name";s:4:"post";s:4:"slug";s:4:"post";s:5:"count";i:2496;}s:5:"admin";a:3:{s:4:"name";s:5:"admin";s:4:"slug";s:5:"admin";s:5:"count";i:2364;}s:11:"woocommerce";a:3:{s:4:"name";s:11:"woocommerce";s:4:"slug";s:11:"woocommerce";s:5:"count";i:2256;}s:5:"posts";a:3:{s:4:"name";s:5:"posts";s:4:"slug";s:5:"posts";s:5:"count";i:1828;}s:8:"comments";a:3:{s:4:"name";s:8:"comments";s:4:"slug";s:8:"comments";s:5:"count";i:1596;}s:9:"shortcode";a:3:{s:4:"name";s:9:"shortcode";s:4:"slug";s:9:"shortcode";s:5:"count";i:1585;}s:7:"twitter";a:3:{s:4:"name";s:7:"twitter";s:4:"slug";s:7:"twitter";s:5:"count";i:1436;}s:6:"google";a:3:{s:4:"name";s:6:"google";s:4:"slug";s:6:"google";s:5:"count";i:1355;}s:6:"images";a:3:{s:4:"name";s:6:"images";s:4:"slug";s:6:"images";s:5:"count";i:1350;}s:8:"facebook";a:3:{s:4:"name";s:8:"facebook";s:4:"slug";s:8:"facebook";s:5:"count";i:1333;}s:7:"sidebar";a:3:{s:4:"name";s:7:"sidebar";s:4:"slug";s:7:"sidebar";s:5:"count";i:1273;}s:5:"image";a:3:{s:4:"name";s:5:"image";s:4:"slug";s:5:"image";s:5:"count";i:1270;}s:3:"seo";a:3:{s:4:"name";s:3:"seo";s:4:"slug";s:3:"seo";s:5:"count";i:1124;}s:7:"gallery";a:3:{s:4:"name";s:7:"gallery";s:4:"slug";s:7:"gallery";s:5:"count";i:1053;}s:4:"page";a:3:{s:4:"name";s:4:"page";s:4:"slug";s:4:"page";s:5:"count";i:1047;}s:6:"social";a:3:{s:4:"name";s:6:"social";s:4:"slug";s:6:"social";s:5:"count";i:998;}s:5:"email";a:3:{s:4:"name";s:5:"email";s:4:"slug";s:5:"email";s:5:"count";i:941;}s:5:"links";a:3:{s:4:"name";s:5:"links";s:4:"slug";s:5:"links";s:5:"count";i:814;}s:5:"login";a:3:{s:4:"name";s:5:"login";s:4:"slug";s:5:"login";s:5:"count";i:807;}s:9:"ecommerce";a:3:{s:4:"name";s:9:"ecommerce";s:4:"slug";s:9:"ecommerce";s:5:"count";i:805;}s:7:"widgets";a:3:{s:4:"name";s:7:"widgets";s:4:"slug";s:7:"widgets";s:5:"count";i:772;}s:5:"video";a:3:{s:4:"name";s:5:"video";s:4:"slug";s:5:"video";s:5:"count";i:767;}s:3:"rss";a:3:{s:4:"name";s:3:"rss";s:4:"slug";s:3:"rss";s:5:"count";i:669;}s:7:"content";a:3:{s:4:"name";s:7:"content";s:4:"slug";s:7:"content";s:5:"count";i:668;}s:10:"buddypress";a:3:{s:4:"name";s:10:"buddypress";s:4:"slug";s:10:"buddypress";s:5:"count";i:662;}s:4:"spam";a:3:{s:4:"name";s:4:"spam";s:4:"slug";s:4:"spam";s:5:"count";i:654;}s:5:"pages";a:3:{s:4:"name";s:5:"pages";s:4:"slug";s:5:"pages";s:5:"count";i:643;}s:8:"security";a:3:{s:4:"name";s:8:"security";s:4:"slug";s:8:"security";s:5:"count";i:640;}s:6:"jquery";a:3:{s:4:"name";s:6:"jquery";s:4:"slug";s:6:"jquery";s:5:"count";i:637;}s:6:"slider";a:3:{s:4:"name";s:6:"slider";s:4:"slug";s:6:"slider";s:5:"count";i:619;}s:5:"media";a:3:{s:4:"name";s:5:"media";s:4:"slug";s:5:"media";s:5:"count";i:605;}s:4:"ajax";a:3:{s:4:"name";s:4:"ajax";s:4:"slug";s:4:"ajax";s:5:"count";i:592;}s:9:"analytics";a:3:{s:4:"name";s:9:"analytics";s:4:"slug";s:9:"analytics";s:5:"count";i:592;}s:4:"feed";a:3:{s:4:"name";s:4:"feed";s:4:"slug";s:4:"feed";s:5:"count";i:588;}s:6:"search";a:3:{s:4:"name";s:6:"search";s:4:"slug";s:6:"search";s:5:"count";i:579;}s:8:"category";a:3:{s:4:"name";s:8:"category";s:4:"slug";s:8:"category";s:5:"count";i:573;}s:10:"e-commerce";a:3:{s:4:"name";s:10:"e-commerce";s:4:"slug";s:10:"e-commerce";s:5:"count";i:573;}s:4:"menu";a:3:{s:4:"name";s:4:"menu";s:4:"slug";s:4:"menu";s:5:"count";i:558;}s:4:"form";a:3:{s:4:"name";s:4:"form";s:4:"slug";s:4:"form";s:5:"count";i:548;}s:5:"embed";a:3:{s:4:"name";s:5:"embed";s:4:"slug";s:5:"embed";s:5:"count";i:541;}s:10:"javascript";a:3:{s:4:"name";s:10:"javascript";s:4:"slug";s:10:"javascript";s:5:"count";i:533;}s:4:"link";a:3:{s:4:"name";s:4:"link";s:4:"slug";s:4:"link";s:5:"count";i:521;}s:3:"css";a:3:{s:4:"name";s:3:"css";s:4:"slug";s:3:"css";s:5:"count";i:512;}s:5:"share";a:3:{s:4:"name";s:5:"share";s:4:"slug";s:5:"share";s:5:"count";i:502;}s:7:"youtube";a:3:{s:4:"name";s:7:"youtube";s:4:"slug";s:7:"youtube";s:5:"count";i:499;}s:7:"comment";a:3:{s:4:"name";s:7:"comment";s:4:"slug";s:7:"comment";s:5:"count";i:494;}s:5:"theme";a:3:{s:4:"name";s:5:"theme";s:4:"slug";s:5:"theme";s:5:"count";i:482;}s:9:"dashboard";a:3:{s:4:"name";s:9:"dashboard";s:4:"slug";s:9:"dashboard";s:5:"count";i:474;}s:6:"custom";a:3:{s:4:"name";s:6:"custom";s:4:"slug";s:6:"custom";s:5:"count";i:471;}s:10:"responsive";a:3:{s:4:"name";s:10:"responsive";s:4:"slug";s:10:"responsive";s:5:"count";i:469;}s:10:"categories";a:3:{s:4:"name";s:10:"categories";s:4:"slug";s:10:"categories";s:5:"count";i:469;}s:3:"ads";a:3:{s:4:"name";s:3:"ads";s:4:"slug";s:3:"ads";s:5:"count";i:443;}s:9:"affiliate";a:3:{s:4:"name";s:9:"affiliate";s:4:"slug";s:9:"affiliate";s:5:"count";i:440;}s:6:"editor";a:3:{s:4:"name";s:6:"editor";s:4:"slug";s:6:"editor";s:5:"count";i:438;}s:4:"tags";a:3:{s:4:"name";s:4:"tags";s:4:"slug";s:4:"tags";s:5:"count";i:437;}s:6:"button";a:3:{s:4:"name";s:6:"button";s:4:"slug";s:6:"button";s:5:"count";i:437;}s:12:"contact-form";a:3:{s:4:"name";s:12:"contact form";s:4:"slug";s:12:"contact-form";s:5:"count";i:428;}s:4:"user";a:3:{s:4:"name";s:4:"user";s:4:"slug";s:4:"user";s:5:"count";i:418;}s:5:"photo";a:3:{s:4:"name";s:5:"photo";s:4:"slug";s:5:"photo";s:5:"count";i:418;}s:6:"mobile";a:3:{s:4:"name";s:6:"mobile";s:4:"slug";s:6:"mobile";s:5:"count";i:405;}s:9:"slideshow";a:3:{s:4:"name";s:9:"slideshow";s:4:"slug";s:9:"slideshow";s:5:"count";i:405;}s:7:"contact";a:3:{s:4:"name";s:7:"contact";s:4:"slug";s:7:"contact";s:5:"count";i:403;}s:5:"users";a:3:{s:4:"name";s:5:"users";s:4:"slug";s:5:"users";s:5:"count";i:402;}s:5:"stats";a:3:{s:4:"name";s:5:"stats";s:4:"slug";s:5:"stats";s:5:"count";i:401;}s:6:"photos";a:3:{s:4:"name";s:6:"photos";s:4:"slug";s:6:"photos";s:5:"count";i:396;}s:10:"statistics";a:3:{s:4:"name";s:10:"statistics";s:4:"slug";s:10:"statistics";s:5:"count";i:382;}s:3:"api";a:3:{s:4:"name";s:3:"api";s:4:"slug";s:3:"api";s:5:"count";i:381;}s:6:"events";a:3:{s:4:"name";s:6:"events";s:4:"slug";s:6:"events";s:5:"count";i:380;}s:10:"navigation";a:3:{s:4:"name";s:10:"navigation";s:4:"slug";s:10:"navigation";s:5:"count";i:369;}s:4:"news";a:3:{s:4:"name";s:4:"news";s:4:"slug";s:4:"news";s:5:"count";i:353;}s:8:"calendar";a:3:{s:4:"name";s:8:"calendar";s:4:"slug";s:8:"calendar";s:5:"count";i:345;}s:7:"payment";a:3:{s:4:"name";s:7:"payment";s:4:"slug";s:7:"payment";s:5:"count";i:334;}s:12:"social-media";a:3:{s:4:"name";s:12:"social media";s:4:"slug";s:12:"social-media";s:5:"count";i:332;}s:9:"multisite";a:3:{s:4:"name";s:9:"multisite";s:4:"slug";s:9:"multisite";s:5:"count";i:332;}s:7:"plugins";a:3:{s:4:"name";s:7:"plugins";s:4:"slug";s:7:"plugins";s:5:"count";i:331;}s:10:"shortcodes";a:3:{s:4:"name";s:10:"shortcodes";s:4:"slug";s:10:"shortcodes";s:5:"count";i:330;}s:10:"newsletter";a:3:{s:4:"name";s:10:"newsletter";s:4:"slug";s:10:"newsletter";s:5:"count";i:326;}s:4:"code";a:3:{s:4:"name";s:4:"code";s:4:"slug";s:4:"code";s:5:"count";i:325;}s:5:"popup";a:3:{s:4:"name";s:5:"popup";s:4:"slug";s:5:"popup";s:5:"count";i:321;}s:4:"list";a:3:{s:4:"name";s:4:"list";s:4:"slug";s:4:"list";s:5:"count";i:321;}s:4:"meta";a:3:{s:4:"name";s:4:"meta";s:4:"slug";s:4:"meta";s:5:"count";i:320;}s:3:"url";a:3:{s:4:"name";s:3:"url";s:4:"slug";s:3:"url";s:5:"count";i:318;}s:9:"marketing";a:3:{s:4:"name";s:9:"marketing";s:4:"slug";s:9:"marketing";s:5:"count";i:301;}s:6:"simple";a:3:{s:4:"name";s:6:"simple";s:4:"slug";s:6:"simple";s:5:"count";i:299;}s:4:"chat";a:3:{s:4:"name";s:4:"chat";s:4:"slug";s:4:"chat";s:5:"count";i:298;}s:8:"redirect";a:3:{s:4:"name";s:8:"redirect";s:4:"slug";s:8:"redirect";s:5:"count";i:296;}s:16:"custom-post-type";a:3:{s:4:"name";s:16:"custom post type";s:4:"slug";s:16:"custom-post-type";s:5:"count";i:290;}s:3:"tag";a:3:{s:4:"name";s:3:"tag";s:4:"slug";s:3:"tag";s:5:"count";i:290;}s:15:"payment-gateway";a:3:{s:4:"name";s:15:"payment gateway";s:4:"slug";s:15:"payment-gateway";s:5:"count";i:285;}s:11:"advertising";a:3:{s:4:"name";s:11:"advertising";s:4:"slug";s:11:"advertising";s:5:"count";i:283;}s:6:"author";a:3:{s:4:"name";s:6:"author";s:4:"slug";s:6:"author";s:5:"count";i:282;}s:7:"adsense";a:3:{s:4:"name";s:7:"adsense";s:4:"slug";s:7:"adsense";s:5:"count";i:280;}s:4:"html";a:3:{s:4:"name";s:4:"html";s:4:"slug";s:4:"html";s:5:"count";i:280;}s:5:"forms";a:3:{s:4:"name";s:5:"forms";s:4:"slug";s:5:"forms";s:5:"count";i:276;}s:8:"lightbox";a:3:{s:4:"name";s:8:"lightbox";s:4:"slug";s:8:"lightbox";s:5:"count";i:275;}s:12:"notification";a:3:{s:4:"name";s:12:"notification";s:4:"slug";s:12:"notification";s:5:"count";i:269;}s:7:"tinymce";a:3:{s:4:"name";s:7:"tinyMCE";s:4:"slug";s:7:"tinymce";s:5:"count";i:269;}s:8:"tracking";a:3:{s:4:"name";s:8:"tracking";s:4:"slug";s:8:"tracking";s:5:"count";i:268;}s:7:"captcha";a:3:{s:4:"name";s:7:"captcha";s:4:"slug";s:7:"captcha";s:5:"count";i:268;}}', 'no'),
+(350, 'wpseo_permalinks', 'a:9:{s:15:"cleanpermalinks";b:0;s:24:"cleanpermalink-extravars";s:0:"";s:29:"cleanpermalink-googlecampaign";b:0;s:31:"cleanpermalink-googlesitesearch";b:0;s:15:"cleanreplytocom";b:0;s:10:"cleanslugs";b:1;s:18:"redirectattachment";b:0;s:17:"stripcategorybase";b:0;s:13:"trailingslash";b:0;}', 'yes');
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
-(334, '_site_transient_update_plugins', 'O:8:"stdClass":4:{s:12:"last_checked";i:1502892910;s:8:"response";a:0:{}s:12:"translations";a:1:{i:0;a:7:{s:4:"type";s:6:"plugin";s:4:"slug";s:21:"regenerate-thumbnails";s:8:"language";s:5:"ru_RU";s:7:"version";s:5:"2.2.6";s:7:"updated";s:19:"2016-11-01 14:37:55";s:7:"package";s:88:"https://downloads.wordpress.org/translation/plugin/regenerate-thumbnails/2.2.6/ru_RU.zip";s:10:"autoupdate";b:1;}}s:9:"no_update";a:4:{s:39:"custom-permalinks/custom-permalinks.php";O:8:"stdClass":6:{s:2:"id";s:31:"w.org/plugins/custom-permalinks";s:4:"slug";s:17:"custom-permalinks";s:6:"plugin";s:39:"custom-permalinks/custom-permalinks.php";s:11:"new_version";s:5:"1.0.2";s:3:"url";s:48:"https://wordpress.org/plugins/custom-permalinks/";s:7:"package";s:66:"https://downloads.wordpress.org/plugin/custom-permalinks.1.0.2.zip";}s:31:"query-monitor/query-monitor.php";O:8:"stdClass":6:{s:2:"id";s:27:"w.org/plugins/query-monitor";s:4:"slug";s:13:"query-monitor";s:6:"plugin";s:31:"query-monitor/query-monitor.php";s:11:"new_version";s:6:"2.13.4";s:3:"url";s:44:"https://wordpress.org/plugins/query-monitor/";s:7:"package";s:63:"https://downloads.wordpress.org/plugin/query-monitor.2.13.4.zip";}s:47:"regenerate-thumbnails/regenerate-thumbnails.php";O:8:"stdClass":6:{s:2:"id";s:35:"w.org/plugins/regenerate-thumbnails";s:4:"slug";s:21:"regenerate-thumbnails";s:6:"plugin";s:47:"regenerate-thumbnails/regenerate-thumbnails.php";s:11:"new_version";s:5:"2.2.6";s:3:"url";s:52:"https://wordpress.org/plugins/regenerate-thumbnails/";s:7:"package";s:64:"https://downloads.wordpress.org/plugin/regenerate-thumbnails.zip";}s:51:"wp-custom-post-template/wp-custom-post-template.php";O:8:"stdClass":6:{s:2:"id";s:37:"w.org/plugins/wp-custom-post-template";s:4:"slug";s:23:"wp-custom-post-template";s:6:"plugin";s:51:"wp-custom-post-template/wp-custom-post-template.php";s:11:"new_version";s:3:"1.0";s:3:"url";s:54:"https://wordpress.org/plugins/wp-custom-post-template/";s:7:"package";s:66:"https://downloads.wordpress.org/plugin/wp-custom-post-template.zip";}}}', 'no'),
+(351, 'wpseo_titles', 'a:64:{s:10:"title_test";i:0;s:17:"forcerewritetitle";b:0;s:9:"separator";s:7:"sc-dash";s:15:"usemetakeywords";b:0;s:16:"title-home-wpseo";s:42:"%%sitename%% %%page%% %%sep%% %%sitedesc%%";s:18:"title-author-wpseo";s:41:"%%name%%, Author at %%sitename%% %%page%%";s:19:"title-archive-wpseo";s:38:"%%date%% %%page%% %%sep%% %%sitename%%";s:18:"title-search-wpseo";s:63:"You searched for %%searchphrase%% %%page%% %%sep%% %%sitename%%";s:15:"title-404-wpseo";s:35:"Page not found %%sep%% %%sitename%%";s:19:"metadesc-home-wpseo";s:0:"";s:21:"metadesc-author-wpseo";s:0:"";s:22:"metadesc-archive-wpseo";s:0:"";s:18:"metakey-home-wpseo";s:0:"";s:20:"metakey-author-wpseo";s:0:"";s:22:"noindex-subpages-wpseo";b:0;s:20:"noindex-author-wpseo";b:0;s:21:"noindex-archive-wpseo";b:1;s:14:"disable-author";b:0;s:12:"disable-date";b:0;s:19:"disable-post_format";b:0;s:10:"title-post";s:39:"%%title%% %%page%% %%sep%% %%sitename%%";s:13:"metadesc-post";s:0:"";s:12:"metakey-post";s:0:"";s:12:"noindex-post";b:0;s:13:"showdate-post";b:0;s:16:"hideeditbox-post";b:0;s:10:"title-page";s:39:"%%title%% %%page%% %%sep%% %%sitename%%";s:13:"metadesc-page";s:0:"";s:12:"metakey-page";s:0:"";s:12:"noindex-page";b:0;s:13:"showdate-page";b:0;s:16:"hideeditbox-page";b:0;s:16:"title-attachment";s:39:"%%title%% %%page%% %%sep%% %%sitename%%";s:19:"metadesc-attachment";s:0:"";s:18:"metakey-attachment";s:0:"";s:18:"noindex-attachment";b:0;s:19:"showdate-attachment";b:0;s:22:"hideeditbox-attachment";b:0;s:9:"title-car";s:39:"%%title%% %%page%% %%sep%% %%sitename%%";s:12:"metadesc-car";s:0:"";s:11:"metakey-car";s:0:"";s:11:"noindex-car";b:0;s:12:"showdate-car";b:0;s:15:"hideeditbox-car";b:0;s:18:"title-tax-category";s:53:"%%term_title%% Archives %%page%% %%sep%% %%sitename%%";s:21:"metadesc-tax-category";s:0:"";s:20:"metakey-tax-category";s:0:"";s:24:"hideeditbox-tax-category";b:0;s:20:"noindex-tax-category";b:0;s:18:"title-tax-post_tag";s:53:"%%term_title%% Archives %%page%% %%sep%% %%sitename%%";s:21:"metadesc-tax-post_tag";s:0:"";s:20:"metakey-tax-post_tag";s:0:"";s:24:"hideeditbox-tax-post_tag";b:0;s:20:"noindex-tax-post_tag";b:0;s:21:"title-tax-post_format";s:53:"%%term_title%% Archives %%page%% %%sep%% %%sitename%%";s:24:"metadesc-tax-post_format";s:0:"";s:23:"metakey-tax-post_format";s:0:"";s:27:"hideeditbox-tax-post_format";b:0;s:23:"noindex-tax-post_format";b:1;s:14:"title-tax-type";s:53:"%%term_title%% Archives %%page%% %%sep%% %%sitename%%";s:17:"metadesc-tax-type";s:0:"";s:16:"metakey-tax-type";s:0:"";s:20:"hideeditbox-tax-type";b:0;s:16:"noindex-tax-type";b:0;}', 'yes'),
 (319, '_site_transient_timeout_browser_3182f755614c06389a440066daa2f279', '1503492753', 'no'),
-(307, 'wp_custom_post_template', 'post', 'yes');
+(307, 'wp_custom_post_template', 'post', 'yes'),
+(349, 'wpseo', 'a:25:{s:14:"blocking_files";a:0:{}s:15:"ms_defaults_set";b:0;s:7:"version";s:3:"5.2";s:12:"company_logo";s:0:"";s:12:"company_name";s:0:"";s:17:"company_or_person";s:0:"";s:20:"disableadvanced_meta";b:1;s:19:"onpage_indexability";b:1;s:12:"googleverify";s:0:"";s:8:"msverify";s:0:"";s:11:"person_name";s:0:"";s:12:"website_name";s:0:"";s:22:"alternate_website_name";s:0:"";s:12:"yandexverify";s:0:"";s:9:"site_type";s:0:"";s:20:"has_multiple_authors";b:0;s:16:"environment_type";s:0:"";s:23:"content_analysis_active";b:1;s:23:"keyword_analysis_active";b:1;s:20:"enable_setting_pages";b:0;s:21:"enable_admin_bar_menu";b:1;s:26:"enable_cornerstone_content";b:1;s:24:"enable_text_link_counter";b:1;s:22:"show_onboarding_notice";b:1;s:18:"first_activated_on";i:1502972559;}', 'yes'),
+(348, '_site_transient_update_plugins', 'O:8:"stdClass":5:{s:12:"last_checked";i:1502972557;s:7:"checked";a:7:{s:39:"custom-permalinks/custom-permalinks.php";s:5:"1.0.2";s:31:"query-monitor/query-monitor.php";s:6:"2.13.4";s:47:"regenerate-thumbnails/regenerate-thumbnails.php";s:5:"2.2.6";s:55:"remove-yoast-seo-comments/remove-yoast-seo-comments.php";s:5:"3.0.1";s:25:"car-plugin/car-plugin.php";s:5:"0.0.1";s:51:"wp-custom-post-template/wp-custom-post-template.php";s:3:"1.0";s:24:"wordpress-seo/wp-seo.php";s:3:"5.2";}s:8:"response";a:0:{}s:12:"translations";a:2:{i:0;a:7:{s:4:"type";s:6:"plugin";s:4:"slug";s:21:"regenerate-thumbnails";s:8:"language";s:5:"ru_RU";s:7:"version";s:5:"2.2.6";s:7:"updated";s:19:"2016-11-01 14:37:55";s:7:"package";s:88:"https://downloads.wordpress.org/translation/plugin/regenerate-thumbnails/2.2.6/ru_RU.zip";s:10:"autoupdate";b:1;}i:1;a:7:{s:4:"type";s:6:"plugin";s:4:"slug";s:13:"wordpress-seo";s:8:"language";s:5:"ru_RU";s:7:"version";s:3:"5.2";s:7:"updated";s:19:"2017-08-08 08:55:44";s:7:"package";s:78:"https://downloads.wordpress.org/translation/plugin/wordpress-seo/5.2/ru_RU.zip";s:10:"autoupdate";b:1;}}s:9:"no_update";a:6:{s:39:"custom-permalinks/custom-permalinks.php";O:8:"stdClass":6:{s:2:"id";s:31:"w.org/plugins/custom-permalinks";s:4:"slug";s:17:"custom-permalinks";s:6:"plugin";s:39:"custom-permalinks/custom-permalinks.php";s:11:"new_version";s:5:"1.0.2";s:3:"url";s:48:"https://wordpress.org/plugins/custom-permalinks/";s:7:"package";s:66:"https://downloads.wordpress.org/plugin/custom-permalinks.1.0.2.zip";}s:31:"query-monitor/query-monitor.php";O:8:"stdClass":6:{s:2:"id";s:27:"w.org/plugins/query-monitor";s:4:"slug";s:13:"query-monitor";s:6:"plugin";s:31:"query-monitor/query-monitor.php";s:11:"new_version";s:6:"2.13.4";s:3:"url";s:44:"https://wordpress.org/plugins/query-monitor/";s:7:"package";s:63:"https://downloads.wordpress.org/plugin/query-monitor.2.13.4.zip";}s:47:"regenerate-thumbnails/regenerate-thumbnails.php";O:8:"stdClass":6:{s:2:"id";s:35:"w.org/plugins/regenerate-thumbnails";s:4:"slug";s:21:"regenerate-thumbnails";s:6:"plugin";s:47:"regenerate-thumbnails/regenerate-thumbnails.php";s:11:"new_version";s:5:"2.2.6";s:3:"url";s:52:"https://wordpress.org/plugins/regenerate-thumbnails/";s:7:"package";s:64:"https://downloads.wordpress.org/plugin/regenerate-thumbnails.zip";}s:55:"remove-yoast-seo-comments/remove-yoast-seo-comments.php";O:8:"stdClass":6:{s:2:"id";s:39:"w.org/plugins/remove-yoast-seo-comments";s:4:"slug";s:25:"remove-yoast-seo-comments";s:6:"plugin";s:55:"remove-yoast-seo-comments/remove-yoast-seo-comments.php";s:11:"new_version";s:5:"3.0.1";s:3:"url";s:56:"https://wordpress.org/plugins/remove-yoast-seo-comments/";s:7:"package";s:68:"https://downloads.wordpress.org/plugin/remove-yoast-seo-comments.zip";}s:51:"wp-custom-post-template/wp-custom-post-template.php";O:8:"stdClass":6:{s:2:"id";s:37:"w.org/plugins/wp-custom-post-template";s:4:"slug";s:23:"wp-custom-post-template";s:6:"plugin";s:51:"wp-custom-post-template/wp-custom-post-template.php";s:11:"new_version";s:3:"1.0";s:3:"url";s:54:"https://wordpress.org/plugins/wp-custom-post-template/";s:7:"package";s:66:"https://downloads.wordpress.org/plugin/wp-custom-post-template.zip";}s:24:"wordpress-seo/wp-seo.php";O:8:"stdClass":6:{s:2:"id";s:27:"w.org/plugins/wordpress-seo";s:4:"slug";s:13:"wordpress-seo";s:6:"plugin";s:24:"wordpress-seo/wp-seo.php";s:11:"new_version";s:3:"5.2";s:3:"url";s:44:"https://wordpress.org/plugins/wordpress-seo/";s:7:"package";s:60:"https://downloads.wordpress.org/plugin/wordpress-seo.5.2.zip";}}}', 'no'),
+(352, 'wpseo_social', 'a:20:{s:9:"fb_admins";a:0:{}s:12:"fbconnectkey";s:32:"2c5d68a5ee3fdde1a6dacf35cf030393";s:13:"facebook_site";s:0:"";s:13:"instagram_url";s:0:"";s:12:"linkedin_url";s:0:"";s:11:"myspace_url";s:0:"";s:16:"og_default_image";s:0:"";s:18:"og_frontpage_title";s:0:"";s:17:"og_frontpage_desc";s:0:"";s:18:"og_frontpage_image";s:0:"";s:9:"opengraph";b:1;s:13:"pinterest_url";s:0:"";s:15:"pinterestverify";s:0:"";s:14:"plus-publisher";s:0:"";s:7:"twitter";b:1;s:12:"twitter_site";s:0:"";s:17:"twitter_card_type";s:7:"summary";s:11:"youtube_url";s:0:"";s:15:"google_plus_url";s:0:"";s:10:"fbadminapp";s:0:"";}', 'yes'),
+(353, 'wpseo_rss', 'a:2:{s:9:"rssbefore";s:0:"";s:8:"rssafter";s:53:"The post %%POSTLINK%% appeared first on %%BLOGLINK%%.";}', 'yes'),
+(354, 'wpseo_internallinks', 'a:12:{s:20:"breadcrumbs-404crumb";s:25:"Error 404: Page not found";s:23:"breadcrumbs-blog-remove";b:0;s:20:"breadcrumbs-boldlast";b:0;s:25:"breadcrumbs-archiveprefix";s:12:"Archives for";s:18:"breadcrumbs-enable";b:0;s:16:"breadcrumbs-home";s:4:"Home";s:18:"breadcrumbs-prefix";s:0:"";s:24:"breadcrumbs-searchprefix";s:16:"You searched for";s:15:"breadcrumbs-sep";s:7:"&raquo;";s:23:"post_types-post-maintax";i:0;s:22:"post_types-car-maintax";i:0;s:22:"taxonomy-type-ptparent";i:0;}', 'yes'),
+(355, 'wpseo_xml', 'a:18:{s:22:"disable_author_sitemap";b:1;s:22:"disable_author_noposts";b:1;s:16:"enablexmlsitemap";b:1;s:16:"entries-per-page";i:1000;s:14:"excluded-posts";s:0:"";s:38:"user_role-administrator-not_in_sitemap";b:0;s:31:"user_role-editor-not_in_sitemap";b:0;s:31:"user_role-author-not_in_sitemap";b:0;s:36:"user_role-contributor-not_in_sitemap";b:0;s:35:"user_role-subscriber-not_in_sitemap";b:0;s:30:"post_types-post-not_in_sitemap";b:0;s:30:"post_types-page-not_in_sitemap";b:0;s:36:"post_types-attachment-not_in_sitemap";b:1;s:29:"post_types-car-not_in_sitemap";b:0;s:34:"taxonomies-category-not_in_sitemap";b:0;s:34:"taxonomies-post_tag-not_in_sitemap";b:0;s:37:"taxonomies-post_format-not_in_sitemap";b:0;s:30:"taxonomies-type-not_in_sitemap";b:0;}', 'yes'),
+(356, 'wpseo_flush_rewrite', '1', 'yes'),
+(358, '_transient_timeout_yoast_i18n_wordpress-seo_ru_RU', '1503058973', 'no'),
+(359, '_transient_yoast_i18n_wordpress-seo_ru_RU', 'O:8:"stdClass":12:{s:2:"id";s:6:"396213";s:4:"name";s:7:"Russian";s:4:"slug";s:7:"default";s:10:"project_id";s:4:"3158";s:6:"locale";s:2:"ru";s:13:"current_count";i:1106;s:18:"untranslated_count";i:7;s:13:"waiting_count";i:0;s:11:"fuzzy_count";i:0;s:18:"percent_translated";i:99;s:9:"wp_locale";s:5:"ru_RU";s:13:"last_modified";s:19:"2017-08-08 08:55:44";}', 'no'),
+(364, 'wpseo_sitemap_type_cache_validator', '4nYHX', 'no'),
+(360, 'wpseo_sitemap_1_cache_validator', '4nYHT', 'no'),
+(361, 'wpseo_sitemap_page_cache_validator', '4fFJT', 'no'),
+(363, 'wpseo_taxonomy_meta', 'a:1:{s:4:"type";a:1:{i:11;a:2:{s:13:"wpseo_linkdex";s:1:"9";s:19:"wpseo_content_score";s:2:"30";}}}', 'yes');
 
 -- --------------------------------------------------------
 
@@ -260,7 +274,7 @@ CREATE TABLE IF NOT EXISTS `wp_postmeta` (
   `post_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `meta_key` varchar(255) DEFAULT NULL,
   `meta_value` longtext
-) ENGINE=MyISAM AUTO_INCREMENT=617 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=687 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `wp_postmeta`
@@ -358,11 +372,11 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (96, 30, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
 (98, 30, '_menu_item_url', '#'),
 (100, 31, '_edit_last', '1'),
-(101, 31, '_edit_lock', '1502178721:1'),
+(101, 31, '_edit_lock', '1502974676:1'),
 (102, 33, '_edit_last', '1'),
 (103, 33, '_edit_lock', '1502178643:1'),
 (104, 35, '_edit_last', '1'),
-(105, 35, '_edit_lock', '1502374180:1'),
+(105, 35, '_edit_lock', '1502974567:1'),
 (106, 37, '_edit_last', '1'),
 (107, 37, '_edit_lock', '1502179965:1'),
 (108, 39, '_edit_last', '1'),
@@ -743,7 +757,70 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (613, 17, '_wp_page_template', 'right-sidebar.php'),
 (614, 192, '_wp_attached_file', '2017/08/otziv-1-300x300.jpg'),
 (615, 192, '_wp_attachment_metadata', 'a:5:{s:5:"width";i:300;s:6:"height";i:300;s:4:"file";s:27:"2017/08/otziv-1-300x300.jpg";s:5:"sizes";a:2:{s:9:"thumbnail";a:4:{s:4:"file";s:27:"otziv-1-300x300-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:7:"owl-273";a:4:{s:4:"file";s:27:"otziv-1-300x300-173x173.jpg";s:5:"width";i:173;s:6:"height";i:173;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:4:{i:0;s:26:"lax airport transportation";i:1;s:41:"sporting event transportation los angeles";i:2;s:19:"ventura county limo";i:3;s:32:"wine tours limo thousand oaks ca";}}}'),
-(616, 19, '_wp_page_template', 'full-width.php');
+(616, 19, '_wp_page_template', 'full-width.php'),
+(617, 31, '_wp_page_template', 'category.php'),
+(618, 213, '_menu_item_type', 'post_type'),
+(619, 213, '_menu_item_menu_item_parent', '0'),
+(620, 213, '_menu_item_object_id', '41'),
+(621, 213, '_menu_item_object', 'page'),
+(622, 213, '_menu_item_target', ''),
+(623, 213, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(624, 213, '_menu_item_xfn', ''),
+(625, 213, '_menu_item_url', ''),
+(627, 214, '_menu_item_type', 'post_type'),
+(628, 214, '_menu_item_menu_item_parent', '0'),
+(629, 214, '_menu_item_object_id', '39'),
+(630, 214, '_menu_item_object', 'page'),
+(631, 214, '_menu_item_target', ''),
+(632, 214, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(633, 214, '_menu_item_xfn', ''),
+(634, 214, '_menu_item_url', ''),
+(636, 215, '_menu_item_type', 'post_type'),
+(637, 215, '_menu_item_menu_item_parent', '0'),
+(638, 215, '_menu_item_object_id', '31'),
+(639, 215, '_menu_item_object', 'page'),
+(640, 215, '_menu_item_target', ''),
+(641, 215, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(642, 215, '_menu_item_xfn', ''),
+(643, 215, '_menu_item_url', ''),
+(645, 216, '_menu_item_type', 'post_type'),
+(646, 216, '_menu_item_menu_item_parent', '0'),
+(647, 216, '_menu_item_object_id', '35'),
+(648, 216, '_menu_item_object', 'page'),
+(649, 216, '_menu_item_target', ''),
+(650, 216, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(651, 216, '_menu_item_xfn', ''),
+(652, 216, '_menu_item_url', ''),
+(682, 31, '_yoast_wpseo_metadesc', 'Микроавтобусов в Минске много, а наши - самые лучше, самые комфортные, самые уютные, самые красивые, самые прохладные летом и теплые осенью'),
+(654, 217, '_menu_item_type', 'post_type'),
+(655, 217, '_menu_item_menu_item_parent', '0'),
+(656, 217, '_menu_item_object_id', '33'),
+(657, 217, '_menu_item_object', 'page'),
+(658, 217, '_menu_item_target', ''),
+(659, 217, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(660, 217, '_menu_item_xfn', ''),
+(661, 217, '_menu_item_url', ''),
+(663, 218, '_menu_item_type', 'post_type'),
+(664, 218, '_menu_item_menu_item_parent', '0'),
+(665, 218, '_menu_item_object_id', '141'),
+(666, 218, '_menu_item_object', 'page'),
+(667, 218, '_menu_item_target', ''),
+(668, 218, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(669, 218, '_menu_item_xfn', ''),
+(670, 218, '_menu_item_url', ''),
+(672, 219, '_menu_item_type', 'post_type'),
+(673, 219, '_menu_item_menu_item_parent', '0'),
+(674, 219, '_menu_item_object_id', '143'),
+(675, 219, '_menu_item_object', 'page'),
+(676, 219, '_menu_item_target', ''),
+(677, 219, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(678, 219, '_menu_item_xfn', ''),
+(679, 219, '_menu_item_url', ''),
+(681, 31, '_yoast_wpseo_title', 'Аренда комфортных микроавтобусов в Минске с водителем напрокат'),
+(683, 31, '_yoast_wpseo_content_score', '60'),
+(684, 31, '_yoast_wpseo_focuskw_text_input', 'аренда микроавтобусов'),
+(685, 31, '_yoast_wpseo_focuskw', 'аренда микроавтобусов'),
+(686, 31, '_yoast_wpseo_linkdex', '36');
 
 -- --------------------------------------------------------
 
@@ -775,7 +852,7 @@ CREATE TABLE IF NOT EXISTS `wp_posts` (
   `post_type` varchar(20) NOT NULL DEFAULT 'post',
   `post_mime_type` varchar(100) NOT NULL DEFAULT '',
   `comment_count` bigint(20) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=213 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=221 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `wp_posts`
@@ -813,7 +890,7 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (28, 1, '2017-08-04 10:05:47', '2017-08-04 07:05:47', ' ', '', '', 'publish', 'closed', 'closed', '', '28', '', '', '2017-08-15 09:53:05', '2017-08-15 06:53:05', '', 0, 'http://bus.local/?p=28', 16, 'nav_menu_item', '', 0),
 (29, 1, '2017-08-04 10:05:48', '2017-08-04 07:05:48', ' ', '', '', 'publish', 'closed', 'closed', '', '29', '', '', '2017-08-15 09:53:05', '2017-08-15 06:53:05', '', 0, 'http://bus.local/?p=29', 15, 'nav_menu_item', '', 0),
 (30, 1, '2017-08-07 15:15:43', '2017-08-07 12:15:43', '', 'Сделать заказ', '', 'publish', 'closed', 'closed', '', '%d1%81%d0%b4%d0%b5%d0%bb%d0%b0%d1%82%d1%8c-%d0%b7%d0%b0%d0%ba%d0%b0%d0%b7', '', '', '2017-08-15 09:53:05', '2017-08-15 06:53:05', '', 0, 'http://bus.local/?p=30', 18, 'nav_menu_item', '', 0),
-(31, 1, '2017-08-07 17:46:30', '2017-08-07 14:46:30', 'Nulla lacinia imperdiet nisi, quis consectetur urna euismod nec. Aenean et augue diam. Vivamus id ex laoreet, placerat eros at, placerat nisi. Integer quam leo, scelerisque sed libero a, facilisis volutpat dui. Suspendisse potenti. Proin et euismod massa. Praesent eget eros vehicula orci iaculis tincidunt eget in libero.', 'Микроавтобусы', '', 'publish', 'closed', 'closed', '', 'van', '', '', '2017-08-08 10:54:17', '2017-08-08 07:54:17', '', 0, 'http://bus.local/?page_id=31', 0, 'page', '', 0),
+(31, 1, '2017-08-07 17:46:30', '2017-08-07 14:46:30', 'Nulla lacinia imperdiet nisi, quis consectetur urna euismod nec. Aenean et augue diam. Vivamus id ex laoreet, placerat eros at, placerat nisi. Integer quam leo, scelerisque sed libero a, facilisis volutpat dui. Suspendisse potenti. Proin et euismod massa. Praesent eget eros vehicula orci iaculis tincidunt eget in libero.', 'Прокат микроавтобусов в Минске', '', 'publish', 'closed', 'closed', '', 'van', '', '', '2017-08-17 15:27:46', '2017-08-17 12:27:46', '', 0, 'http://bus.local/?page_id=31', 0, 'page', '', 0),
 (33, 1, '2017-08-07 17:47:02', '2017-08-07 14:47:02', 'Phasellus tellus arcu, tempor eu mattis et, lacinia nec nisi. Vestibulum sodales molestie felis, eget maximus justo euismod id. Duis gravida quis ligula nec egestas. Morbi ligula risus, tempor sit amet tincidunt eget, condimentum in nulla. Fusce at mi ullamcorper, pellentesque libero in, aliquet nunc. Vestibulum ornare purus vitae quam posuere fermentum. Nulla ac velit condimentum, bibendum mi ac, tincidunt purus. Etiam sit amet est blandit, luctus purus ac, imperdiet odio. In eu blandit libero.', 'Автобусы', '', 'publish', 'closed', 'closed', '', 'bus', '', '', '2017-08-08 10:53:00', '2017-08-08 07:53:00', '', 0, 'http://bus.local/?page_id=33', 0, 'page', '', 0),
 (32, 1, '2017-08-07 17:46:30', '2017-08-07 14:46:30', 'Nulla lacinia imperdiet nisi, quis consectetur urna euismod nec. Aenean et augue diam. Vivamus id ex laoreet, placerat eros at, placerat nisi. Integer quam leo, scelerisque sed libero a, facilisis volutpat dui. Suspendisse potenti. Proin et euismod massa. Praesent eget eros vehicula orci iaculis tincidunt eget in libero.', 'Микроавтобусы', '', 'inherit', 'closed', 'closed', '', '31-revision-v1', '', '', '2017-08-07 17:46:30', '2017-08-07 14:46:30', '', 31, 'http://bus.local/2017/08/07/31-revision-v1/', 0, 'revision', '', 0),
 (35, 1, '2017-08-07 17:47:40', '2017-08-07 14:47:40', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt faucibus felis, at gravida mi commodo et. Pellentesque faucibus augue eget erat fermentum maximus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In hac habitasse platea dictumst. Sed malesuada vehicula facilisis. Mauris id tortor at ipsum faucibus dictum. Nunc nec risus id tellus vehicula vestibulum. Nam vitae lacus non magna varius viverra sed in lorem. Mauris eget ex nec diam bibendum mollis. Vivamus ultricies sapien tincidunt, lobortis magna vel, lacinia lectus. Quisque eget ipsum hendrerit, tempus nisi ac, rutrum leo. Pellentesque vel varius orci.', 'Авто на свадьбу', '', 'publish', 'closed', 'closed', '', 'wedding', '', '', '2017-08-08 10:52:40', '2017-08-08 07:52:40', '', 0, 'http://bus.local/?page_id=35', 0, 'page', '', 0),
@@ -993,7 +1070,15 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (208, 1, '2017-08-16 17:49:40', '2017-08-16 14:49:40', '<div class="tablewrap">\r\n<div class=''gmap''>\r\n<iframe class=''lazyload'' data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4701.698787206413!2d27.495444005057493!3d53.898880769907414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbc5531b651723%3A0x8f4ccd2f790a8a41!2z0L_RgNC-0YHQv9C10LrRgiDQn9GD0YjQutC40L3QsCAxMiwg0JzQuNC90YHQug!5e0!3m2!1sru!2sby!4v1502894711659" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>\r\n</div>\r\n<p style=''padding-left:1em''>Aenean dignissim quis ante eu tristique. Suspendisse ornare ante at diam euismod sollicitudin. Aliquam tristique ligula sed tellus suscipit, feugiat ullamcorper elit euismod. Curabitur rutrum lobortis dolor, a tincidunt purus luctus vitae. Nulla in dolor eu tellus tincidunt posuere eget nec eros. Aliquam ex purus, pretium eu fringilla ac, scelerisque sed odio. Morbi consequat, mauris eget iaculis porttitor, tortor massa commodo orci, ut pulvinar ante dui vitae mauris. Duis eu pellentesque nisl. Vestibulum odio elit, condimentum sit amet dignissim quis, efficitur ac ligula. Nam euismod, massa sit amet pellentesque malesuada, risus augue sollicitudin erat, rhoncus fringilla ligula tellus et metus. In nulla felis, convallis ac ante sit amet, pretium pulvinar tellus. Pellentesque interdum lobortis mi, non faucibus turpis tincidunt ac. Fusce non mauris vehicula, blandit arcu vel, tempor arcu.\r\n</p>\r\n</div>', 'Контакты', '', 'inherit', 'closed', 'closed', '', '19-revision-v1', '', '', '2017-08-16 17:49:40', '2017-08-16 14:49:40', '', 19, 'http://bus.local/2017/08/16/19-revision-v1/', 0, 'revision', '', 0),
 (210, 1, '2017-08-16 17:52:59', '2017-08-16 14:52:59', '<h1>Контакты</h1>\r\n<div class="tablewrap">\r\n<div class=''gmap''>\r\n<iframe class=''lazyload'' data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4701.698787206413!2d27.495444005057493!3d53.898880769907414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbc5531b651723%3A0x8f4ccd2f790a8a41!2z0L_RgNC-0YHQv9C10LrRgiDQn9GD0YjQutC40L3QsCAxMiwg0JzQuNC90YHQug!5e0!3m2!1sru!2sby!4v1502894711659" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>\r\n</div>\r\n<div style=''padding-left:1em''>\r\n<h2>НАШ АДРЕС</h2>\r\n<ul>\r\n<li>г. Минск</li>\r\n<li>пр-т Пушкина, 12 </li>\r\n</ul>\r\n\r\n<h2>КОНТАКТНЫЕ ТЕЛЕФОНЫ</h2>\r\n<ul>\r\n<li>VEL.: +375 (29) 638 77 00</li>\r\n</ul>\r\n\r\n<h3>E-MAIL</h3>\r\n<ul>\r\n<li>Minsk-bus@bk.ru</li>\r\n</ul>\r\n</div>\r\n</div>', 'Контакты', '', 'inherit', 'closed', 'closed', '', '19-revision-v1', '', '', '2017-08-16 17:52:59', '2017-08-16 14:52:59', '', 19, 'http://bus.local/2017/08/16/19-revision-v1/', 0, 'revision', '', 0),
 (211, 1, '2017-08-16 17:53:33', '2017-08-16 14:53:33', '<div class="wpb_wrapper">\r\n<h1>Контакты</h1>\r\n<div class="tablewrap">\r\n<div class=''gmap''>\r\n<iframe class=''lazyload'' data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4701.698787206413!2d27.495444005057493!3d53.898880769907414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbc5531b651723%3A0x8f4ccd2f790a8a41!2z0L_RgNC-0YHQv9C10LrRgiDQn9GD0YjQutC40L3QsCAxMiwg0JzQuNC90YHQug!5e0!3m2!1sru!2sby!4v1502894711659" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>\r\n</div>\r\n<div style=''padding-left:1em''>\r\n<h2>НАШ АДРЕС</h2>\r\n<ul>\r\n<li>г. Минск</li>\r\n<li>пр-т Пушкина, 12 </li>\r\n</ul>\r\n\r\n<h2>КОНТАКТНЫЕ ТЕЛЕФОНЫ</h2>\r\n<ul>\r\n<li>VEL.: +375 (29) 638 77 00</li>\r\n</ul>\r\n\r\n<h3>E-MAIL</h3>\r\n<ul>\r\n<li>Minsk-bus@bk.ru</li>\r\n</ul>\r\n</div>\r\n</div>\r\n</div>', 'Контакты', '', 'inherit', 'closed', 'closed', '', '19-revision-v1', '', '', '2017-08-16 17:53:33', '2017-08-16 14:53:33', '', 19, 'http://bus.local/2017/08/16/19-revision-v1/', 0, 'revision', '', 0),
-(212, 1, '2017-08-16 17:53:49', '2017-08-16 14:53:49', '<div class="wpb_wrapper">\r\n<h1>Контакты</h1>\r\n<div class="tablewrap">\r\n<div class=''gmap''>\r\n<iframe class=''lazyload'' data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4701.698787206413!2d27.495444005057493!3d53.898880769907414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbc5531b651723%3A0x8f4ccd2f790a8a41!2z0L_RgNC-0YHQv9C10LrRgiDQn9GD0YjQutC40L3QsCAxMiwg0JzQuNC90YHQug!5e0!3m2!1sru!2sby!4v1502894711659" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>\r\n</div>\r\n<div style=''padding-left:1em''>\r\n<h2>НАШ АДРЕС</h2>\r\n<ul>\r\n<li>г. Минск</li>\r\n<li>пр-т Пушкина, 12 </li>\r\n</ul>\r\n\r\n<h2>КОНТАКТНЫЕ ТЕЛЕФОНЫ</h2>\r\n<ul>\r\n<li>VEL.: +375 (29) 638 77 00</li>\r\n</ul>\r\n\r\n<h2>E-MAIL</h2>\r\n<ul>\r\n<li>Minsk-bus@bk.ru</li>\r\n</ul>\r\n</div>\r\n</div>\r\n</div>', 'Контакты', '', 'inherit', 'closed', 'closed', '', '19-revision-v1', '', '', '2017-08-16 17:53:49', '2017-08-16 14:53:49', '', 19, 'http://bus.local/2017/08/16/19-revision-v1/', 0, 'revision', '', 0);
+(212, 1, '2017-08-16 17:53:49', '2017-08-16 14:53:49', '<div class="wpb_wrapper">\r\n<h1>Контакты</h1>\r\n<div class="tablewrap">\r\n<div class=''gmap''>\r\n<iframe class=''lazyload'' data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4701.698787206413!2d27.495444005057493!3d53.898880769907414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbc5531b651723%3A0x8f4ccd2f790a8a41!2z0L_RgNC-0YHQv9C10LrRgiDQn9GD0YjQutC40L3QsCAxMiwg0JzQuNC90YHQug!5e0!3m2!1sru!2sby!4v1502894711659" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>\r\n</div>\r\n<div style=''padding-left:1em''>\r\n<h2>НАШ АДРЕС</h2>\r\n<ul>\r\n<li>г. Минск</li>\r\n<li>пр-т Пушкина, 12 </li>\r\n</ul>\r\n\r\n<h2>КОНТАКТНЫЕ ТЕЛЕФОНЫ</h2>\r\n<ul>\r\n<li>VEL.: +375 (29) 638 77 00</li>\r\n</ul>\r\n\r\n<h2>E-MAIL</h2>\r\n<ul>\r\n<li>Minsk-bus@bk.ru</li>\r\n</ul>\r\n</div>\r\n</div>\r\n</div>', 'Контакты', '', 'inherit', 'closed', 'closed', '', '19-revision-v1', '', '', '2017-08-16 17:53:49', '2017-08-16 14:53:49', '', 19, 'http://bus.local/2017/08/16/19-revision-v1/', 0, 'revision', '', 0),
+(213, 1, '2017-08-17 15:02:22', '2017-08-17 12:02:22', ' ', '', '', 'publish', 'closed', 'closed', '', '213', '', '', '2017-08-17 15:39:49', '2017-08-17 12:39:49', '', 0, 'http://bus.local/?p=213', 2, 'nav_menu_item', '', 0),
+(214, 1, '2017-08-17 15:02:22', '2017-08-17 12:02:22', ' ', '', '', 'publish', 'closed', 'closed', '', '214', '', '', '2017-08-17 15:39:49', '2017-08-17 12:39:49', '', 0, 'http://bus.local/?p=214', 3, 'nav_menu_item', '', 0),
+(215, 1, '2017-08-17 15:02:22', '2017-08-17 12:02:22', '', 'Микроавтобусы', '', 'publish', 'closed', 'closed', '', '215', '', '', '2017-08-17 15:39:49', '2017-08-17 12:39:49', '', 0, 'http://bus.local/?p=215', 1, 'nav_menu_item', '', 0),
+(216, 1, '2017-08-17 15:02:22', '2017-08-17 12:02:22', ' ', '', '', 'publish', 'closed', 'closed', '', '216', '', '', '2017-08-17 15:39:49', '2017-08-17 12:39:49', '', 0, 'http://bus.local/?p=216', 4, 'nav_menu_item', '', 0),
+(217, 1, '2017-08-17 15:02:22', '2017-08-17 12:02:22', ' ', '', '', 'publish', 'closed', 'closed', '', '217', '', '', '2017-08-17 15:39:49', '2017-08-17 12:39:49', '', 0, 'http://bus.local/?p=217', 5, 'nav_menu_item', '', 0),
+(218, 1, '2017-08-17 15:02:22', '2017-08-17 12:02:22', ' ', '', '', 'publish', 'closed', 'closed', '', '218', '', '', '2017-08-17 15:39:49', '2017-08-17 12:39:49', '', 0, 'http://bus.local/?p=218', 6, 'nav_menu_item', '', 0),
+(219, 1, '2017-08-17 15:02:23', '2017-08-17 12:02:23', ' ', '', '', 'publish', 'closed', 'closed', '', '219', '', '', '2017-08-17 15:39:49', '2017-08-17 12:39:49', '', 0, 'http://bus.local/?p=219', 7, 'nav_menu_item', '', 0),
+(220, 1, '2017-08-17 15:27:46', '2017-08-17 12:27:46', 'Nulla lacinia imperdiet nisi, quis consectetur urna euismod nec. Aenean et augue diam. Vivamus id ex laoreet, placerat eros at, placerat nisi. Integer quam leo, scelerisque sed libero a, facilisis volutpat dui. Suspendisse potenti. Proin et euismod massa. Praesent eget eros vehicula orci iaculis tincidunt eget in libero.', 'Прокат микроавтобусов в Минске', '', 'inherit', 'closed', 'closed', '', '31-revision-v1', '', '', '2017-08-17 15:27:46', '2017-08-17 12:27:46', '', 31, 'http://bus.local/2017/08/17/31-revision-v1/', 0, 'revision', '', 0);
 
 -- --------------------------------------------------------
 
@@ -1019,7 +1104,7 @@ CREATE TABLE IF NOT EXISTS `wp_terms` (
   `name` varchar(200) NOT NULL DEFAULT '',
   `slug` varchar(200) NOT NULL DEFAULT '',
   `term_group` bigint(10) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `wp_terms`
@@ -1027,6 +1112,7 @@ CREATE TABLE IF NOT EXISTS `wp_terms` (
 
 INSERT INTO `wp_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
 (1, 'статьи', 'articles', 0),
+(13, 'Side menu', 'side-menu', 0),
 (2, 'Header Menu', 'header-menu', 0),
 (3, 'Second Menu', 'second-menu', 0),
 (5, 'лимузин', 'limo', 0),
@@ -1035,7 +1121,7 @@ INSERT INTO `wp_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
 (8, 'микроавтобусы', 'van', 0),
 (7, 'джипы', 'jeep', 0),
 (10, 'джипы', 'jeep', 0),
-(11, 'на свадьбу', 'wed', 0),
+(11, 'на свадьбу', 'wedding', 0),
 (12, 'автобусы', 'bus', 0);
 
 -- --------------------------------------------------------
@@ -1099,7 +1185,14 @@ INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 (146, 2, 0),
 (145, 2, 0),
 (157, 1, 0),
-(159, 1, 0);
+(159, 1, 0),
+(215, 13, 0),
+(213, 13, 0),
+(214, 13, 0),
+(216, 13, 0),
+(217, 13, 0),
+(218, 13, 0),
+(219, 13, 0);
 
 -- --------------------------------------------------------
 
@@ -1114,7 +1207,7 @@ CREATE TABLE IF NOT EXISTS `wp_term_taxonomy` (
   `description` longtext NOT NULL,
   `parent` bigint(20) unsigned NOT NULL DEFAULT '0',
   `count` bigint(20) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `wp_term_taxonomy`
@@ -1131,7 +1224,8 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 (9, 9, 'type', '', 0, 1),
 (10, 10, 'type', '', 0, 2),
 (11, 11, 'type', '', 0, 5),
-(12, 12, 'type', '', 0, 3);
+(12, 12, 'type', '', 0, 3),
+(13, 13, 'nav_menu', '', 0, 7);
 
 -- --------------------------------------------------------
 
@@ -1144,7 +1238,7 @@ CREATE TABLE IF NOT EXISTS `wp_usermeta` (
   `user_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `meta_key` varchar(255) DEFAULT NULL,
   `meta_value` longtext
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `wp_usermeta`
@@ -1174,13 +1268,17 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (19, 1, 'metaboxhidden_dashboard', 'a:0:{}'),
 (20, 1, 'managenav-menuscolumnshidden', 'a:5:{i:0;s:11:"link-target";i:1;s:11:"css-classes";i:2;s:3:"xfn";i:3;s:11:"description";i:4;s:15:"title-attribute";}'),
 (21, 1, 'metaboxhidden_nav-menus', 'a:1:{i:0;s:12:"add-post_tag";}'),
-(22, 1, 'nav_menu_recently_edited', '2'),
+(22, 1, 'nav_menu_recently_edited', '13'),
 (23, 1, 'wp_user-settings', 'libraryContent=browse&editor=html&imgsize=full'),
 (24, 1, 'wp_user-settings-time', '1502806093'),
 (25, 1, 'meta-box-order_car', 'a:3:{s:4:"side";s:50:"submitdiv,tagsdiv-type,postimagediv,addictive-plum";s:6:"normal";s:18:"postcustom,slugdiv";s:8:"advanced";s:0:"";}'),
 (26, 1, 'screen_layout_car', '2'),
 (27, 1, 'closedpostboxes_car', 'a:0:{}'),
-(28, 1, 'metaboxhidden_car', 'a:1:{i:0;s:7:"slugdiv";}');
+(28, 1, 'metaboxhidden_car', 'a:1:{i:0;s:7:"slugdiv";}'),
+(31, 1, 'wp_yoast_notifications', 'a:3:{i:0;a:2:{s:7:"message";s:549:"To make sure all the links in your texts are counted, we need to analyze all your texts.\n					All you have to do is press the following button and we''ll go through all your texts for you.\n\n					<button type="button" id="noticeRunLinkIndex" class="button">Count links</button>\n\n					The Text link counter feature provides insights in how many links are found in your text and how many links are referring to your text. This is very helpful when you are improving your <a href="https://yoa.st/15m?utm_content=5.2" target="_blank">internal linking</a>.";s:7:"options";a:8:{s:4:"type";s:7:"warning";s:2:"id";s:19:"wpseo-reindex-links";s:5:"nonce";s:10:"3c05f82f37";s:8:"priority";d:0.8000000000000000444089209850062616169452667236328125;s:9:"data_json";a:0:{}s:13:"dismissal_key";N;s:12:"capabilities";s:14:"manage_options";s:16:"capability_check";s:3:"all";}}i:1;a:2:{s:7:"message";s:159:"Don''t miss your crawl errors: <a href="http://bus.local/wp-admin/admin.php?page=wpseo_search_console&tab=settings">connect with Google Search Console here</a>.";s:7:"options";a:8:{s:4:"type";s:7:"warning";s:2:"id";s:17:"wpseo-dismiss-gsc";s:5:"nonce";N;s:8:"priority";d:0.5;s:9:"data_json";a:0:{}s:13:"dismissal_key";N;s:12:"capabilities";s:14:"manage_options";s:16:"capability_check";s:3:"all";}}i:2;a:2:{s:7:"message";s:338:"You still have the default WordPress tagline, even an empty one is probably better. <a href="http://bus.local/wp-admin/customize.php?url=http%3A%2F%2Fbus.local%2Fwp-admin%2Fterm.php%3Ftaxonomy%3Dtype%26tag_ID%3D12%26post_type%3Dcar%26wp_http_referer%3Dwp-adminedit-tags.phptaxonomytypepost_typecar">You can fix this in the customizer</a>.";s:7:"options";a:8:{s:4:"type";s:5:"error";s:2:"id";s:28:"wpseo-dismiss-tagline-notice";s:5:"nonce";N;s:8:"priority";d:0.5;s:9:"data_json";a:0:{}s:13:"dismissal_key";N;s:12:"capabilities";s:14:"manage_options";s:16:"capability_check";s:3:"all";}}}'),
+(32, 1, 'wpseo-dismiss-tagline-notice', 'seen'),
+(33, 1, 'wpseo-reindex-links', 'seen'),
+(34, 1, 'wpseo-dismiss-gsc', 'seen');
 
 -- --------------------------------------------------------
 
@@ -1207,6 +1305,39 @@ CREATE TABLE IF NOT EXISTS `wp_users` (
 
 INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`) VALUES
 (1, 'admin', '$P$BU1TT59Y7xoZYTEMNiMmTjdq6om.tP/', 'admin', 'timotheus@list.ru', '', '2017-08-01 14:14:05', '', 0, 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_yoast_seo_links`
+--
+
+CREATE TABLE IF NOT EXISTS `wp_yoast_seo_links` (
+  `id` bigint(20) unsigned NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `post_id` bigint(20) unsigned NOT NULL,
+  `target_post_id` bigint(20) unsigned NOT NULL,
+  `type` varchar(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_yoast_seo_meta`
+--
+
+CREATE TABLE IF NOT EXISTS `wp_yoast_seo_meta` (
+  `object_id` bigint(20) unsigned NOT NULL,
+  `internal_link_count` int(10) unsigned DEFAULT NULL,
+  `incoming_link_count` int(10) unsigned DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `wp_yoast_seo_meta`
+--
+
+INSERT INTO `wp_yoast_seo_meta` (`object_id`, `internal_link_count`, `incoming_link_count`) VALUES
+(31, 0, NULL);
 
 --
 -- Индексы сохранённых таблиц
@@ -1312,6 +1443,19 @@ ALTER TABLE `wp_users`
   ADD KEY `user_email` (`user_email`);
 
 --
+-- Индексы таблицы `wp_yoast_seo_links`
+--
+ALTER TABLE `wp_yoast_seo_links`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `link_direction` (`post_id`,`type`);
+
+--
+-- Индексы таблицы `wp_yoast_seo_meta`
+--
+ALTER TABLE `wp_yoast_seo_meta`
+  ADD UNIQUE KEY `object_id` (`object_id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -1334,17 +1478,17 @@ ALTER TABLE `wp_links`
 -- AUTO_INCREMENT для таблицы `wp_options`
 --
 ALTER TABLE `wp_options`
-  MODIFY `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=337;
+  MODIFY `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=365;
 --
 -- AUTO_INCREMENT для таблицы `wp_postmeta`
 --
 ALTER TABLE `wp_postmeta`
-  MODIFY `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=617;
+  MODIFY `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=687;
 --
 -- AUTO_INCREMENT для таблицы `wp_posts`
 --
 ALTER TABLE `wp_posts`
-  MODIFY `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=213;
+  MODIFY `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=221;
 --
 -- AUTO_INCREMENT для таблицы `wp_termmeta`
 --
@@ -1354,22 +1498,27 @@ ALTER TABLE `wp_termmeta`
 -- AUTO_INCREMENT для таблицы `wp_terms`
 --
 ALTER TABLE `wp_terms`
-  MODIFY `term_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `term_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT для таблицы `wp_term_taxonomy`
 --
 ALTER TABLE `wp_term_taxonomy`
-  MODIFY `term_taxonomy_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `term_taxonomy_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT для таблицы `wp_usermeta`
 --
 ALTER TABLE `wp_usermeta`
-  MODIFY `umeta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
+  MODIFY `umeta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT для таблицы `wp_users`
 --
 ALTER TABLE `wp_users`
   MODIFY `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT для таблицы `wp_yoast_seo_links`
+--
+ALTER TABLE `wp_yoast_seo_links`
+  MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
