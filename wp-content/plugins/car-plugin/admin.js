@@ -138,6 +138,9 @@ customUploader.on('select', function(){
 $('input[value*="img"]').parent().parent().remove();
 $('option[value*="img"]').remove();
 
+$('input[value*="custom"]').parent().parent().remove();
+$('option[value*="custom"]').remove();
+
 
 
 

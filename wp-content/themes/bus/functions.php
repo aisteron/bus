@@ -128,9 +128,9 @@ function wpdocs_vip_scripts() {
     {
       wp_enqueue_style( 'right-sidebar-style', get_template_directory_uri() .'/src/css/pages/right-sidebar/right.css' );
     }
-    if (is_archive())
+    if (is_page_template( 'category.php' ))
     {
-      wp_enqueue_style( 'archive-style', get_template_directory_uri() .'/src/css/pages/archive/archive.css' );
+      wp_enqueue_style( 'category-style', get_template_directory_uri() .'/src/css/pages/category/category.css' );
     }
 
     if (is_single())

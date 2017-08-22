@@ -3,7 +3,7 @@
 
 .wpb_wrapper
 {
-	display:flex;
+	display:flex; 
 	.left 
 	{
 		border-right:1px solid @green;
@@ -57,6 +57,48 @@
 		h1 
 		{
 			text-transform: uppercase;
+		}
+
+		.flex-container
+		{
+			display:flex;
+			flex-wrap:wrap;
+
+			.flex-item
+			{
+				margin:0.3em;
+			    border:1px solid #084634;
+			    border-radius: 4px;
+
+			    img 
+			    {
+			    	border-bottom: 1px solid #084634;
+			    }
+
+				p.taxtitle
+				{
+					text-transform: uppercase;
+					font-weight: 700;
+					font-family: 'Open Sans Condensed';
+					font-size:1.2em;
+				    padding-left: 0.7em;
+    				padding-bottom: 0.1em;
+
+				}
+
+				p 
+				{
+					padding:0;
+					padding-left: 1em;
+					margin:0;
+					font-family:Arial, sans-serif;
+					font-size:90%;
+				}
+				p:last-of-type
+				{
+					margin-bottom:0.4em;
+				}
+			}
 		}
 	}
 }	
