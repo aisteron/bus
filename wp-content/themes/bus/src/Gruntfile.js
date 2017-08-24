@@ -45,6 +45,7 @@ module.exports = function(grunt){
 			      '../right-sidebar.php':['template/right-sidebar.pug'],
 			      '../article-template.php':['template/article-template.pug'],
 			      '../category.php':['template/category.pug'],
+			      '../single-car.php':['template/single-car.pug'],
 			    },
 			    
 			  }
@@ -69,6 +70,7 @@ module.exports = function(grunt){
 				      'css/pages/about/about.css': 'css/pages/about/about.less',
 				      'css/pages/right-sidebar/right.css': 'css/pages/right-sidebar/right.less',
 				      'css/pages/category/category.css': 'css/pages/category/category.less',
+				      'css/pages/single-car/single-car.css': 'css/pages/single-car/single-car.less',
 				    }
 			  }
 			},

@@ -52,6 +52,7 @@ add_action( 'init', 'register_my_menus' );
 # регистрация размера thumnail
 
 add_image_size( 'owl-273', 230, 173 );
+add_image_size( 'owl-427', 427, 320 );
 
 
 /*добавляем поддержку post thumbnail для second menu главной страницы*/
@@ -133,9 +134,20 @@ function wpdocs_vip_scripts() {
       wp_enqueue_style( 'category-style', get_template_directory_uri() .'/src/css/pages/category/category.css' );
     }
 
-    if (is_single())
+
+    /* похоже шаблоны для custom post type не определяются */
+
+
+  if (is_page_template( 'single-car.php' ))
+    {
+      wp_enqueue_style( 'single-car-style', get_template_directory_uri() .'/src/css/pages/single-car/single-car.css' );
+    }
+
+
+    if (is_single() && !is_page_template( 'single-car.php' ))
     {
       wp_enqueue_style( 'article-template-style', get_template_directory_uri() .'/src/css/pages/right-sidebar/right.css' );
+
     }
 
    

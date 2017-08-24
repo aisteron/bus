@@ -226,6 +226,49 @@ if ( $the_query->have_posts() ) {
 }
 add_shortcode( 'list', 'articles_list' );
 
+/* шоткод для вывода авто на произвольных страницах */
+
+// [car id="1,2,3"]
+function show_car( $atts ) {   
+
+	$go ='<div class="flex-container">';
+	foreach ($atts as $key => $value) {
+		
+		$id = explode(',', $value);
+
+		//$post_id = get_post($id[]); 
+		//$title = $post_id_7->post_title;
+
+		foreach ($id as $key) {
+			$post_id = get_post($key);
+
+			$thumb = get_the_post_thumbnail_url($key, 'owl-273');
+			$go .= '<div class="flex-item">';
+			$go .= '<a href="'.get_permalink($post_id).'" rel="nofollow">';
+			$go .= '<img class="lazyload" data-src="'.$thumb.'" width="230" height="173"></a>';
+			$go .= '<p class="taxtitle"><a href="'.get_permalink($post_id).'">'.$post_id->post_title.'</a></p>';
+			$go .= '<p>от '. get_post_meta( $key, 'от', true ).' руб. в час</p>';
+
+			if (get_post_meta( $key, 'кол-во мест', true )) 
+			{
+				$go .= '<p>кол-во мест: '. get_post_meta( $key, 'кол-во мест', true ).'</p></div>';
+			}
+			else 
+			{
+				$go .= '</div>';}
+
+			}
+
+
+		
+	}
+	$go .= '</div>';
+	return $go;
+
+}
+
+add_shortcode( 'car', 'show_car' );
+
 		
 
 		

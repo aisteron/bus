@@ -1,0 +1,36 @@
+ <?php 
+|/*
+| *
+| * Template Name: Car Template
+| * Template Post Type: page, car
+| * @package WordPress
+| *
+| */
+
+| get_header(); ?>
+
+
+.wpb_wrapper
+	.left
+		h4 Авто с водителем
+		| <?php wp_nav_menu(array('menu' => 'side-menu','container' => ''))?>
+		h4
+			a(href="/w-o-driver/") Авто без водителя
+		h4 Популярные предложения	
+	.right
+		
+		.rightWrap
+			.photo
+				include php/single.php
+			.chars
+				|<?php chars(); ?>
+		.rightDesc
+			| <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
+			|<?php the_content();  ?>
+			|<?php endwhile; else: ?>
+			|<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+			|<?php endif; ?>		
+				
+
+
+|<?php get_footer();?>

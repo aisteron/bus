@@ -1,0 +1,93 @@
+@import '../../base'; // header + footer
+
+
+.wpb_wrapper
+{
+	display:flex; 
+	.left 
+	{
+		border-right:1px solid @green;
+		min-width:305px;
+
+		h4 
+		{
+			text-transform: uppercase;
+			color:#fff;
+			font-size:1.3em;
+			margin-bottom:0;
+				a 
+				{
+					color:#fff;
+				}
+			&:first-child
+			{
+				margin-top:25px;
+			}		
+		}
+
+		#menu-side-menu
+		{
+			margin-left: 0;
+			padding-left: 0;
+			li 
+			{
+
+			list-style-type:none;
+			font-family: Arial, sans-serif;
+			line-height: 200%;
+			font-size:0.9em;
+
+			&.current-menu-item a
+			{
+				color:@green;
+			}
+
+				a 
+				{
+					color:#fff;
+				}
+			}
+		}
+	}
+
+	.right
+	{
+		.rightWrap
+		{
+			display:flex;
+			.photo
+			{
+				
+				h1 
+				{
+					text-transform: uppercase;
+				}
+				.thumb-container
+				{
+					img 
+					{
+						margin-right: 0.25em;
+					}
+				}
+			}
+			.chars
+			{
+				margin-top:77px;
+			}	
+		}
+
+		
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+@import '../../base-media';// header + footer media queries
