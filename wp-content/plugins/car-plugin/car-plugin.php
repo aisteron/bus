@@ -269,10 +269,142 @@ function show_car( $atts ) {
 
 add_shortcode( 'car', 'show_car' );
 
-		
+/* обрабатываем лидформу на странице авто */
 
-		
+add_action('wp_ajax_carform', 'carform_callback');
+add_action('wp_ajax_nopriv_carform', 'carform_callback');
 
+function carform_callback() {
+
+	$car = $_POST['car'];
+	$phone = $_POST['phone'];
+
+	//echo $car, ' - ', $phone;
+	//print_r($_POST);
+
+	if ($_POST['car'] && $_POST['phone'])
+	{
+		echo 'ok';
+
+		$to      = 'timotheus@list.ru';
+		$subject = 'Заказ с сайта busminsk.by';
+		$message = 'Авто: '. $car.'<br>';
+		$message .='Телефон: '. $phone;
+		$headers = 'From: robot@busminsk.by' . "\r\n" .
+		    'Reply-To: robot@busminsk.by' . "\r\n" .
+		    'X-Mailer: PHP/' . phpversion();
+
+		mail($to, $subject, $message, $headers);
+
+	} else 
+	{
+		echo 'error';
+	}
+
+
+	wp_die();
+}
+
+/* обрабатываем отзыв */
+
+add_action('wp_ajax_testimonial', 'testimonial_callback');
+add_action('wp_ajax_nopriv_testimonial', 'testimonial_callback');
+
+function testimonial_callback() {
+
+	$name = $_POST['name'];
+	$area = $_POST['area'];
+
+	//echo $car, ' - ', $phone;
+	//print_r($_POST);
+
+	if ($_POST['area'] && $_POST['name'])
+	{
+		echo 'ok';
+
+		$to      = 'timotheus@list.ru';
+		$subject = 'Отзыв с сайта busminsk.by';
+		$message = 'Имя: '. $name.'<br>';
+		$message .='Отзыв: '. $area;
+		$headers = 'From: robot@busminsk.by' . "\r\n" .
+		    'Reply-To: robot@busminsk.by' . "\r\n" .
+		    'X-Mailer: PHP/' . phpversion();
+
+		mail($to, $subject, $message, $headers);
+
+	} else 
+	{
+		echo 'error';
+	}
+
+
+	wp_die();
+}
+
+/* обрабатываем запрос на первый селект в лидформе*/		
+add_action('wp_ajax_get_terms', 'get_terms_callback');
+add_action('wp_ajax_nopriv_get_terms', 'get_terms_callback');
+
+function get_terms_callback ()
+{
+
+$terms = get_terms( 'type' );
+$stack = array();
+
+if( $terms && ! is_wp_error($terms) ){
+	
+	foreach( $terms as $term ){
+		//echo "<li>". $term->name ."</li>";
+		//array_push($stack, $term->name);
+		$stack[$term->slug] = $term->name;
+
+	}
+	
+
+}
+echo json_encode($stack);
+
+die();
+
+}
+
+/* получаем список транспорта у термы таксономии */
+		
+add_action('wp_ajax_get_car', 'get_car_callback');
+add_action('wp_ajax_nopriv_get_car', 'get_car_callback');
+
+function get_car_callback()
+{
+	$slug = $_POST['slug'];
+
+	$args = array('post_type' => 'car',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'type',
+                'field' => 'slug',
+                'terms' => $slug,
+            ),
+        ),
+     );
+
+	$loop = new WP_Query($args);
+	$stack = array();
+
+	if($loop->have_posts()) {
+
+	while($loop->have_posts()) : $loop->the_post();
+
+		array_push($stack, get_the_title());
+
+
+	endwhile;
+	}
+
+	echo json_encode($stack);
+
+die();
+
+}
 
 
 

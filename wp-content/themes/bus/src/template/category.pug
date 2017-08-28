@@ -16,7 +16,8 @@
 		| <?php wp_nav_menu(array('menu' => 'side-menu','container' => ''))?>
 		h4
 			a(href="/w-o-driver/") Авто без водителя
-		h4 Популярные предложения	
+		h4 Популярные предложения
+		include php/pop.php
 	.right
 		h1 
 			| <?php echo get_the_title() ?>

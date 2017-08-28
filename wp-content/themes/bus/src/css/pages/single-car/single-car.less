@@ -48,6 +48,33 @@
 				}
 			}
 		}
+
+		.section
+		{
+			display:flex;
+			margin-bottom:0.7em;
+			
+			&:first-of-type
+			{
+				margin-top:1em;
+			}
+
+			.desc
+			{
+				font-family: Arial, sans-serif;
+				font-size: 80%;
+				margin-left:0.8em;
+
+				.pop-title
+				{
+					margin: 0;
+				}
+				.pop-date
+				{
+					
+				}
+			}
+		}
 	}
 
 	.right
@@ -57,6 +84,7 @@
 			display:flex;
 			.photo
 			{
+				margin-left:1em;
 				
 				h1 
 				{
@@ -64,30 +92,106 @@
 				}
 				.thumb-container
 				{
-					img 
+					a 
 					{
-						margin-right: 0.25em;
+				    	margin: 0;
+    					padding: 0;
+						img 
+						{
+							margin-right: .1em;
+    						margin-top: -0.1em;
+						}
 					}
+					
 				}
 			}
 			.chars
 			{
-				margin-top:77px;
+				margin-top:71px;
+				margin-left: 1em;
+
+				table 
+				{
+					font-family: Arial, sans-serif;
+					min-width:424px;
+					font-size: 90%;
+
+					tr 
+					{
+						line-height: 230%;						
+
+						td 
+						{
+							border-bottom: 1px solid #084634;
+							font-size: 90%;
+						}
+					}
+					tr:first-of-type
+					{
+						font-weight: bold;
+					}
+				}
+				input:extend(.wrap .keyholder input) 
+				{
+				    margin: 1em auto;
+    				display: block;
+    				cursor:pointer;
+				}
+				.dashed
+				{
+					font-size:1.2em;
+					border:1px dashed @green;
+					padding:0.3em;
+					border-radius: 6px;
+
+				}
+
+
 			}	
+		}
+
+		.rightDesc
+		{
+			margin-left: 1em;
 		}
 
 		
 
 	}
 
+
+
 }
 
 
+#hidden-content-b {
+	  /* Custom styling */
+	  max-width: 550px;
+	  border-radius: 4px;
+
+	  /* Custom transition - slide from top*/
+	  transform: translateY(-50px);
+	  transition: all .33s;
+
+	  input 
+		  {
+		  	display:block;
+		  	padding:0.4em;
+		  	margin:0.4em;
+		  }
+	  h2 
+		  {
+		  	text-align: center;
+		  }
+	}
+
+	.fancybox-slide--current #hidden-content-b {
+	  transform: translateY(0);
+	}
 
 
 
 
 
-
-
+@import 'single-car-media';
 @import '../../base-media';// header + footer media queries

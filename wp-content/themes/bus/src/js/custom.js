@@ -4,6 +4,8 @@ jQuery.noConflict();
 
 $(document).ready(function(){
 
+
+
 $('.topnav').after('<div class="mobile-menu"><ul></ul></div>');
 
 $('.topnav .menu > li > a').each(function(){
@@ -84,6 +86,258 @@ if (window.location.href.split('/').length == 5 && window.location.href.split('/
 
     //$(this).parent().next().fadeToggle();
  });*/
+
+
+/* отправка данных формы со страницы авто */
+
+$( "#hidden-content-b form" ).on( "submit", function( event ) {
+  event.preventDefault();
+  //console.log( );
+  //console.log($(this).find('input[type="text"]').val());
+  //var data =  $( this ).serialize();
+  var type = $(this).find('input[name="car"]').val();
+  var phone = $(this).find('input[name="phone"]').val();
+  var data = {
+            action: 'carform',
+            car: type,
+            phone: phone,
+        };   
+  //console.log(data);
+  $.post( ajaxurl, data, function(response) {
+            //alert('Получено с сервера: ' + response);
+            if(response == 'ok')
+            {
+                $('#hidden-content-b form').remove();
+                $('#hidden-content-b img').fadeIn('slow');
+                $('#hidden-content-b h2').html('Ура! <br> Мы получили ваш запрос!');
+                $('#hidden-content-b img').after('<p>Наш менеджер вам скоро перезвонит</p>')
+            } else 
+            {
+                $('#hidden-content-b form').append('<p style="color:red">Что-то пошло не так -(</p>')
+            }
+    });
+});
+
+
+
+
+/* добавить отзыв */
+var state = true;
+
+$('.testimonials').click(function(){
+
+
+if (state)
+{
+
+    
+   
+      $('<link/>', {
+       rel: 'stylesheet',
+       type: 'text/css',
+       href: '/wp-content/themes/bus/src/css/owl/jquery.fancybox.min.css'
+    }).appendTo('head');    
+
+    $.getScript( "/wp-content/themes/bus/src/js/jquery.fancybox.min.js", function( data, textStatus, jqxhr )
+     { 
+        console.log( "fancybox js loaded" );
+
+        $.fancybox.open({
+        src  : '#hidden-testimonial',
+        type : 'inline',
+        opts : {
+            afterShow : function( instance, current ) {
+                console.info( 'done!' );
+            }
+        }
+        });
+
+     });
+    
+    state = false; 
+} else
+{
+     $.fancybox.open({
+        src  : '#hidden-testimonial',
+        type : 'inline',
+        opts : {
+            afterShow : function( instance, current ) {
+                console.info( 'done!' );
+            }
+        }
+        });
+}
+
+/* отправка отзыва на почту */
+
+$( "#hidden-testimonial form" ).on( "submit", function( event ) {
+  event.preventDefault();
+
+  var name = $(this).find('input[name="name"]').val();
+  var area = $(this).find('#area').val();
+  var data = {
+            action: 'testimonial',
+            name: name,
+            area: area,
+        };   
+  //console.log(data);
+
+  $.post( ajaxurl, data, function(response) {
+            //alert('Получено с сервера: ' + response);
+            if(response == 'ok')
+            {
+                $('#hidden-testimonial form').remove();
+                $('#hidden-testimonial img').fadeIn('slow');
+                $('#hidden-testimonial h2').html('Ура! <br> Мы получили ваш отзыв!');
+                $('.testimonials').attr('disabled', true);
+            } else 
+            {
+                $('#hidden-testimonial form').append('<p style="color:red">Что-то пошло не так -(</p>')
+            }
+    });
+});
+    
+
+
+
+
+}); // клик по кнопке "добавить отзыв"
+
+
+/*  стили для страницы отзывов */
+if (window.location.href.split('/').length == 5 && window.location.href.split('/')[3] == "testimonials")
+ {
+     $("<style type='text/css'> #hidden-testimonial input {display:block; margin: 0.3em auto} .testimonials {background-color: #12c391;background-image: none;background: #12c391;background: linear-gradient(135deg,#12c391 30%,#00d6bd 100%);border: none;padding: 1em;border-bottom: 2px solid green;border-radius: 3px;color: #fff;text-transform: uppercase;font-weight: 700;}</style>").appendTo("head");
+ }
+
+
+ /* клик по кнопкам "сделать заказ" в хидере и футере */
+
+var state = true;
+
+ jQuery('#menu-header-menu > li').last().add(' .f-line-wrap input').on("click", function(e){
+ e.preventDefault();
+
+
+//add html
+var to_add  = '<div style="display:none;" id="hidden_form">';
+    to_add += '<h2>Заказать <span>авто</span></h2>';
+    to_add += '<form>';
+    to_add += '<input type="text" placeholder="Ваш номер телефона">';
+    to_add += '<select class="taxonomy">';
+    to_add += '<option>Тип транспорта</option>';
+    to_add += '</select>';
+    to_add += '</form>';
+    to_add += '</div>';
+ 
+ $(this).append(to_add);
+
+
+/* get taxonomy terms */
+var data = {action: 'get_terms'};
+
+$.post( ajaxurl, data, function(response) {
+
+        var terms = JSON.parse(response);
+        
+        
+        $.each(terms, function(key, value) {
+        //console.log(key + ' ' + value);
+
+        function capitalizeFirstLetter(string)
+            {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+        $('#hidden_form form select').append('<option data="'+key+'">'+capitalizeFirstLetter(value)+'</option>');    
+
+        });
+
+});
+
+
+
+
+ if (state)
+{
+
+    $('<link/>', {
+       rel: 'stylesheet',
+       type: 'text/css',
+       href: '/wp-content/themes/bus/src/css/owl/jquery.fancybox.min.css'
+       }).appendTo('head');    
+
+    $.getScript( "/wp-content/themes/bus/src/js/jquery.fancybox.min.js", function( data, textStatus, jqxhr )
+     { 
+        console.log( "fancybox js loaded" );
+
+    $.fancybox.open({
+    src  : '#hidden_form',
+    type : 'inline',
+    opts : {
+        afterShow : function( instance, current ) {
+            console.info( 'done!' );
+        }
+    }
+    });
+
+     });
+    
+    state = false; 
+}   else
+{
+    $.fancybox.open({
+        src  : '#hidden_form',
+        type : 'inline',
+        opts : {
+            afterShow : function( instance, current ) {
+                console.info( 'done!' );
+            }
+        }
+        });
+} 
+
+// таксономии и транспорт
+
+var select_created = true;
+
+$('#hidden_form form select').on('change', function() {
+    
+    if(select_created)
+    {
+      var to_add = '<select class="car"></select>';
+      $('#hidden_form form select.taxonomy').fadeIn().after(to_add);
+      $('#hidden_form form select.car').after('<input type="submit" value="Отправить">');
+      select_created = false;
+    }
+  
+
+
+  var data = {action: 'get_car', slug: $(this).find(":selected").attr('data')};
+  $.post( ajaxurl, data, function(response) {
+
+    var cars = JSON.parse(response);
+    $('#hidden_form form select.car').empty();
+        for (var i = cars.length - 1; i >= 0; i--) {
+           $('#hidden_form form select.car').append($('<option>', {
+                value: i,
+                text: cars[i]
+            }));
+        }
+
+
+    });
+  
+
+
+
+
+
+});
+
+ 
+ }); // header + footer button
+
+
 
 
 }); // document ready

@@ -192,7 +192,7 @@ body
 		    }
 
 			
-			li 
+			> li 
 			{
 				list-style-type: none;
 				align-self:center;
@@ -405,3 +405,35 @@ body
 
     	}
     }
+#hidden_form
+{
+	h2 
+	{
+		text-transform: uppercase;
+		text-align: center;
+
+		span 
+		{
+			color:@green;
+		}
+	}
+	input, select
+	{
+		display:block;
+		margin:0.4em auto;
+		width:200px;
+		padding:0.4em;
+
+		-ms-box-sizing:content-box;
+		-moz-box-sizing:content-box;
+		-webkit-box-sizing:content-box; 
+		box-sizing:content-box;
+	}
+	input[type='submit']:extend(.wrap .keyholder input)
+	{
+	    width: 200px;
+	    padding: 0.5em;
+	    text-transform: none;
+	    cursor:pointer;
+	}
+}    

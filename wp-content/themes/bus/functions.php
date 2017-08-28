@@ -53,6 +53,7 @@ add_action( 'init', 'register_my_menus' );
 
 add_image_size( 'owl-273', 230, 173 );
 add_image_size( 'owl-427', 427, 320 );
+add_image_size( 'owl-80-50', 80, 50 );
 
 
 /*добавляем поддержку post thumbnail для second menu главной страницы*/
@@ -141,12 +142,17 @@ function wpdocs_vip_scripts() {
   if (is_page_template( 'single-car.php' ))
     {
       wp_enqueue_style( 'single-car-style', get_template_directory_uri() .'/src/css/pages/single-car/single-car.css' );
+      wp_enqueue_style( 'fancy-style', get_template_directory_uri() .'/src/css/owl/jquery.fancybox.min.css' );
+      wp_enqueue_script('fancy-js', get_template_directory_uri() .'/src/js/jquery.fancybox.min.js', array('jquery'), null, true);
+
+
     }
 
 
     if (is_single() && !is_page_template( 'single-car.php' ))
     {
       wp_enqueue_style( 'article-template-style', get_template_directory_uri() .'/src/css/pages/right-sidebar/right.css' );
+
 
     }
 
