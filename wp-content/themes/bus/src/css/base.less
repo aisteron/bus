@@ -130,6 +130,10 @@ body
 	        background-color: rgba(0,0,0,0.6);
 	        border-bottom:1px solid @green;
 
+		ul.menu > li.current-menu-item
+		    {
+		    	border-bottom:2px solid @green;
+		    }
 		ul.menu 
 		{
 			width:1190px;
@@ -140,10 +144,7 @@ body
 		    min-height: 54px;
 		    padding-left: inherit;
 
-		    .current-menu-item
-		    {
-		    	border-bottom:2px solid @green;
-		    }
+		    
 
 		    li.menu-item-has-children
 		    {
@@ -159,11 +160,18 @@ body
 				    padding: 0.7em;
 				    margin-left: -0.7em;
 
-				    
+				    li.current-menu-item
+				    {
+				    	a 
+				    	{
+				    		color:@green;
+				    	}
+				    }
 
 		    		li
 		    		{
 	    			    padding-bottom: 0.5em;
+	    			    list-style-type: none;
 
 	    			    a 
 	    			    {

@@ -407,5 +407,80 @@ die();
 }
 
 
+/* обрабатываем "главную" лидформу */
+
+add_action('wp_ajax_main_form', 'main_form_callback');
+add_action('wp_ajax_nopriv_main_form', 'main_form_callback');
+
+function main_form_callback() {
+
+	$phone = $_POST['phone'];
+	$type = $_POST['type'];
+	$model = $_POST['model'];
+
+	//echo $car, ' - ', $phone;
+	//print_r($_POST);
+
+	if ($_POST['phone'] && $_POST['type'] && $_POST['model'])
+	{
+		echo 'ok';
+
+		$to      = 'timotheus@list.ru';
+		$subject = 'Заявка с сайта busminsk.by';
+		$message = 'Телефон: '. $phone.'<br>';
+		$message .='Категория: '. $type.'<br>';
+		$message .='Модель: '. $model.'<br>';
+		$headers = 'From: robot@busminsk.by' . "\r\n" .
+		    'Reply-To: robot@busminsk.by' . "\r\n" .
+		    'X-Mailer: PHP/' . phpversion();
+
+		mail($to, $subject, $message, $headers);
+
+	} else 
+	{
+		echo 'error';
+	}
 
 
+	wp_die();
+}
+
+
+/* .filter на странице микроавтобусов. обрабатываем ajax */
+
+
+add_action('wp_ajax_filter', 'filter_callback');
+add_action('wp_ajax_nopriv_filter', 'filter_callback');
+
+function filter_callback() {
+
+	$link = $_POST['link'];
+	$stack = array();
+
+	if($link == 'vip')
+	{
+		$args = array('post__in' => array(381,388,394));
+
+		$loop = new WP_Query($args);
+		if($loop->have_posts()) {
+
+		while($loop->have_posts()) : $loop->the_post();
+
+		    $stack['car'] = array('link', get_permalink());
+		    $stack['car'] = array('thumb', get_the_post_thumbnail_url($post->ID, 'owl-273'));
+		    $stack['car'] = array('title', get_the_title());
+		    $stack['car'] = array('ot', get_post_meta( $post->ID, 'от', true ));
+		    $stack['car'] = array('capacity', get_post_meta( $post->ID, 'кол-во мест', true ));
+
+		endwhile;
+		}
+
+
+		echo json_encode($stack);
+	}
+
+
+
+
+	wp_die();
+}

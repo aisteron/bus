@@ -5,6 +5,10 @@ global $meta;
  
 $tit = get_the_title();
 echo '<h1>'.$tit.'</h1>';
+
+echo '<h4>'. get_post_meta( $post->ID, 'h4', true ).'</h4>';
+
+
 echo '<div class="photo_wrap">
 	  <img class="lazyload" data-src="'.get_the_post_thumbnail_url($post->ID, 'owl-427').'" alt="'.$tit.'" width="427" height="284">';
 

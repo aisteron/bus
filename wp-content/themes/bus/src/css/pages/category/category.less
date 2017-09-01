@@ -79,17 +79,19 @@
 
 	.right
 	{
-		padding-left:1em;
+		//padding-left:1em;
 
 		h1 
 		{
 			text-transform: uppercase;
+			padding-left:0.6em
 		}
 
 		.flex-container
 		{
 			display:flex;
 			flex-wrap:wrap;
+			justify-content:center;
 
 			.flex-item
 			{
@@ -125,6 +127,57 @@
 				{
 					margin-bottom:0.4em;   
 				}
+			}
+		}
+	}
+
+	.filter
+	{
+		min-width: 130px;
+		border-left: 1px solid @green;
+
+		ul 
+		{
+			margin-left:0.5em;
+			padding-left:0.8em;
+			padding-top:4.1em;
+			position: fixed;
+			li 
+			{
+				list-style-type: none;
+				line-height: 180%;
+				border-bottom: 1px dashed #111d26;
+
+				&:hover 
+				{
+					border-bottom: 1px dashed @green;
+				}
+
+				a 
+				{
+					color:#fff;
+					font-family: Arial, sans-serif;
+					font-size: 0.8em;
+
+					&:hover
+					{
+						text-decoration: none;
+					}
+				}
+			}
+		}
+		a.reset
+		{
+			font-family: Arial,sans-serif;
+		    padding-left: 1.5em;
+		    font-size: 0.8em;
+	        position: fixed;
+    		top: 34em;
+
+			img 
+			{
+				margin-right: 0.4em;
+				vertical-align: sub;
 			}
 		}
 	}

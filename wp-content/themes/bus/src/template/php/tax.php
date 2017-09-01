@@ -18,7 +18,7 @@ echo '<h1>',the_field('h1', $key ), '</h1>';
 
 /*echo $taxname;*/
 
-$args = array('post_type' => 'car',
+$args = array('post_type' => 'car', 'posts_per_page' => -1,
         'tax_query' => array(
             array(
                 'taxonomy' => 'type',
@@ -38,7 +38,7 @@ while($loop->have_posts()) : $loop->the_post();
     <a href="'.get_permalink().'" rel="nofollow">';
 
     $thumb = get_the_post_thumbnail_url($post->ID, 'owl-273');
-    echo '<img class="lazyload" data-src="'.$thumb.'" width="230" height="173"></a> 
+    echo '<img class="lazyload" data-src="'.$thumb.'" width="230" height="153"></a> 
 	<p class="taxtitle"><a href="'.get_permalink().'">'.get_the_title().'</a></p>';
 	echo '<p>от '. get_post_meta( $post->ID, 'от', true ).' руб. в час</p>';
 
