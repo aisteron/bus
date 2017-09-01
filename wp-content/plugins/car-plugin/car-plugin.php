@@ -449,7 +449,7 @@ function main_form_callback() {
 /* .filter на странице микроавтобусов. обрабатываем ajax */
 
 
-add_action('wp_ajax_filter', 'filter_callback');
+/*add_action('wp_ajax_filter', 'filter_callback');
 add_action('wp_ajax_nopriv_filter', 'filter_callback');
 
 function filter_callback() {
@@ -476,11 +476,14 @@ function filter_callback() {
 		}
 
 
-		echo json_encode($stack);
+		//echo json_encode($stack);
 	}
+	echo '<pre>';
+	print_r($stack);
+	echo '</pre>';
 
 
 
 
 	wp_die();
-}
+}*/
