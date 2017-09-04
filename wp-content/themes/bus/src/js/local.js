@@ -42,7 +42,7 @@ $('.filter ul li').on('click', function(e){
 
 /* сформировать local storage объекты */
 
-step1().then(step2).then(step3).then(vip).then(van).then(reset);
+step1().then(step2).then(step3).then(vip).then(van).then(reset).then(asc).then(desc).then(b1020).then(b10);
 
 function step1() {
     var $dfStep1 = new $.Deferred();
@@ -175,6 +175,147 @@ function reset()
 	else
 	{
 		console.log('reset object already exist');
+	}
+}
+
+function asc()
+{
+	if (localStorage.getItem("asc") === null) {
+
+		var $dfAsc = new $.Deferred();
+
+		var data = 
+		{
+			action: 'local',
+			name: 'asc'
+		}
+
+		$.post( ajaxurl, data, function(response) {
+			var stack = JSON.parse(response);
+
+			//console.log(response);
+
+			localStorage.setItem('asc', JSON.stringify(response));
+
+			console.log('asc object placed in localStorage')	
+		});
+
+
+
+		$dfAsc.resolve();
+	    return $dfAsc.promise();
+
+	}
+
+	else
+	{
+		console.log('asc object already exist');
+	}
+}
+
+function desc()
+{
+	if (localStorage.getItem("desc") === null) {
+
+		var $dfdesc = new $.Deferred();
+
+		var data = 
+		{
+			action: 'local',
+			name: 'desc'
+		}
+
+		$.post( ajaxurl, data, function(response) {
+			var stack = JSON.parse(response);
+
+			//console.log(response);
+
+			localStorage.setItem('desc', JSON.stringify(response));
+
+			console.log('desc object placed in localStorage')	
+		});
+
+
+
+		$dfdesc.resolve();
+	    return $dfdesc.promise();
+
+	}
+
+	else
+	{
+		console.log('desc object already exist');
+	}
+}
+
+
+function b1020()
+{
+	if (localStorage.getItem("b1020") === null) {
+
+		var $dfb1020 = new $.Deferred();
+
+		var data = 
+		{
+			action: 'local',
+			name: 'b1020'
+		}
+
+		$.post( ajaxurl, data, function(response) {
+			var stack = JSON.parse(response);
+
+			//console.log(response);
+
+			localStorage.setItem('b1020', JSON.stringify(response));
+
+			console.log('b1020 object placed in localStorage')	
+		});
+
+
+
+		$dfb1020.resolve();
+	    return $dfb1020.promise();
+
+	}
+
+	else
+	{
+		console.log('b1020 object already exist');
+	}
+}
+
+function b10()
+{
+	if (localStorage.getItem("b10") === null) {
+
+		var $dfb10 = new $.Deferred();
+
+		var data = 
+		{
+			action: 'local',
+			name: 'b10'
+		}
+
+		$.post( ajaxurl, data, function(response) {
+			var stack = JSON.parse(response);
+
+			//console.log(response);
+
+			localStorage.setItem('b10', JSON.stringify(response));
+
+			console.log('b10 object placed in localStorage')	
+		});
+
+
+
+		$dfb10.resolve();
+	    return $dfb10.promise();
+
+	}
+
+	else
+	{
+		console.log('b10 object already exist');
 	}
 }
 

@@ -70,7 +70,15 @@ echo '<h1>',the_field('h1', $key ), '</h1>';
 
 /*echo $taxname;*/
 
-$args = array('post_type' => 'car', 'posts_per_page' => -1,
+
+
+
+$args = array(
+        'post_type' => 'car', 
+        'posts_per_page' => -1,
+        /*'orderby'   => 'meta_value_num',
+        'meta_key'  => 'от',
+        'order'     => 'ASC',*/
         'tax_query' => array(
             array(
                 'taxonomy' => 'type',
@@ -108,4 +116,4 @@ echo '</div>';
 ?>
 <?php endwhile; else: ?>
 <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-<?php endif; ?></div></div><?php if (is_page( 'van' )) {?><div class="filter"><ul><li> <a href="#">до 10 мест</a></li><li> <a href="#">10 - 20 мест</a></li><li> <a href="#">сначала дорогие</a></li><li> <a href="#">сначала дешевые</a></li><li> <a href="/van/van">минивэны</a></li><li> <a href="/van/vip">VIP</a></li><li> <a class="reset" href="/van/reset">+ Сбросить</a></li></ul></div><?php }?></div><?php get_footer();?>
+<?php endif; ?></div></div><?php if (is_page( 'van' )) {?><div class="filter"><ul><li> <a href="/van/b10">до 10 мест</a></li><li> <a href="/van/b1020">10 - 20 мест</a></li><li> <a href="/van/desc">сначала дорогие</a></li><li> <a href="/van/asc">сначала дешевые</a></li><li> <a href="/van/van">минивэны</a></li><li> <a href="/van/vip">VIP</a></li><li> <a class="reset" href="/van/reset">+ Сбросить</a></li></ul></div><?php }?></div><?php get_footer();?>

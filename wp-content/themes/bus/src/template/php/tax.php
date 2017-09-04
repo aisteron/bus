@@ -18,7 +18,15 @@ echo '<h1>',the_field('h1', $key ), '</h1>';
 
 /*echo $taxname;*/
 
-$args = array('post_type' => 'car', 'posts_per_page' => -1,
+
+
+
+$args = array(
+        'post_type' => 'car', 
+        'posts_per_page' => -1,
+        /*'orderby'   => 'meta_value_num',
+        'meta_key'  => 'от',
+        'order'     => 'ASC',*/
         'tax_query' => array(
             array(
                 'taxonomy' => 'type',
