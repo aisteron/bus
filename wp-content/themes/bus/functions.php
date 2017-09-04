@@ -133,6 +133,7 @@ function wpdocs_vip_scripts() {
     if (is_page_template( 'category.php' ))
     {
       wp_enqueue_style( 'category-style', get_template_directory_uri() .'/src/css/pages/category/category.css' );
+      wp_enqueue_script('local-js', get_template_directory_uri() .'/src/js/local.js', array('jquery'), null, true);
     }
 
 

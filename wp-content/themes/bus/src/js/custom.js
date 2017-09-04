@@ -404,11 +404,15 @@ if (window.location.href.split('/').length == 5)
 
 
 /* .filter ajax-запросы на странице микроавтобусов*/
-
-$('.filter ul li a').on('click', function(e){
+/*
+$('.filter ul li').on('click', function(e){
   e.preventDefault();
+  $(this).css('border-bottom' ,'1px dashed #12c391');
+  $("html, body").animate({ scrollTop: 0 }, "slow");
 
-var attr = $(this).attr('href').split('/')[2];
+  
+
+var attr = $(this).find('a').attr('href').split('/')[2];
 data =
 {
   action: 'filter',
@@ -416,21 +420,58 @@ data =
 }
 
 // отправка запроса на выборку
+var attr = $(this).attr('response');
 
+// делать запрос только тогда, когда еще не спрашивали
+//if (typeof attr !== typeof undefined && attr !== false) {
+  if(!$(this).is("[response]"))
+  {
+
+$('.flex-container').empty().after('<img src="/wp-content/themes/bus/src/img/spinner.gif" class="spinner">');
   $.post( ajaxurl, data, function(response) {
-        //alert('Получено с сервера: ' + response);
+     
 
-        console.log(response)
+        var stack = JSON.parse(response);
+        //localStorage.setItem('testObject', JSON.stringify(response));
+
+        for(var k in stack) {
+         //console.log(stack[k]);
+         //console.log(stack[k].thumb);
+         var to_add ='<div class="flex-item">';
+         to_add += '<a href="'+stack[k].link+'" rel="nofollow">';
+         to_add += '<img src="'+stack[k].thumb+'" width="230" height="153"></a>';
+         to_add += '<p class="taxtitle">';
+         to_add += '<a href="'+stack[k].link+'">';
+         to_add += stack[k].title + '</a></p>';
+         to_add += '<p>от ' + stack[k].ot + ' руб. в час</p>';
+         to_add += '<p>кол-во мест: ' + stack[k].capacity + '</p>';
+
+         $('.spinner').fadeOut();
+
+         $('.flex-container').append(to_add).fadeIn(999); 
+        
+      }
 });
 
+} // если уже был запрос
+else 
+{
+  $('.flex-item img').each(function(){
+    $(this).animate({opacity:0.8});
+    $(this).animate({opacity:1});
+  });
+}
+
+$(this).attr('response', 'already');
 
 
+}); // onclick .filter ajax
 
 
+/* .filter .reset click */
 
-}); // onclick
-
-
+// мы, конечно, можем запрашивать все аяксом. а
+// можем и попробовать local Storage & JSON stringify*/
 
 
 }); // document ready

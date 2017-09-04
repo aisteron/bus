@@ -449,41 +449,175 @@ function main_form_callback() {
 /* .filter на странице микроавтобусов. обрабатываем ajax */
 
 
-/*add_action('wp_ajax_filter', 'filter_callback');
+add_action('wp_ajax_filter', 'filter_callback');
 add_action('wp_ajax_nopriv_filter', 'filter_callback');
 
 function filter_callback() {
 
-	$link = $_POST['link'];
-	$stack = array();
+    global $post;
+    $stack = array();
 
-	if($link == 'vip')
-	{
-		$args = array('post__in' => array(381,388,394));
+$args = array( 'post_type'=>'car', 'post__in' => array( 381,388,394 ) ); 
+$query = new WP_Query( $args );
 
-		$loop = new WP_Query($args);
-		if($loop->have_posts()) {
+// Цикл
+$i = 0;
+if ( $query->have_posts() ) {
+    while ( $query->have_posts() ) {
+        $query->the_post();
+        $stack['car_'.$i] = array('link' => get_permalink(),
+                                  'thumb'=> get_the_post_thumbnail_url($post->ID, 'owl-273'),
+                                  'title'=> get_the_title(),
+                                  'ot'  =>get_post_meta( $post->ID, 'от', true ),
+                                  'capacity' => get_post_meta( $post->ID, 'кол-во мест', true )
 
-		while($loop->have_posts()) : $loop->the_post();
+                            );
+        $i++;
+    }
+} else {
+    echo 'Постов не найдено';
+}
+/* Возвращаем оригинальные данные поста. Сбрасываем $post. */
 
-		    $stack['car'] = array('link', get_permalink());
-		    $stack['car'] = array('thumb', get_the_post_thumbnail_url($post->ID, 'owl-273'));
-		    $stack['car'] = array('title', get_the_title());
-		    $stack['car'] = array('ot', get_post_meta( $post->ID, 'от', true ));
-		    $stack['car'] = array('capacity', get_post_meta( $post->ID, 'кол-во мест', true ));
+    /*echo '<pre>';
+    print_r($stack);
+    echo '</pre>';*/
 
-		endwhile;
-		}
+    echo json_encode($stack);
+    wp_die();
 
-
-		//echo json_encode($stack);
-	}
-	echo '<pre>';
-	print_r($stack);
-	echo '</pre>';
-
+wp_reset_postdata();
 
 
+        //echo json_encode($stack);
+}
 
-	wp_die();
-}*/
+
+/* retieving data for local Storage objects */
+
+add_action('wp_ajax_local', 'local_callback');
+add_action('wp_ajax_nopriv_local', 'local_callback');
+
+function local_callback() {
+
+
+if ($_POST['name'] == 'vip')
+{
+	global $post;
+    $stack = array();
+
+$args = array( 'post_type'=>'car', 'post__in' => array( 381,388,394 ) ); 
+$query = new WP_Query( $args );
+
+// Цикл
+$i = 0;
+if ( $query->have_posts() ) {
+    while ( $query->have_posts() ) {
+        $query->the_post();
+        $stack['car_'.$i] = array('link' => get_permalink(),
+                                  'thumb'=> get_the_post_thumbnail_url($post->ID, 'owl-273'),
+                                  'title'=> get_the_title(),
+                                  'ot'  =>get_post_meta( $post->ID, 'от', true ),
+                                  'capacity' => get_post_meta( $post->ID, 'кол-во мест', true )
+
+                            );
+        $i++;
+    }
+} else {
+    echo 'Постов не найдено';
+}
+
+    echo json_encode($stack);
+
+    wp_die();
+	wp_reset_postdata();	
+
+
+} // if 'vip'
+
+
+if ($_POST['name'] == 'van')
+{
+
+global $post;
+$stack = array();
+
+$args = array( 'post_type'=>'car', 
+	'post__in' => array( 418,413,410,405,349,344,334,329,324,319 ) ); 
+$query = new WP_Query( $args );
+
+// Цикл
+$i = 0;
+if ( $query->have_posts() ) {
+    while ( $query->have_posts() ) {
+        $query->the_post();
+        $stack['car_'.$i] = array('link' => get_permalink(),
+                                  'thumb'=> get_the_post_thumbnail_url($post->ID, 'owl-273'),
+                                  'title'=> get_the_title(),
+                                  'ot'  =>get_post_meta( $post->ID, 'от', true ),
+                                  'capacity' => get_post_meta( $post->ID, 'кол-во мест', true )
+
+                            );
+        $i++;
+    }
+} else {
+    echo 'Постов не найдено';
+}
+
+    echo json_encode($stack);
+
+    wp_die();
+	wp_reset_postdata();
+
+
+} // if 'van'
+
+
+if ($_POST['name'] == 'reset')
+{
+
+global $post;
+$stack = array();
+
+$args = array('post_type' => 'car', 'posts_per_page' => -1,
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'type',
+                'field' => 'slug',
+                'terms' => 'van',
+            ),
+        ),
+     );
+
+$query = new WP_Query( $args );
+
+// Цикл
+$i = 0;
+if ( $query->have_posts() ) {
+    while ( $query->have_posts() ) {
+        $query->the_post();
+        $stack['car_'.$i] = array('link' => get_permalink(),
+                                  'thumb'=> get_the_post_thumbnail_url($post->ID, 'owl-273'),
+                                  'title'=> get_the_title(),
+                                  'ot'  =>get_post_meta( $post->ID, 'от', true ),
+                                  'capacity' => get_post_meta( $post->ID, 'кол-во мест', true )
+
+                            );
+        $i++;
+    }
+} else {
+    echo 'Постов не найдено';
+}
+
+    echo json_encode($stack);
+
+    wp_die();
+	wp_reset_postdata();
+
+
+} // if 'reset'
+
+
+
+
+}// local callback

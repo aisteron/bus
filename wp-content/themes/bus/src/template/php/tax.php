@@ -49,42 +49,5 @@ while($loop->have_posts()) : $loop->the_post();
 endwhile;
 }
 
-echo '</div>'; // flex-container
-
-//echo term_description( $term_id, 'type' );
-
-function filter_callback() {
-
-    //
-    $stack = array();
-
-$args = array( 'post_type'=>'car', 'post__in' => array( 381,388,394 ) ); 
-$query = new WP_Query( $args );
-
-// Цикл
-$i = 0;
-if ( $query->have_posts() ) {
-    while ( $query->have_posts() ) {
-        $query->the_post();
-        $stack['car_'.$i] = array('link' => get_permalink(),
-                                  'thumb'=> get_the_post_thumbnail_url($post->ID, 'owl-273')
-                            );
-        $i++;
-    }
-} else {
-    echo 'Постов не найдено';
-}
-/* Возвращаем оригинальные данные поста. Сбрасываем $post. */
-
-echo '<pre>';
-    print_r($stack);
-    echo '</pre>';
-
-wp_reset_postdata();
-
-
-        //echo json_encode($stack);
-}
-
-                 
+echo '</div>';            
  ?>   
