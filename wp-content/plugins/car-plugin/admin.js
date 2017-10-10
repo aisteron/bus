@@ -6,13 +6,14 @@ $(document).ready(function(){
 
 
 /* клик на кнопку "добавить" */
-
+if (wp.media) 
+{
 var customUploader = wp.media({
 
 	title: 'Выберите ваше изображение(-я), сир',
 	button:{text: 'Заюзать'},
 	multiple:true
-});
+});	
 
 $('#addictive-plum .add').click(function(){
 
@@ -99,6 +100,10 @@ customUploader.on('select', function(){
 
 
 });
+}
+
+
+
 
 /* обработчик для удаления изображения из БД */
 
@@ -141,7 +146,212 @@ $('option[value*="img"]').remove();
 $('input[value*="custom"]').parent().parent().remove();
 $('option[value*="custom"]').remove();
 
+$('input[value*="count"]').parent().parent().remove();
+$('option[value*="count"]').remove();
 
+$('input[value*="rating"]').parent().parent().remove();
+$('option[value*="rating"]').remove();
+
+
+/* generate rating */
+
+function generateRating() {
+    var min = 4.9,
+        max = 4.4,
+        highlightedNumber = Math.random() * (max - min) + min;  
+
+    return highlightedNumber.toFixed(1);
+};
+
+function generateCount() {
+    var min = 9,
+        max = 30,
+        highlightedNumber = Math.random() * (max - min) + min;
+    
+    return highlightedNumber.toFixed(0);
+};
+
+
+
+if ($('input[name="ratingValue"]').val() =="")
+{
+	var rating = generateRating();
+	var count = generateCount();
+	$('input[name="ratingValue"]').val(rating);
+	$('input[name="ratingCount"]').val(count);
+
+	
+
+	var data = 
+	{
+		action:'schema',
+		rating:rating,
+		count:count
+	}
+
+	/* обрабатываем URL для получения ID поста*/
+
+	var url =  window.location.href;
+	data.id = parseInt(/post=([^&]+)/.exec(url)[1]);
+
+	//console.log(data)
+
+  	$.post( ajaxurl, data, function(response) {
+  		 if(response == 'ok')
+            {
+            	console.log('rating successufully updated');
+            }
+          else 
+          {
+          	console.log('что-то пошло не так');
+          } 
+          //console.log(response); 
+
+    });
+}
+
+/* onchange ajax*/
+
+var timer;
+
+function myTimer() {
+    var sec = 0
+    clearInterval(timer);
+    timer = setInterval(function() { 
+    console.log(sec--);
+    if (sec == -1) {
+      clearInterval(timer);
+      sendToDb();
+     } 
+    }   , 1000);
+
+}
+
+$('#meta-box-rating input').bind('keyup mouseup', function () {
+
+myTimer();
+$(this).css('background-color', '#eee');
+
+});
+
+function sendToDb()
+{
+
+	var rating = $('input[name="ratingValue"]').val();
+	var count = $('input[name="ratingCount"]').val();
+
+	var data = 
+		{
+			action:'updateSchema',
+			rating:rating,
+			count:count
+		}
+
+	/* обрабатываем URL для получения ID поста*/
+
+	var url =  window.location.href;
+	data.id = parseInt(/post=([^&]+)/.exec(url)[1]);	
+
+	//console.log(data);
+
+
+  	$.post( ajaxurl, data, function(response) {
+  		 if(response == 'ok')
+            {
+            	console.log('rating successufully updated');
+            	$('#meta-box-rating input').css({
+            		'background-color': '#fff',
+            		'transition': 'background 0.5s linear'
+            			});
+            }
+          else 
+          {
+          	console.log('что-то пошло не так');
+          } 
+          //console.log(response); 
+
+    });
+}
+
+
+
+/* добавить доп. фильтр */
+
+if(window.location.href.split('?')[1] == 'post_type=car')
+{
+	var to_add = '<select name="get_tax">';
+	to_add += '<option>Выберите класс авто</option>';
+
+	$('#post-query-submit').after(to_add);
+
+	var data = {action: 'get_terms'};
+	    $.post( ajaxurl, data, function(response) {
+
+            var terms = JSON.parse(response);
+                       
+            $.each(terms, function(key, value) {
+
+            function capitalizeFirstLetter(string)
+                {
+                    return string.charAt(0).toUpperCase() + string.slice(1);
+                }
+            $('select[name="get_tax"]').append('<option data="'+key+'">'+capitalizeFirstLetter(value)+'</option>');    
+
+            });
+
+    }); //get tax data
+
+	/* рисуем основную таблицу списка авто */
+	$('select[name="get_tax"]').on('change', function(){
+
+	var data = {
+		action: 'get_car', 
+		slug: $(this).find(":selected").attr('data'),
+		admin:'admin'
+	};	
+
+	
+	$.post( ajaxurl, data, function(response) {
+
+    var cars = JSON.parse(response);
+    //console.log(cars);
+
+	$('#the-list').empty();
+        
+    var draw;
+
+    for (var i = cars.length - 1; i >= 0; i--) {
+
+        var name = cars[i][0]; // - name
+        var id = cars[i][1]; //- id
+        var link = cars[i][2]; //- url
+
+		draw += '<tr id="post-'+id+'" class="iedit">';
+		draw +=  '<th class="check-column">';
+		draw +=   '<label class="screen-reader-text" for="cb-select-'+id+'">Выбрать '+name+'</label>';
+		draw +=   '<input id="cb-select-'+id+'" type="checkbox" name="post[]" value="'+id+'"></th>';
+		draw +=  '<td class="title">';
+		draw +=   '<strong>';
+		draw +=    '<a class="row-title" href="/wp-admin/post.php?post='+id+'&amp;action=edit" >'+name+'</a>';
+		draw +=   '</strong></td>';
+		draw += '<td><a class="row-title" href="/wp-admin/post.php?post='+id+'&amp;action=edit" >'+link+'</a></td></tr>';
+
+    }
+
+    //draw += '</tbody>';
+
+    $('#the-list').html(draw);
+
+
+    
+
+
+    });
+
+
+
+	});//обработка клика по типу авто
+} //если мы на странице списка авто
 
 
 

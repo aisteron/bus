@@ -3,7 +3,7 @@
  * Plugin Name: Remove Yoast SEO Comments
  * Plugin URI: https://wordpress.org/plugins/remove-yoast-seo-comments/
  * Description: Removes the Yoast SEO advertisement HTML comments from your front-end source code.
- * Version: 3.0.1
+ * Version: 3.0.2
  * Author: Mitch
  * Author URI: https://profiles.wordpress.org/lowest
  * License: GPL-2.0+
@@ -30,7 +30,7 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class RYSC {
-	private $version = '3.0.1';
+	private $version = '3.0.2';
 	private $debug_marker_removed = false;
 	private $head_marker_removed = false;
 	
@@ -53,7 +53,7 @@ class RYSC {
 				$this->head_marker_removed = true;
 			}
 			
-			add_action( 'wp_dashboard_setup', array( $this, 'dash_widget' ) );
+			if(current_user_can('manage_options')) add_action( 'wp_dashboard_setup', array( $this, 'dash_widget' ) );
 		}
 		
 		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'plugin_links' ) );

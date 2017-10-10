@@ -10,7 +10,7 @@
 | get_header(); ?>
 
 
-.wpb_wrapper
+.wpb_wrapper(itemscope itemtype="http://schema.org/Product")
 	.left
 		h4 Авто с водителем
 		| <?php wp_nav_menu(array('menu' => 'side-menu','container' => ''))?>
@@ -25,7 +25,7 @@
 				include php/single.php
 			.chars
 				|<?php chars(); ?>
-		.rightDesc
+		.rightDesc(itemprop="description")
 			| <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
 			|<?php the_content();  ?>
 			|<?php endwhile; else: ?>

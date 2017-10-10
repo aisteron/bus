@@ -377,7 +377,43 @@ function get_car_callback()
 {
 	$slug = $_POST['slug'];
 
-	$args = array('post_type' => 'car',
+	/* обработаем пока админку */
+
+	if($_POST['admin'])
+	{
+		global $post;
+
+			$args = array('post_type' => 'car', 'posts_per_page' => -1,
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'type',
+                'field' => 'slug',
+                'terms' => $slug,
+            ),
+        ),
+     );
+
+	$loop = new WP_Query($args);
+	$stack = array();
+
+	if($loop->have_posts()) {
+
+	while($loop->have_posts()) : $loop->the_post();
+		$link = explode('http://bus.local/', get_the_permalink($post->ID));
+
+		array_push($stack, array(get_the_title(), $post->ID, $link[1]));
+
+
+	endwhile;
+	}
+
+	echo json_encode($stack);
+
+	die();
+
+	} /* /обработка админки */
+
+	$args = array('post_type' => 'car', 'posts_per_page' => -1,
         'tax_query' => array(
             array(
                 'taxonomy' => 'type',
@@ -579,7 +615,11 @@ if ($_POST['name'] == 'reset')
 global $post;
 $stack = array();
 
-$args = array('post_type' => 'car', 'posts_per_page' => -1,
+$args = array(
+	'post_type' => 'car', 
+	'posts_per_page' => -1,
+	'orderby'   => 'publish_date',
+    'order'     => 'ASC',
         'tax_query' => array(
             array(
                 'taxonomy' => 'type',
@@ -834,3 +874,88 @@ if ( $query->have_posts() ) {
 
 
 }// local callback
+
+
+/**
+ * Register meta box(es).
+ */
+function schema_register_meta_boxes() {
+	$types = array( 'car', 'page');
+    add_meta_box( 'meta-box-rating', __( 'aggregateRating' ), 'schema_my_display_callback', $types );
+}
+add_action( 'add_meta_boxes', 'schema_register_meta_boxes' );
+ 
+/**
+ * Meta box display callback.
+ *
+ * @param WP_Post $post Current post object.
+ */
+function schema_my_display_callback( $post ) {
+    // Display code/markup goes here. Don't forget to include nonces!
+    global $post;
+
+    $rating = get_post_meta($post->ID, 'rating');
+    $count = get_post_meta($post->ID, 'count');
+
+    echo '
+			<input type="number" placeholder="ratingValue" name="ratingValue" step="0.1" value="'.$rating[0].'">
+			<input type="number" placeholder="ratingCount" name="ratingCount" value="'.$count[0].'">
+    ';
+}
+ 
+/**
+ * Save meta box content.
+ *
+ * @param int $post_id Post ID
+ */
+function schema_save_meta_box( $post_id ) {
+    // Save logic goes here. Don't forget to include nonce checks!
+}
+add_action( 'save_post', 'schema_save_meta_box' );
+
+
+/*обработка schema.org */
+
+add_action('wp_ajax_schema', 'save_rating');
+
+function save_rating() 
+	{
+
+		$rating = $_POST['rating'];
+		$count = $_POST['count'];
+		/*id поста*/
+		$id = $_POST['id'];
+		//echo 'rating: ', $rating, 'count: ', $count;
+		
+		if($_POST['rating'] && $_POST['count'])
+		{
+			update_post_meta( $id, 'rating', $rating );
+			update_post_meta( $id, 'count', $count );
+			echo 'ok';	
+		}
+
+		wp_die();
+	}
+
+add_action('wp_ajax_updateSchema', 'update_rating');
+
+function update_rating() 
+	{
+
+		$rating = $_POST['rating'];
+		$count = $_POST['count'];
+		/*id поста*/
+		$id = $_POST['id'];
+		//echo 'rating: ', $rating, 'count: ', $count;
+		
+		if($_POST['rating'] && $_POST['count'])
+		{
+			update_post_meta( $id, 'rating', $rating );
+			update_post_meta( $id, 'count', $count );
+			echo 'ok';	
+		}
+
+		wp_die();
+	}
+
+

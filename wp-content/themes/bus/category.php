@@ -6,7 +6,7 @@
 * @package WordPress
 *
 */
-get_header(); ?><div class="wpb_wrapper"><div class="left"><h4>Авто с водителем</h4><?php wp_nav_menu(array('menu' => 'side-menu','container' => ''))?><h4><a href="/w-o-driver/">Авто без водителя</a></h4><h4>Популярные предложения</h4><?php
+get_header(); ?><div class="wpb_wrapper" itemscope="itemscope" itemtype="http://schema.org/WebPage"><div class="left"><meta itemprop="headline" content="<?php echo get_post_meta( $post->ID, '_yoast_wpseo_title', true ) ?>"/><meta itemprop="description" content="<?php echo get_post_meta( $post->ID, '_yoast_wpseo_metadesc', true ) ?>"/><h4>Авто с водителем</h4><?php wp_nav_menu(array('menu' => 'side-menu','container' => ''))?><h4><a href="/w-o-driver/">Авто без водителя</a></h4><h4>Популярные предложения</h4><?php
 
  // The Query
     $args = array(
@@ -50,13 +50,13 @@ wp_reset_postdata();
 
 
 
-?></div><div class="right"><h1> <?php echo get_the_title() ?></h1><?php 
+?></div><div class="right"><h1 itemprop="name"> <?php echo get_the_title() ?></h1><?php 
 
 //$terms = get_the_terms( get_the_ID(), 'type' );
 $slug = get_post_field( 'post_name', get_post() );
                        
 /*echo '<pre>';
-print_r($terms);
+print_r($slug);
 echo '</pre>';*/
 
 /*foreach ($terms as $key) {
@@ -76,9 +76,8 @@ echo '<h1>',the_field('h1', $key ), '</h1>';
 $args = array(
         'post_type' => 'car', 
         'posts_per_page' => -1,
-        /*'orderby'   => 'meta_value_num',
-        'meta_key'  => 'от',
-        'order'     => 'ASC',*/
+        'orderby'   => 'publish_date',
+        'order'     => 'ASC',
         'tax_query' => array(
             array(
                 'taxonomy' => 'type',
@@ -89,8 +88,9 @@ $args = array(
      );
 
 $loop = new WP_Query($args);
-echo '<div class="flex-container">';
+
 if($loop->have_posts()) {
+echo '<div class="flex-container">';
 
 while($loop->have_posts()) : $loop->the_post();
     //echo '<a href="'.get_permalink().'">'.get_the_title().'</a><br>';
@@ -107,13 +107,11 @@ while($loop->have_posts()) : $loop->the_post();
 		}
 		else {echo '</div>';}
 endwhile;
+echo '</div>';  
 }
 
-echo '</div>';            
+          
  ?>   <div class="desc"><?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-<?php the_content(); 
-//filter_callback();
-?>
-<?php endwhile; else: ?>
+<?php the_content(); ?><div class="aggregateRating" itemprop="aggregateRating" itemscope="itemscope" itemtype="http://schema.org/AggregateRating"><img src="/wp-content/themes/bus/src/img/greenstar.png"/><span itemprop="ratingValue"><?php echo get_post_meta( $post->ID, 'rating', true )?> </span>из <span itemprop="ratingCount"><?php echo get_post_meta( $post->ID, 'count', true ) ?> </span>голосовавших	</div><?php endwhile; else: ?>
 <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-<?php endif; ?></div></div><?php if (is_page( 'van' )) {?><div class="filter"><ul><li> <a href="/van/b10">до 10 мест</a></li><li> <a href="/van/b1020">10 - 20 мест</a></li><li> <a href="/van/desc">сначала дорогие</a></li><li> <a href="/van/asc">сначала дешевые</a></li><li> <a href="/van/van">минивэны</a></li><li> <a href="/van/vip">VIP</a></li><li> <a class="reset" href="/van/reset">+ Сбросить</a></li></ul></div><?php }?></div><?php get_footer();?>
+<?php endif; ?></div></div><?php if (is_page( 'van' )) {?><div class="filter"><?php echo get_query_var('food'); ?><ul><li> <a href="/van/b10">до 10 мест</a></li><li> <a href="/van/b1020">10 - 20 мест</a></li><li> <a href="/van/desc">сначала дорогие</a></li><li> <a href="/van/asc">сначала дешевые</a></li><li> <a href="/van/van">минивэны</a></li><li> <a href="/van/vip">VIP</a></li><li> <a class="reset" href="/van/reset">+ Сбросить</a></li></ul></div><?php }?></div><?php get_footer();?>

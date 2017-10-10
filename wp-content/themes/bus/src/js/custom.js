@@ -5,7 +5,7 @@ jQuery.noConflict();
 $(document).ready(function(){
 
 
-
+/* рисуем мобильное меню */
 $('.topnav').after('<div class="mobile-menu"><ul></ul></div>');
 
 $('.topnav .menu > li > a').each(function(){
@@ -18,6 +18,29 @@ if($(this).parent().hasClass('menu-item-has-children') == false){
     $('.mobile-menu ul').append('<li><a href="'+alink+'">'+atext+'</li>');
 }
 
+
+
+});
+
+$('.mobile-menu ul li').last().remove();
+
+/* добавляем подменю в мобильное меню */
+$('.mobile-menu ul').append('<li class="sub"><a href="#">Транспорт <span>+</span></a><ul style="display:none"></ul></li>');
+$('.topnav .menu .menu-item-has-children .sub-menu li a').each(function(){
+
+  var atext = $(this).text();
+  var alink = $(this).attr('href');
+
+  $('.mobile-menu ul .sub ul').append('<li><a href="'+alink+'">'+atext+'</li>');
+
+
+});
+
+/* fadeToggle .sub mobile menu */
+
+$('.mobile-menu ul .sub a').first().click(function(e){
+  e.preventDefault();
+ $('.mobile-menu ul .sub ul').fadeToggle("slow", "linear");
 });
 
 $('.grid-icon').click(function(){
@@ -275,9 +298,8 @@ var state = true;
        $.getScript( "/wp-content/themes/bus/src/js/jquery.fancybox.min.js", function( data, textStatus, jqxhr ) {
           console.log( "Load was performed." );
 
-        });  // getScript  
 
-       $.fancybox.open({
+          $.fancybox.open({
         src  : '#hidden_form',
         type : 'inline',
         opts : {
@@ -285,7 +307,11 @@ var state = true;
                 console.info( 'done!' );
             }
         }
-        }); //open
+        }); //open 
+
+        });  // getScript  
+
+      
 
 
 
@@ -398,6 +424,14 @@ if (window.location.href.split('/').length == 5)
   {
     $(this).css('color', '#12c391');
   }
+
+  var wo = $('.wpb_wrapper h4:eq(1) a').attr('href').split('/')[1];
+
+  if (flink == wo)
+  {
+    $('.wpb_wrapper h4:eq(1) a').css('color', '#12c391');
+  }
+
 })
 
 }
@@ -416,6 +450,21 @@ if($(document).width() > 620)
 }
 
 
+/* переименовываем "Стоимость за час" на "Стоимость за день" */
+
+if(window.location.href.split('/')[3] == 'w-o-driver')
+{
+$('.chars table tr').first().find('td:eq(1)').text('Стоимость за день');
+$('.taxtitle + p').each(function(){
+  var str = jQuery(this).text().replace("час", "день");
+  jQuery(this).text(str);
+});
+
+}
+
+
+/* косяк с Header Menu исправляем топором */
+$('#menu-item-987 a').first().attr('href','#');
 
 }); // document ready
 })(jQuery)

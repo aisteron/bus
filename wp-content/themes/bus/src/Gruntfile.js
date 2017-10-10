@@ -46,6 +46,8 @@ module.exports = function(grunt){
 			      '../article-template.php':['template/article-template.pug'],
 			      '../category.php':['template/category.pug'],
 			      '../single-car.php':['template/single-car.pug'],
+			      '../404.php':['template/404.pug'],
+			      '../price.php':['template/price.pug'],
 			    },
 			    
 			  }

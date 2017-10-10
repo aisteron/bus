@@ -32,7 +32,19 @@ remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
 remove_action( 'wp_head', 'feed_links', 2 ); 
 remove_action( 'wp_head', 'feed_links_extra', 3 );
 
+/* yoast seo fucking links */
 
+add_action('wp_head', 'remove_all_wpseo_og', 1);
+function remove_all_wpseo_og() {
+  remove_action( 'wpseo_head', array( $GLOBALS['wpseo_og'], 'opengraph' ), 30 );
+}
+add_filter( 'wpseo_canonical', '__return_false' );
+
+function bybe_remove_yoast_json($data){
+    $data = array();
+    return $data;
+  }
+  add_filter('wpseo_json_ld_output', 'bybe_remove_yoast_json', 10, 1);
 
 
 
@@ -133,6 +145,10 @@ function wpdocs_vip_scripts() {
     if (is_page_template( 'category.php' ))
     {
       wp_enqueue_style( 'category-style', get_template_directory_uri() .'/src/css/pages/category/category.css' );
+      
+    }
+    if (is_page('van'))
+    {
       wp_enqueue_script('local-js', get_template_directory_uri() .'/src/js/local.js', array('jquery'), null, true);
     }
 
@@ -157,9 +173,29 @@ function wpdocs_vip_scripts() {
 
     }
 
+    if (is_404())
+    {
+      wp_enqueue_style( 'article-template-style', get_template_directory_uri() .'/src/css/pages/right-sidebar/right.css' );
+
+
+    }
+
    
 
 }
 
 add_action( 'wp_enqueue_scripts', 'wpdocs_vip_scripts' );  
 
+
+/* реализуем дополнительные фильтры */  
+
+/*function custom_rewrite_tag() {
+  add_rewrite_tag('%food%', '([^&]+)');
+  add_rewrite_tag('%variety%', '([^&]+)');
+}
+add_action('init', 'custom_rewrite_tag', 10, 0);
+
+function custom_rewrite_rule() {
+    add_rewrite_rule('^nutrition/([^/]*)/([^/]*)/?','index.php?page_id=955&food=$matches[1]&variety=$matches[2]','top');
+  }
+  add_action('init', 'custom_rewrite_rule', 10, 0);*/

@@ -4,10 +4,16 @@ global $meta;
 
  
 $tit = get_the_title();
-echo '<h1>'.$tit.'</h1>';
+echo '<h1 itemprop="name">'.$tit.'</h1>';
 
 echo '<h4>'. get_post_meta( $post->ID, 'h4', true ).'</h4>';
-
+echo '<div class="rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+	  <img src="/wp-content/themes/bus/src/img/greenstar.png">
+	  <span itemprop="ratingValue">'.get_post_meta( $post->ID, 'rating', true ).'</span>
+	  из
+	  <span itemprop="ratingCount">'.get_post_meta( $post->ID, 'count', true ).'</span>
+	   голосовавших	
+	  </div>';
 
 echo '<div class="photo_wrap">
 	  <img class="lazyload" data-src="'.get_the_post_thumbnail_url($post->ID, 'owl-427').'" alt="'.$tit.'" width="427" height="284">';
@@ -62,6 +68,13 @@ function chars()
 	global $post;
 	$tit = get_the_title();
 	$meta = get_post_meta($post->ID);
+
+	/* schema.org */
+	echo '<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+		  <meta itemprop="priceCurrency" content="BYN" />';
+	echo '<meta itemprop="price" content="'. get_post_meta( $post->ID, 'от', true ).'"></div>';
+
+
 	echo '<table><tr><td>Аренда</td><td>Стоимость за час</td></tr>';
 
 	foreach ($meta as $key => $value)

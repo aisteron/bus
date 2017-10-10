@@ -10,8 +10,10 @@
 | get_header(); ?>
 
 
-.wpb_wrapper
+.wpb_wrapper(itemscope itemtype="http://schema.org/WebPage")
 	.left
+		meta(itemprop="headline" content!="<?php echo get_post_meta( $post->ID, '_yoast_wpseo_title', true ) ?>")
+		meta(itemprop="description" content!="<?php echo get_post_meta( $post->ID, '_yoast_wpseo_metadesc', true ) ?>")
 		h4 Авто с водителем
 		| <?php wp_nav_menu(array('menu' => 'side-menu','container' => ''))?>
 		h4
@@ -19,19 +21,26 @@
 		h4 Популярные предложения
 		include php/pop.php
 	.right
-		h1 
+		h1(itemprop="name") 
 			| <?php echo get_the_title() ?>
 		include php/tax.php
 		.desc
 			| <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-			|<?php the_content(); 
-			| //filter_callback();
-			|?>
+			|<?php the_content(); ?>
+			.aggregateRating( itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating")
+				img(src="/wp-content/themes/bus/src/img/greenstar.png")
+				span(itemprop="ratingValue")
+					|<?php echo get_post_meta( $post->ID, 'rating', true )?> 
+				| из 
+				span(itemprop="ratingCount")
+					|<?php echo get_post_meta( $post->ID, 'count', true ) ?> 
+				| голосовавших	
 			|<?php endwhile; else: ?>
 			|<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
 			|<?php endif; ?>
 	|<?php if (is_page( 'van' )) {?>
 	.filter
+		|<?php echo get_query_var('food'); ?>
 		ul
 			li 
 				a(href='/van/b10') до 10 мест

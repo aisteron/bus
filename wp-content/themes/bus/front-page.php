@@ -72,7 +72,7 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu {
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
 
-} ?></div><div class="keyholder"><div class="text">ВНИМАНИЕ! У НАС СТАЛ ДОСТУПЕН ПРОКАТ<br> АВТОМОБИЛЕЙ БЕЗ ВОДИТЕЛЯ</div><div class="auto"><img class="lazyload" data-src="/wp-content/themes/bus/src/img/wcar.png"/><a href="#"><input type="button" value="Подобрать авто"/></a></div></div><div class="carLineWrap"><h2 class="typical">Микроавтобусы</h2><?php
+} ?></div><div class="keyholder"><div class="text">ВНИМАНИЕ! У НАС СТАЛ ДОСТУПЕН ПРОКАТ<br> АВТОМОБИЛЕЙ БЕЗ ВОДИТЕЛЯ</div><div class="auto"><img class="lazyload" data-src="/wp-content/themes/bus/src/img/wcar.png"/><a href="/w-o-driver/"><input type="button" value="Подобрать авто"/></a></div></div><div class="carLineWrap"><h2 class="typical">Микроавтобусы</h2><?php
 
 // задаем нужные нам критерии выборки данных из БД
 function getOwl ($arg) {
@@ -105,7 +105,7 @@ echo '</div>';
 wp_reset_postdata();
 
 } 
-?><?php getOwl('van');?><p class="dashed">Перейти в раздел: <a href="/van/">Прокат микроавтобусов с водителем</a></p></div><div class="carLineWrap"><h2 class="typical">Прокат авто на свадьбу</h2><?php getOwl('wed');?><p class="dashed">Перейти в раздел: <a href="/wedding/">Прокат авто на свадьбу</a></p></div><div class="carLineWrap"><h2 class="typical">Автобусы</h2><?php getOwl('bus');?><p class="dashed">Перейти в раздел: <a href="/bus/">Прокат пассажирских автобусов</a></p></div><?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+?><?php getOwl('van');?><p class="dashed">Перейти в раздел: <a href="/van/">Прокат микроавтобусов с водителем</a></p></div><div class="carLineWrap"><h2 class="typical">Прокат авто на свадьбу</h2><?php getOwl('wedding');?><p class="dashed">Перейти в раздел: <a href="/wedding/">Прокат авто на свадьбу</a></p></div><div class="carLineWrap"><h2 class="typical">Автобусы</h2><?php getOwl('bus');?><p class="dashed">Перейти в раздел: <a href="/bus/">Прокат пассажирских автобусов</a></p></div><?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <?php the_content(); ?>
 <?php endwhile; else: ?>
 <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>

@@ -46,6 +46,9 @@ No, this plugin will not modify any of your Yoast SEO plugin files.
 
 == Changelog ==
 
+= 3.0.2 =
+* Limited the RYSC dashboard widget to admin only.
+
 = 3.0.1 =
 * Versioning added as a variable to the RYSC class.
 * Fixed a display error where the RYSC version was showing instead of the Yoast SEO version.

@@ -4,7 +4,7 @@
 $slug = get_post_field( 'post_name', get_post() );
                        
 /*echo '<pre>';
-print_r($terms);
+print_r($slug);
 echo '</pre>';*/
 
 /*foreach ($terms as $key) {
@@ -24,9 +24,8 @@ echo '<h1>',the_field('h1', $key ), '</h1>';
 $args = array(
         'post_type' => 'car', 
         'posts_per_page' => -1,
-        /*'orderby'   => 'meta_value_num',
-        'meta_key'  => 'от',
-        'order'     => 'ASC',*/
+        'orderby'   => 'publish_date',
+        'order'     => 'ASC',
         'tax_query' => array(
             array(
                 'taxonomy' => 'type',
@@ -37,8 +36,9 @@ $args = array(
      );
 
 $loop = new WP_Query($args);
-echo '<div class="flex-container">';
+
 if($loop->have_posts()) {
+echo '<div class="flex-container">';
 
 while($loop->have_posts()) : $loop->the_post();
     //echo '<a href="'.get_permalink().'">'.get_the_title().'</a><br>';
@@ -55,7 +55,8 @@ while($loop->have_posts()) : $loop->the_post();
 		}
 		else {echo '</div>';}
 endwhile;
+echo '</div>';  
 }
 
-echo '</div>';            
+          
  ?>   
